@@ -1,87 +1,174 @@
 /* =========================================================
-   STACKLY ADMIN DASHBOARD JAVASCRIPT
-   USER EMAIL + RESPONSIVE SIDEBAR + MOBILE MENU
+   STACKLY ADMIN DASHBOARD
+   COMPLETE + CORRECT JAVASCRIPT
+   SIDEBAR + ACCOUNT + CHARTS + SETTINGS
+   CUSTOM DROPDOWNS + CROP PERFORMANCE
 ========================================================= */
+
+"use strict";
 
 document.addEventListener("DOMContentLoaded", function () {
 
     /* =========================================================
-       GET ELEMENTS
+       GLOBAL HELPERS
     ========================================================= */
 
-    const sidebar = document.getElementById(
-        "stacklyAdminSidebar"
-    );
+    function getElement(selector) {
+        return document.querySelector(selector);
+    }
 
-    const menuToggle = document.getElementById(
-        "stacklyMenuToggle"
-    );
-
-    const sidebarClose = document.getElementById(
-        "stacklySidebarClose"
-    );
-
-    const sidebarOverlay = document.getElementById(
-        "stacklySidebarOverlay"
-    );
-
-    const adminAccount = document.querySelector(
-        ".stackly-admin-account"
-    );
-
-    const navLinks = document.querySelectorAll(
-        ".stackly-nav-link"
-    );
-
-    const emailElement = document.querySelector(
-        ".stackly-account-details strong"
-    );
-
-    const logoutLink = document.querySelector(
-        ".stackly-logout-link"
-    );
-
-
-    /* =========================================================
-       USER EMAIL
-       
-       LOGIN PAGE SAVES:
-       stacklyUserEmail
-    ========================================================= */
-
-    const savedEmail = localStorage.getItem(
-        "stacklyUserEmail"
-    );
-
-    if (emailElement) {
-
-        if (
-            savedEmail &&
-            savedEmail.trim() !== ""
-        ) {
-
-            emailElement.textContent =
-                savedEmail;
-
-        } else {
-
-            emailElement.textContent =
-                "admin@stacklyfarm.com";
-
-        }
-
+    function getElements(selector) {
+        return document.querySelectorAll(selector);
     }
 
 
     /* =========================================================
-       SIDEBAR STATE
+       USER INFORMATION
     ========================================================= */
+
+    const savedEmail =
+        localStorage.getItem("stacklyUserEmail");
+
+    const savedRole =
+        localStorage.getItem("stacklyUserRole");
+
+    const savedUserName =
+        localStorage.getItem("stacklyUserName");
+
+
+    /* =========================================================
+       GET NAME FROM EMAIL
+    ========================================================= */
+
+    function getNameFromEmail(email) {
+
+        if (!email || !email.includes("@")) {
+            return "Farm Admin";
+        }
+
+        let name =
+            email
+                .split("@")[0]
+                .trim();
+
+        name =
+            name
+                .replace(/[._-]+/g, " ")
+                .replace(/\s+/g, " ")
+                .trim()
+                .toLowerCase()
+                .replace(/\b\w/g, function (letter) {
+                    return letter.toUpperCase();
+                });
+
+        return name || "Farm Admin";
+    }
+
+
+    /* =========================================================
+       USER NAME
+    ========================================================= */
+
+    const userNameElement =
+        document.getElementById(
+            "stacklyAdminUserName"
+        );
+
+    const adminNameInput =
+        document.getElementById(
+            "stacklyAdminName"
+        );
+
+
+    let displayName =
+        savedUserName ||
+        getNameFromEmail(savedEmail);
+
+
+    if (userNameElement) {
+        userNameElement.textContent =
+            displayName;
+    }
+
+    if (adminNameInput) {
+        adminNameInput.value =
+            displayName;
+    }
+
+
+    /* =========================================================
+       USER EMAIL
+    ========================================================= */
+
+    const emailElements =
+        document.querySelectorAll(
+            ".stackly-account-details strong, #stacklyAdminEmail"
+        );
+
+
+    emailElements.forEach(function (element) {
+
+        const email =
+            savedEmail &&
+            savedEmail.trim() !== ""
+                ? savedEmail.trim()
+                : "admin@stacklyfarm.com";
+
+
+        if (element.tagName === "INPUT") {
+            element.value = email;
+        } else {
+            element.textContent = email;
+        }
+
+    });
+
+
+    /* =========================================================
+       SIDEBAR ELEMENTS
+    ========================================================= */
+
+    const sidebar =
+        document.getElementById(
+            "stacklyAdminSidebar"
+        );
+
+    const menuToggle =
+        document.getElementById(
+            "stacklyMenuToggle"
+        );
+
+    const sidebarClose =
+        document.getElementById(
+            "stacklySidebarClose"
+        );
+
+    const sidebarOverlay =
+        document.getElementById(
+            "stacklySidebarOverlay"
+        );
+
+    const adminAccount =
+        document.querySelector(
+            ".stackly-admin-account"
+        );
+
+    const navLinks =
+        document.querySelectorAll(
+            ".stackly-nav-link"
+        );
+
+    const logoutLink =
+        document.querySelector(
+            ".stackly-logout-link"
+        );
+
 
     let sidebarOpen = false;
 
 
     /* =========================================================
-       OPEN SIDEBAR
+       SIDEBAR OPEN
     ========================================================= */
 
     function openSidebar() {
@@ -95,11 +182,7 @@ document.addEventListener("DOMContentLoaded", function () {
         sidebar.classList.add("active");
 
         if (sidebarOverlay) {
-
-            sidebarOverlay.classList.add(
-                "active"
-            );
-
+            sidebarOverlay.classList.add("active");
         }
 
         if (menuToggle) {
@@ -121,10 +204,6 @@ document.addEventListener("DOMContentLoaded", function () {
             "false"
         );
 
-        /*
-         * Prevent background page scrolling
-         * only on mobile.
-         */
 
         if (window.innerWidth <= 991) {
 
@@ -141,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       CLOSE SIDEBAR
+       SIDEBAR CLOSE
     ========================================================= */
 
     function closeSidebar() {
@@ -150,9 +229,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         if (sidebar) {
 
-            sidebar.classList.remove(
-                "active"
-            );
+            sidebar.classList.remove("active");
 
             sidebar.setAttribute(
                 "aria-hidden",
@@ -162,11 +239,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (sidebarOverlay) {
-
-            sidebarOverlay.classList.remove(
-                "active"
-            );
-
+            sidebarOverlay.classList.remove("active");
         }
 
         if (menuToggle) {
@@ -193,7 +266,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       TOGGLE SIDEBAR
+       SIDEBAR TOGGLE
     ========================================================= */
 
     function toggleSidebar(event) {
@@ -206,23 +279,21 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (sidebarOpen) {
-
             closeSidebar();
-
         } else {
-
             openSidebar();
-
         }
 
     }
 
 
     /* =========================================================
-       HAMBURGER BUTTON
+       MENU BUTTON
     ========================================================= */
 
     if (menuToggle) {
+
+        menuToggle.type = "button";
 
         menuToggle.addEventListener(
             "click",
@@ -233,7 +304,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       SIDEBAR CLOSE / X BUTTON
+       SIDEBAR CLOSE BUTTON
     ========================================================= */
 
     if (sidebarClose) {
@@ -254,52 +325,21 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       OVERLAY CLICK
+       SIDEBAR OVERLAY
     ========================================================= */
 
     if (sidebarOverlay) {
 
         sidebarOverlay.addEventListener(
             "click",
-            function (event) {
-
-                event.preventDefault();
-
-                closeSidebar();
-
-            }
+            closeSidebar
         );
 
     }
 
 
     /* =========================================================
-       SIDEBAR NAVIGATION
-       
-       CLOSE SIDEBAR AFTER CLICKING LINK
-       ON MOBILE ONLY
-    ========================================================= */
-
-    navLinks.forEach(function (link) {
-
-        link.addEventListener(
-            "click",
-            function () {
-
-                if (window.innerWidth <= 991) {
-
-                    closeSidebar();
-
-                }
-
-            }
-        );
-
-    });
-
-
-    /* =========================================================
-       ACTIVE SIDEBAR LINK
+       ACTIVE NAVIGATION
     ========================================================= */
 
     let currentPage =
@@ -311,19 +351,9 @@ document.addEventListener("DOMContentLoaded", function () {
             .toLowerCase();
 
 
-    /*
-     * If no filename exists,
-     * use dashboard.
-     */
-
-    if (
-        !currentPage ||
-        currentPage === ""
-    ) {
-
+    if (!currentPage) {
         currentPage =
             "admin-dashboard.html";
-
     }
 
 
@@ -336,6 +366,7 @@ document.addEventListener("DOMContentLoaded", function () {
             return;
         }
 
+
         const linkPage =
             href
                 .split("/")
@@ -344,25 +375,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 .split("#")[0]
                 .toLowerCase();
 
-        link.classList.remove(
-            "active"
-        );
 
-        if (
-            linkPage === currentPage
-        ) {
+        link.classList.remove("active");
 
-            link.classList.add(
-                "active"
-            );
 
+        if (linkPage === currentPage) {
+            link.classList.add("active");
         }
+
+
+        link.addEventListener(
+            "click",
+            function () {
+
+                if (window.innerWidth <= 991) {
+                    closeSidebar();
+                }
+
+            }
+        );
 
     });
 
 
     /* =========================================================
-       ADMIN ACCOUNT DROPDOWN
+       ACCOUNT DROPDOWN
     ========================================================= */
 
     if (adminAccount) {
@@ -385,29 +422,50 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       CLOSE ACCOUNT DROPDOWN
-       WHEN CLICKING OUTSIDE
+       CUSTOM DROPDOWN CLOSE SYSTEM
     ========================================================= */
 
-    document.addEventListener(
-        "click",
-        function (event) {
+    function closeAllCustomDropdowns(
+        exceptDropdown = null
+    ) {
 
-            if (
-                adminAccount &&
-                !adminAccount.contains(
-                    event.target
-                )
-            ) {
+        const dropdowns =
+            document.querySelectorAll(
+                ".stackly-js-dropdown, " +
+                ".stackly-card-dropdown, " +
+                ".stackly-crop-dropdown"
+            );
 
-                adminAccount.classList.remove(
-                    "active"
+
+        dropdowns.forEach(function (dropdown) {
+
+            if (dropdown !== exceptDropdown) {
+
+                dropdown.classList.remove(
+                    "open"
                 );
+
+
+                const button =
+                    dropdown.querySelector(
+                        "button"
+                    );
+
+
+                if (button) {
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
 
             }
 
-        }
-    );
+        });
+
+    }
 
 
     /* =========================================================
@@ -433,6 +491,48 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 }
 
+                closeAllCustomDropdowns();
+
+            }
+
+        }
+    );
+
+
+    /* =========================================================
+       CLICK OUTSIDE
+    ========================================================= */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                adminAccount &&
+                !adminAccount.contains(
+                    event.target
+                )
+            ) {
+
+                adminAccount.classList.remove(
+                    "active"
+                );
+
+            }
+
+
+            const clickedDropdown =
+                event.target.closest(
+                    ".stackly-js-dropdown, " +
+                    ".stackly-card-dropdown, " +
+                    ".stackly-crop-dropdown"
+                );
+
+
+            if (!clickedDropdown) {
+
+                closeAllCustomDropdowns();
+
             }
 
         }
@@ -447,46 +547,8 @@ document.addEventListener("DOMContentLoaded", function () {
         "resize",
         function () {
 
-            /*
-             * When switching from mobile
-             * to desktop, completely reset
-             * mobile sidebar state.
-             */
-
             if (window.innerWidth > 991) {
-
                 closeSidebar();
-
-            } else {
-
-                /*
-                 * On mobile don't automatically
-                 * open the sidebar.
-                 */
-
-                if (!sidebarOpen) {
-
-                    if (sidebar) {
-
-                        sidebar.classList.remove(
-                            "active"
-                        );
-
-                    }
-
-                    if (sidebarOverlay) {
-
-                        sidebarOverlay.classList.remove(
-                            "active"
-                        );
-
-                    }
-
-                    document.body.style.overflow =
-                        "";
-
-                }
-
             }
 
         }
@@ -494,10 +556,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       MOBILE SWIPE SUPPORT
-       
-       RIGHT SWIPE FROM LEFT EDGE = OPEN
-       LEFT SWIPE = CLOSE
+       MOBILE SWIPE
     ========================================================= */
 
     let touchStartX = 0;
@@ -512,9 +571,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 !event.changedTouches ||
                 !event.changedTouches.length
             ) {
-
                 return;
-
             }
 
             touchStartX =
@@ -538,16 +595,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 !event.changedTouches ||
                 !event.changedTouches.length
             ) {
-
                 return;
-
             }
+
 
             if (window.innerWidth > 991) {
-
                 return;
-
             }
+
 
             const touchEndX =
                 event.changedTouches[0].clientX;
@@ -563,23 +618,13 @@ document.addEventListener("DOMContentLoaded", function () {
                 touchEndY - touchStartY;
 
 
-            /*
-             * Ignore vertical scrolling.
-             */
-
             if (
                 Math.abs(differenceY) >
                 Math.abs(differenceX)
             ) {
-
                 return;
-
             }
 
-
-            /* =========================================
-               SWIPE RIGHT
-            ========================================= */
 
             if (
                 touchStartX <= 50 &&
@@ -592,10 +637,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-
-            /* =========================================
-               SWIPE LEFT
-            ========================================= */
 
             if (
                 differenceX <= -70 &&
@@ -621,11 +662,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         logoutLink.addEventListener(
             "click",
-            function (event) {
-
-                /*
-                 * Clear login information.
-                 */
+            function () {
 
                 localStorage.removeItem(
                     "stacklyUserEmail"
@@ -639,9 +676,13 @@ document.addEventListener("DOMContentLoaded", function () {
                     "stacklyRememberMe"
                 );
 
-                /*
-                 * Close sidebar before leaving.
-                 */
+                localStorage.removeItem(
+                    "stacklyUserName"
+                );
+
+                localStorage.removeItem(
+                    "stacklySettings"
+                );
 
                 closeSidebar();
 
@@ -652,460 +693,1343 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     /* =========================================================
-       INITIAL STATE
+       INITIAL SIDEBAR STATE
     ========================================================= */
 
     closeSidebar();
 
 
-    if (menuToggle) {
+    /* =========================================================
+       CUSTOM DROPDOWN SYSTEM
+    ========================================================= */
 
-        menuToggle.setAttribute(
-            "type",
-            "button"
-        );
+    const dropdownInstances = {};
 
-        menuToggle.setAttribute(
-            "aria-expanded",
-            "false"
-        );
 
-        menuToggle.setAttribute(
-            "aria-label",
-            "Open Menu"
-        );
+    function getDropdownMenu(
+        dropdown,
+        menuId,
+        menuSelector
+    ) {
+
+        let menu = null;
+
+
+        if (menuId) {
+
+            menu =
+                document.getElementById(
+                    menuId
+                );
+
+        }
+
+
+        if (!menu && menuSelector) {
+
+            menu =
+                dropdown.querySelector(
+                    menuSelector
+                );
+
+        }
+
+
+        return menu;
 
     }
 
 
-    if (sidebar) {
+    function initializeCustomDropdown(config) {
 
-        sidebar.setAttribute(
-            "aria-hidden",
-            "true"
+        const dropdown =
+            document.getElementById(
+                config.dropdownId
+            );
+
+        const button =
+            document.getElementById(
+                config.buttonId
+            );
+
+        const selected =
+            document.getElementById(
+                config.selectedId
+            );
+
+        const hiddenInput =
+            document.getElementById(
+                config.hiddenInputId
+            );
+
+
+        if (
+            !dropdown ||
+            !button ||
+            !selected ||
+            !hiddenInput
+        ) {
+
+            return null;
+
+        }
+
+
+        const menu =
+            getDropdownMenu(
+                dropdown,
+                config.menuId,
+                config.menuSelector
+            );
+
+
+        if (!menu) {
+            return null;
+        }
+
+
+        const optionSelector =
+            config.optionSelector ||
+            ".stackly-js-option, " +
+            ".stackly-card-option";
+
+
+        const options =
+            menu.querySelectorAll(
+                optionSelector
+            );
+
+
+        if (!options.length) {
+            return null;
+        }
+
+
+        /* =====================================================
+           ACCESSIBILITY
+        ===================================================== */
+
+        button.type = "button";
+
+        button.setAttribute(
+            "aria-haspopup",
+            "listbox"
+        );
+
+        button.setAttribute(
+            "aria-expanded",
+            "false"
+        );
+
+        menu.setAttribute(
+            "role",
+            "listbox"
+        );
+
+
+        options.forEach(function (option) {
+
+            option.setAttribute(
+                "role",
+                "option"
+            );
+
+            option.setAttribute(
+                "tabindex",
+                "-1"
+            );
+
+        });
+
+
+        /* =====================================================
+           RENDER SELECTED OPTION
+        ===================================================== */
+
+        function renderSelected(option) {
+
+            if (!option) {
+                return;
+            }
+
+
+            const value =
+                option.getAttribute(
+                    "data-value"
+                );
+
+
+            const icon =
+                option.querySelector("i");
+
+
+            if (icon) {
+
+                selected.innerHTML =
+                    '<i class="' +
+                    icon.className +
+                    '"></i> ' +
+                    value;
+
+            } else {
+
+                selected.textContent =
+                    value;
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SELECT OPTION
+        ===================================================== */
+
+        function selectOption(
+            option,
+            triggerEvent = true
+        ) {
+
+            if (!option) {
+                return;
+            }
+
+
+            const value =
+                option.getAttribute(
+                    "data-value"
+                );
+
+
+            if (!value) {
+                return;
+            }
+
+
+            hiddenInput.value =
+                value;
+
+
+            renderSelected(option);
+
+
+            options.forEach(
+                function (item) {
+
+                    const isActive =
+                        item === option;
+
+
+                    item.classList.toggle(
+                        "active",
+                        isActive
+                    );
+
+                    item.setAttribute(
+                        "aria-selected",
+                        isActive
+                            ? "true"
+                            : "false"
+                    );
+
+                }
+            );
+
+
+            dropdown.classList.remove(
+                "open"
+            );
+
+
+            button.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+
+            if (triggerEvent) {
+
+                hiddenInput.dispatchEvent(
+                    new Event(
+                        "change",
+                        {
+                            bubbles: true
+                        }
+                    )
+                );
+
+
+                if (config.changeEvent) {
+
+                    dropdown.dispatchEvent(
+                        new CustomEvent(
+                            config.changeEvent,
+                            {
+                                bubbles: true,
+                                detail: {
+                                    value: value
+                                }
+                            }
+                        )
+                    );
+
+                }
+
+            }
+
+        }
+
+
+        /* =====================================================
+           SYNC DROPDOWN
+        ===================================================== */
+
+        function syncDropdown() {
+
+            const currentValue =
+                String(
+                    hiddenInput.value || ""
+                ).trim();
+
+
+            let matchedOption = null;
+
+
+            options.forEach(
+                function (option) {
+
+                    const optionValue =
+                        option.getAttribute(
+                            "data-value"
+                        );
+
+
+                    const isActive =
+                        optionValue ===
+                        currentValue;
+
+
+                    option.classList.toggle(
+                        "active",
+                        isActive
+                    );
+
+
+                    option.setAttribute(
+                        "aria-selected",
+                        isActive
+                            ? "true"
+                            : "false"
+                    );
+
+
+                    if (isActive) {
+                        matchedOption =
+                            option;
+                    }
+
+                }
+            );
+
+
+            if (!matchedOption) {
+
+                matchedOption =
+                    options[0];
+
+                if (matchedOption) {
+
+                    hiddenInput.value =
+                        matchedOption.getAttribute(
+                            "data-value"
+                        );
+
+                }
+
+            }
+
+
+            if (matchedOption) {
+                renderSelected(
+                    matchedOption
+                );
+            }
+
+        }
+
+
+        /* =====================================================
+           BUTTON CLICK
+        ===================================================== */
+
+        button.addEventListener(
+            "click",
+            function (event) {
+
+                event.preventDefault();
+                event.stopPropagation();
+
+
+                const isOpen =
+                    dropdown.classList.contains(
+                        "open"
+                    );
+
+
+                closeAllCustomDropdowns(
+                    dropdown
+                );
+
+
+                if (!isOpen) {
+
+                    dropdown.classList.add(
+                        "open"
+                    );
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           OPTION CLICK
+        ===================================================== */
+
+        options.forEach(
+            function (option) {
+
+                option.addEventListener(
+                    "click",
+                    function (event) {
+
+                        event.preventDefault();
+                        event.stopPropagation();
+
+                        selectOption(
+                            option,
+                            true
+                        );
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           KEYBOARD SUPPORT
+        ===================================================== */
+
+        button.addEventListener(
+            "keydown",
+            function (event) {
+
+                const currentIndex =
+                    Array.from(
+                        options
+                    ).findIndex(
+                        function (option) {
+
+                            return option.classList.contains(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                if (
+                    event.key === "Enter" ||
+                    event.key === " "
+                ) {
+
+                    event.preventDefault();
+
+                    button.click();
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key === "ArrowDown" ||
+                    event.key === "ArrowUp"
+                ) {
+
+                    event.preventDefault();
+
+
+                    closeAllCustomDropdowns(
+                        dropdown
+                    );
+
+
+                    dropdown.classList.add(
+                        "open"
+                    );
+
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "true"
+                    );
+
+
+                    let nextIndex;
+
+
+                    if (
+                        event.key ===
+                        "ArrowDown"
+                    ) {
+
+                        nextIndex =
+                            currentIndex <
+                            options.length - 1
+                                ? currentIndex + 1
+                                : 0;
+
+                    } else {
+
+                        nextIndex =
+                            currentIndex > 0
+                                ? currentIndex - 1
+                                : options.length - 1;
+
+                    }
+
+
+                    const nextOption =
+                        options[nextIndex];
+
+
+                    if (nextOption) {
+
+                        options.forEach(
+                            function (item) {
+
+                                item.classList.remove(
+                                    "keyboard-active"
+                                );
+
+                            }
+                        );
+
+
+                        nextOption.classList.add(
+                            "keyboard-active"
+                        );
+
+                        nextOption.focus();
+
+                    }
+
+                    return;
+
+                }
+
+
+                if (
+                    event.key === "Escape"
+                ) {
+
+                    event.preventDefault();
+
+                    dropdown.classList.remove(
+                        "open"
+                    );
+
+                    button.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    button.focus();
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           OPTION KEYBOARD SUPPORT
+        ===================================================== */
+
+        options.forEach(
+            function (option, index) {
+
+                option.addEventListener(
+                    "keydown",
+                    function (event) {
+
+                        if (
+                            event.key === "Enter" ||
+                            event.key === " "
+                        ) {
+
+                            event.preventDefault();
+
+                            selectOption(
+                                option,
+                                true
+                            );
+
+                            button.focus();
+
+                            return;
+
+                        }
+
+
+                        if (
+                            event.key === "Escape"
+                        ) {
+
+                            event.preventDefault();
+
+                            dropdown.classList.remove(
+                                "open"
+                            );
+
+                            button.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            button.focus();
+
+                            return;
+
+                        }
+
+
+                        if (
+                            event.key ===
+                            "ArrowDown"
+                        ) {
+
+                            event.preventDefault();
+
+                            const next =
+                                options[
+                                    (index + 1) %
+                                    options.length
+                                ];
+
+                            if (next) {
+                                next.focus();
+                            }
+
+                        }
+
+
+                        if (
+                            event.key ===
+                            "ArrowUp"
+                        ) {
+
+                            event.preventDefault();
+
+                            const previous =
+                                options[
+                                    (index -
+                                        1 +
+                                        options.length) %
+                                    options.length
+                                ];
+
+                            if (previous) {
+                                previous.focus();
+                            }
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           INITIALIZE
+        ===================================================== */
+
+        syncDropdown();
+
+
+        return {
+            sync: syncDropdown,
+            select: selectOption
+        };
+
+    }
+
+
+    /* =========================================================
+       FARMING TYPE DROPDOWN
+    ========================================================= */
+
+    dropdownInstances.farmType =
+        initializeCustomDropdown({
+
+            dropdownId:
+                "stacklyFarmDropdown",
+
+            buttonId:
+                "stacklyFarmDropdownBtn",
+
+            menuId:
+                "stacklyFarmDropdownMenu",
+
+            selectedId:
+                "stacklyFarmSelected",
+
+            hiddenInputId:
+                "stacklyFarmType",
+
+            optionSelector:
+                ".stackly-js-option",
+
+            changeEvent:
+                "stacklyFarmTypeChange"
+
+        });
+
+
+    /* =========================================================
+       MEASUREMENT UNIT DROPDOWN
+    ========================================================= */
+
+    dropdownInstances.farmUnit =
+        initializeCustomDropdown({
+
+            dropdownId:
+                "stacklyFarmUnitDropdown",
+
+            buttonId:
+                "stacklyFarmUnitDropdownBtn",
+
+            menuId:
+                "stacklyFarmUnitDropdownMenu",
+
+            selectedId:
+                "stacklyFarmUnitSelected",
+
+            hiddenInputId:
+                "stacklyFarmUnit",
+
+            optionSelector:
+                ".stackly-js-option",
+
+            changeEvent:
+                "stacklyFarmUnitChange"
+
+        });
+
+
+    /* =========================================================
+       YEAR / PERIOD DROPDOWN
+    ========================================================= */
+
+    dropdownInstances.year =
+        initializeCustomDropdown({
+
+            dropdownId:
+                "stacklyYearDropdown",
+
+            buttonId:
+                "stacklyYearDropdownBtn",
+
+            menuId:
+                "stacklyYearDropdownMenu",
+
+            menuSelector:
+                ".stackly-card-dropdown-menu",
+
+            selectedId:
+                "stacklyYearSelected",
+
+            hiddenInputId:
+                "stacklyYearValue",
+
+            optionSelector:
+                ".stackly-card-option",
+
+            changeEvent:
+                "stacklyYearChange"
+
+        });
+
+
+    /* =========================================================
+       CROP PERFORMANCE CUSTOM DROPDOWN
+    ========================================================= */
+
+    dropdownInstances.crop =
+        initializeCustomDropdown({
+
+            dropdownId:
+                "stacklyCropDropdown",
+
+            buttonId:
+                "stacklyCropDropdownBtn",
+
+            menuId:
+                "stacklyCropDropdownMenu",
+
+            selectedId:
+                "stacklyCropSelected",
+
+            hiddenInputId:
+                "stacklyCropFilter",
+
+            optionSelector:
+                ".stackly-crop-option",
+
+            changeEvent:
+                "stacklyCropFilterChange"
+
+        });
+
+
+    /* =========================================================
+       SYNCHRONIZE ALL DROPDOWNS
+    ========================================================= */
+
+    function syncAllCustomDropdowns() {
+
+        Object.keys(
+            dropdownInstances
+        ).forEach(
+            function (key) {
+
+                if (
+                    dropdownInstances[key] &&
+                    typeof dropdownInstances[key].sync ===
+                    "function"
+                ) {
+
+                    dropdownInstances[key].sync();
+
+                }
+
+            }
         );
 
     }
 
 
     /* =========================================================
-       FINAL BODY STATE
+       PRODUCTION CHART DATA
     ========================================================= */
-
-    document.body.classList.remove(
-        "stackly-sidebar-open"
-    );
-
-    document.body.style.overflow = "";
-
-
-});
-
-/* =========================================================
-   USER NAME FROM EMAIL
-   Example:
-   kalaikargil@gmail.com
-   → Kalaikargil
-========================================================= */
-
-const userEmail =
-    localStorage.getItem("stacklyUserEmail");
-
-const userNameElement =
-    document.getElementById("stacklyAdminUserName");
-
-const emailElement =
-    document.querySelector(
-        ".stackly-account-details strong"
-    );
-
-
-/* =========================================================
-   DISPLAY USER NAME
-========================================================= */
-
-if (userNameElement) {
-
-    if (
-        userEmail &&
-        userEmail.trim() !== ""
-    ) {
-
-        /* Get text before @ */
-        let userName =
-            userEmail
-                .split("@")[0]
-                .trim();
-
-        /* Get first word only */
-        userName =
-            userName
-                .split(/[._\-\s]+/)[0]
-                .trim();
-
-        /* Capitalize first letter */
-        if (userName !== "") {
-
-            userName =
-                userName.charAt(0).toUpperCase() +
-                userName.slice(1).toLowerCase();
-
-            userNameElement.textContent =
-                userName;
-
-        } else {
-
-            userNameElement.textContent =
-                "Farm Admin";
-
-        }
-
-    } else {
-
-        userNameElement.textContent =
-            "Farm Admin";
-
-    }
-
-}
-
-
-/* =========================================================
-   DISPLAY USER EMAIL
-========================================================= */
-
-if (emailElement) {
-
-    if (
-        userEmail &&
-        userEmail.trim() !== ""
-    ) {
-
-        emailElement.textContent =
-            userEmail;
-
-    } else {
-
-        emailElement.textContent =
-            "admin@stacklyfarm.com";
-
-    }
-
-}
-
-
-/* =========================================================
-   STACKLY ADMIN DASHBOARD
-   PRODUCTION CHART JAVASCRIPT
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =====================================================
-       PRODUCTION DATA
-    ===================================================== */
 
     const productionData = {
 
         "This Year": [
-            38, 52, 45, 68, 61, 79,
-            91, 84, 96, 88, 100, 94
+            38, 52, 45, 68,
+            61, 79, 91, 84,
+            96, 88, 100, 94
         ],
 
         "Last Year": [
-            32, 44, 41, 55, 50, 67,
-            76, 71, 82, 78, 89, 85
+            32, 44, 41, 55,
+            50, 67, 76, 71,
+            82, 78, 89, 85
         ],
 
         "This Season": [
-            25, 39, 48, 61, 70, 82,
-            90, 86, 94, 97, 100, 98
+            25, 39, 48, 61,
+            70, 82, 90, 86,
+            94, 97, 100, 98
         ]
 
     };
 
 
-    /* =====================================================
-       GET ELEMENTS
-    ===================================================== */
-
     const productionSelect =
-        document.querySelector(".stackly-card-select");
+        document.querySelector(
+            ".stackly-card-select"
+        );
+
+
+    const yearValue =
+        document.getElementById(
+            "stacklyYearValue"
+        );
+
 
     const chartBars =
-        document.querySelectorAll(".stackly-chart-line span");
+        document.querySelectorAll(
+            ".stackly-chart-line span"
+        );
 
-
-    /* =====================================================
-       UPDATE PRODUCTION CHART
-    ===================================================== */
 
     function updateProductionChart(type) {
 
-        const values = productionData[type];
+        const values =
+            productionData[type];
 
-        if (!values || !chartBars.length) {
+
+        if (
+            !values ||
+            !chartBars.length
+        ) {
+
             return;
+
         }
 
-        chartBars.forEach(function (bar, index) {
 
-            if (values[index] !== undefined) {
+        chartBars.forEach(
+            function (bar, index) {
 
-                bar.style.height = values[index] + "%";
+                const value =
+                    values[index] ?? 0;
+
+
+                bar.style.height =
+                    value + "%";
 
             }
-
-        });
+        );
 
     }
 
-
-    /* =====================================================
-       DROPDOWN CHANGE
-    ===================================================== */
 
     if (productionSelect) {
 
-        productionSelect.addEventListener("change", function () {
+        productionSelect.addEventListener(
+            "change",
+            function () {
 
-            updateProductionChart(this.value);
+                updateProductionChart(
+                    this.value
+                );
 
-        });
+            }
+        );
 
     }
 
 
-    /* =====================================================
-       INITIAL CHART
-    ===================================================== */
+    if (yearValue) {
 
-    updateProductionChart("This Year");
+        yearValue.addEventListener(
+            "change",
+            function () {
+
+                updateProductionChart(
+                    this.value
+                );
+
+            }
+        );
+
+    }
 
 
-});
-
-/* =========================================================
-   STACKLY FARMING
-   CROP MANAGEMENT - PERFORMANCE JAVASCRIPT
-   ========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =====================================================
-       PERFORMANCE BAR ANIMATION
-    ===================================================== */
-
-    const performanceBars = document.querySelectorAll(
-        ".crop-performance-bars .crop-bar span"
-    );
-
-    const miniProgressBars = document.querySelectorAll(
-        ".mini-progress span"
-    );
-
-    const fieldProgressBars = document.querySelectorAll(
-        ".field-progress-bar span"
+    updateProductionChart(
+        yearValue
+            ? yearValue.value
+            : productionSelect
+                ? productionSelect.value
+                : "This Year"
     );
 
 
-    /* =====================================================
-       RESET BAR WIDTH FOR ANIMATION
-    ===================================================== */
+    /* =========================================================
+       CROP PERFORMANCE DATA
+    ========================================================= */
 
-    performanceBars.forEach(function (bar) {
+    const performanceData = {
 
-        const finalWidth = bar.style.width;
+        "This Season": {
 
-        bar.dataset.width = finalWidth;
-
-        bar.style.width = "0";
-
-    });
-
-
-    miniProgressBars.forEach(function (bar) {
-
-        const finalWidth = bar.style.width;
-
-        bar.dataset.width = finalWidth;
-
-        bar.style.width = "0";
-
-    });
-
-
-    fieldProgressBars.forEach(function (bar) {
-
-        const finalWidth = bar.style.width;
-
-        bar.dataset.width = finalWidth;
-
-        bar.style.width = "0";
-
-    });
-
-
-    /* =====================================================
-       INTERSECTION OBSERVER
-       ANIMATE BARS WHEN THEY ENTER VIEW
-    ===================================================== */
-
-    const performanceObserver = new IntersectionObserver(
-        function (entries, observer) {
-
-            entries.forEach(function (entry) {
-
-                if (!entry.isIntersecting) {
-                    return;
-                }
-
-
-                const element = entry.target;
-
-
-                /* =========================================
-                   PERFORMANCE BARS
-                ========================================= */
-
-                if (
-                    element.classList.contains("crop-performance-bars")
-                ) {
-
-                    const bars = element.querySelectorAll(
-                        ".crop-bar span"
-                    );
-
-                    bars.forEach(function (bar, index) {
-
-                        setTimeout(function () {
-
-                            bar.style.width =
-                                bar.dataset.width;
-
-                        }, index * 180);
-
-                    });
-
-                }
-
-
-                /* =========================================
-                   FIELD HEALTH BARS
-                ========================================= */
-
-                if (
-                    element.classList.contains("field-health-section")
-                ) {
-
-                    const bars = element.querySelectorAll(
-                        ".field-progress-bar span"
-                    );
-
-                    bars.forEach(function (bar, index) {
-
-                        setTimeout(function () {
-
-                            bar.style.width =
-                                bar.dataset.width;
-
-                        }, index * 150);
-
-                    });
-
-                }
-
-
-                /* =========================================
-                   TABLE MINI PROGRESS
-                ========================================= */
-
-                if (
-                    element.classList.contains("crop-table-section")
-                ) {
-
-                    const bars = element.querySelectorAll(
-                        ".mini-progress span"
-                    );
-
-                    bars.forEach(function (bar, index) {
-
-                        setTimeout(function () {
-
-                            bar.style.width =
-                                bar.dataset.width;
-
-                        }, index * 150);
-
-                    });
-
-                }
-
-
-                observer.unobserve(element);
-
-            });
+            rice: "96%",
+            carrot: "88%",
+            tomato: "92%",
+            chilli: "84%"
 
         },
-        {
-            threshold: 0.25
+
+        "This Year": {
+
+            rice: "93%",
+            carrot: "86%",
+            tomato: "89%",
+            chilli: "81%"
+
+        },
+
+        "Last Year": {
+
+            rice: "89%",
+            carrot: "82%",
+            tomato: "85%",
+            chilli: "78%"
+
         }
-    );
+
+    };
 
 
-    /* =====================================================
-       OBSERVE PERFORMANCE SECTION
-    ===================================================== */
+    /* =========================================================
+       CROP PERFORMANCE ELEMENTS
+    ========================================================= */
 
-    const performanceSection = document.querySelector(
-        ".crop-performance-card"
-    );
+    const performanceBars =
+        document.querySelectorAll(
+            ".crop-performance-bars .crop-bar span"
+        );
 
-    if (performanceSection) {
 
-        performanceObserver.observe(performanceSection);
+    const performanceValues =
+        document.querySelectorAll(
+            ".crop-performance-bars .crop-bar-item strong"
+        );
+
+
+    const cropFilterHidden =
+        document.getElementById(
+            "stacklyCropFilter"
+        );
+
+
+    const nativeCropFilter =
+        document.querySelector(
+            ".crop-filter"
+        );
+
+
+    /* =========================================================
+       STORE ORIGINAL BAR WIDTHS
+    ========================================================= */
+
+    function prepareProgressBars(bars) {
+
+        bars.forEach(
+            function (bar) {
+
+                let finalWidth =
+                    bar.getAttribute(
+                        "data-width"
+                    );
+
+
+                if (!finalWidth) {
+
+                    finalWidth =
+                        bar.style.width;
+
+                }
+
+
+                if (
+                    finalWidth &&
+                    finalWidth !== "0px" &&
+                    finalWidth !== "0"
+                ) {
+
+                    bar.dataset.width =
+                        finalWidth;
+
+                }
+
+            }
+        );
 
     }
 
 
-    /* =====================================================
-       OBSERVE FIELD HEALTH SECTION
-    ===================================================== */
+    const miniProgressBars =
+        document.querySelectorAll(
+            ".mini-progress span"
+        );
 
-    const fieldHealthSection = document.querySelector(
-        ".field-health-section"
+
+    const fieldProgressBars =
+        document.querySelectorAll(
+            ".field-progress-bar span"
+        );
+
+
+    prepareProgressBars(
+        performanceBars
     );
 
-    if (fieldHealthSection) {
+    prepareProgressBars(
+        miniProgressBars
+    );
 
-        performanceObserver.observe(fieldHealthSection);
+    prepareProgressBars(
+        fieldProgressBars
+    );
+
+
+    /* =========================================================
+       UPDATE CROP PERFORMANCE
+    ========================================================= */
+
+    function updateCropPerformance(
+        selectedValue
+    ) {
+
+        const data =
+            performanceData[selectedValue];
+
+
+        if (!data) {
+
+            console.warn(
+                "Invalid crop performance filter:",
+                selectedValue
+            );
+
+            return;
+
+        }
+
+
+        const newValues = [
+
+            data.rice,
+            data.carrot,
+            data.tomato,
+            data.chilli
+
+        ];
+
+
+        /* =====================================================
+           UPDATE BARS
+        ===================================================== */
+
+        performanceBars.forEach(
+            function (bar, index) {
+
+                const newValue =
+                    newValues[index] || "0%";
+
+
+                bar.style.width = "0";
+
+
+                setTimeout(
+                    function () {
+
+                        bar.style.width =
+                            newValue;
+
+                    },
+                    100 + index * 80
+                );
+
+            }
+        );
+
+
+        /* =====================================================
+           UPDATE PERCENTAGE TEXT
+        ===================================================== */
+
+        performanceValues.forEach(
+            function (value, index) {
+
+                if (
+                    newValues[index]
+                ) {
+
+                    value.textContent =
+                        newValues[index];
+
+                }
+
+            }
+        );
+
+
+        /* =====================================================
+           UPDATE SCORE CIRCLE
+        ===================================================== */
+
+        const average =
+            Math.round(
+                newValues
+                    .map(
+                        function (value) {
+                            return parseInt(
+                                value,
+                                10
+                            ) || 0;
+                        }
+                    )
+                    .reduce(
+                        function (
+                            total,
+                            value
+                        ) {
+                            return total + value;
+                        },
+                        0
+                    ) /
+                newValues.length
+            );
+
+
+        const scoreCircle =
+            document.querySelector(
+                ".crop-score-circle"
+            );
+
+
+        if (scoreCircle) {
+
+            scoreCircle.style.setProperty(
+                "--score",
+                average + "%"
+            );
+
+
+            const scoreText =
+                scoreCircle.querySelector(
+                    "strong, .score-number, span"
+                );
+
+
+            if (scoreText) {
+
+                scoreText.textContent =
+                    average + "%";
+
+            }
+
+        }
+
+
+        console.log(
+            "Crop Performance Updated:",
+            selectedValue,
+            newValues
+        );
 
     }
 
 
-    /* =====================================================
-       OBSERVE TABLE SECTION
-    ===================================================== */
+    /* =========================================================
+       CROP FILTER - CUSTOM DROPDOWN
+    ========================================================= */
 
-    const tableSection = document.querySelector(
-        ".crop-table-section"
-    );
+    if (cropFilterHidden) {
 
-    if (tableSection) {
+        cropFilterHidden.addEventListener(
+            "change",
+            function () {
 
-        performanceObserver.observe(tableSection);
+                updateCropPerformance(
+                    this.value
+                );
+
+            }
+        );
 
     }
 
 
-    /* =====================================================
-       CROP PERFORMANCE SCORE
-       91% CIRCLE
-    ===================================================== */
+    /* =========================================================
+       CROP FILTER - CUSTOM EVENT
+       Useful for external scripts
+    ========================================================= */
 
-    const scoreCircle = document.querySelector(
-        ".crop-score-circle"
+    const cropDropdown =
+        document.getElementById(
+            "stacklyCropDropdown"
+        );
+
+
+    if (cropDropdown) {
+
+        cropDropdown.addEventListener(
+            "stacklyCropFilterChange",
+            function (event) {
+
+                const value =
+                    event.detail &&
+                    event.detail.value
+                        ? event.detail.value
+                        : cropFilterHidden
+                            ? cropFilterHidden.value
+                            : "This Season";
+
+
+                updateCropPerformance(
+                    value
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       CROP FILTER - OLD NATIVE SELECT FALLBACK
+    ========================================================= */
+
+    if (nativeCropFilter) {
+
+        nativeCropFilter.addEventListener(
+            "change",
+            function () {
+
+                updateCropPerformance(
+                    this.value
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =========================================================
+       INITIAL CROP PERFORMANCE
+    ========================================================= */
+
+    const initialCropValue =
+        cropFilterHidden
+            ? cropFilterHidden.value
+            : nativeCropFilter
+                ? nativeCropFilter.value
+                : "This Season";
+
+
+    updateCropPerformance(
+        performanceData[initialCropValue]
+            ? initialCropValue
+            : "This Season"
     );
+
+
+    /* =========================================================
+       SCORE CIRCLE DEFAULT
+    ========================================================= */
+
+    const scoreCircle =
+        document.querySelector(
+            ".crop-score-circle"
+        );
+
 
     if (scoreCircle) {
 
@@ -1117,103 +2041,45 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       PERFORMANCE FILTER
-    ===================================================== */
+    /* =========================================================
+       ANIMATE PROGRESS BARS
+    ========================================================= */
 
-    const cropFilter = document.querySelector(
-        ".crop-filter"
-    );
+    function animateBars(
+        container,
+        selector,
+        delay
+    ) {
 
-    if (cropFilter) {
-
-        cropFilter.addEventListener(
-            "change",
-            function () {
-
-                const selectedValue =
-                    cropFilter.value;
+        if (!container) {
+            return;
+        }
 
 
-                /* -----------------------------------------
-                   DEMO PERFORMANCE DATA
-                ----------------------------------------- */
+        const bars =
+            container.querySelectorAll(
+                selector
+            );
 
-                const performanceData = {
 
-                    "This Season": {
-                        rice: "96%",
-                        carrot: "88%",
-                        tomato: "92%",
-                        chilli: "84%"
+        bars.forEach(
+            function (bar, index) {
+
+                setTimeout(
+                    function () {
+
+                        if (
+                            bar.dataset.width
+                        ) {
+
+                            bar.style.width =
+                                bar.dataset.width;
+
+                        }
+
                     },
-
-                    "This Year": {
-                        rice: "93%",
-                        carrot: "86%",
-                        tomato: "89%",
-                        chilli: "81%"
-                    },
-
-                    "Last Year": {
-                        rice: "89%",
-                        carrot: "82%",
-                        tomato: "85%",
-                        chilli: "78%"
-                    }
-
-                };
-
-
-                const data =
-                    performanceData[selectedValue];
-
-
-                if (!data) {
-                    return;
-                }
-
-
-                const bars =
-                    document.querySelectorAll(
-                        ".crop-performance-bars .crop-bar span"
-                    );
-
-                const values =
-                    document.querySelectorAll(
-                        ".crop-performance-bars .crop-bar-item strong"
-                    );
-
-
-                const newValues = [
-                    data.rice,
-                    data.carrot,
-                    data.tomato,
-                    data.chilli
-                ];
-
-
-                bars.forEach(function (bar, index) {
-
-                    bar.style.width = "0";
-
-
-                    setTimeout(function () {
-
-                        bar.style.width =
-                            newValues[index];
-
-                    }, 100);
-
-                });
-
-
-                values.forEach(function (value, index) {
-
-                    value.textContent =
-                        newValues[index];
-
-                });
+                    index * delay
+                );
 
             }
         );
@@ -1221,47 +2087,206 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       CARD HOVER EFFECT
-    ===================================================== */
+    /* =========================================================
+       OBSERVER
+    ========================================================= */
+
+    const performanceSection =
+        document.querySelector(
+            ".crop-performance-card"
+        );
+
+
+    const fieldHealthSection =
+        document.querySelector(
+            ".field-health-section"
+        );
+
+
+    const tableSection =
+        document.querySelector(
+            ".crop-table-section"
+        );
+
+
+    if (
+        "IntersectionObserver" in window
+    ) {
+
+        const performanceObserver =
+            new IntersectionObserver(
+                function (
+                    entries,
+                    observer
+                ) {
+
+                    entries.forEach(
+                        function (entry) {
+
+                            if (
+                                !entry.isIntersecting
+                            ) {
+
+                                return;
+
+                            }
+
+
+                            if (
+                                entry.target.classList.contains(
+                                    "crop-performance-card"
+                                )
+                            ) {
+
+                                animateBars(
+                                    entry.target,
+                                    ".crop-bar span",
+                                    180
+                                );
+
+                            }
+
+
+                            if (
+                                entry.target.classList.contains(
+                                    "field-health-section"
+                                )
+                            ) {
+
+                                animateBars(
+                                    entry.target,
+                                    ".field-progress-bar span",
+                                    150
+                                );
+
+                            }
+
+
+                            if (
+                                entry.target.classList.contains(
+                                    "crop-table-section"
+                                )
+                            ) {
+
+                                animateBars(
+                                    entry.target,
+                                    ".mini-progress span",
+                                    150
+                                );
+
+                            }
+
+
+                            observer.unobserve(
+                                entry.target
+                            );
+
+                        }
+                    );
+
+                },
+                {
+                    threshold: 0.25
+                }
+            );
+
+
+        if (performanceSection) {
+
+            performanceObserver.observe(
+                performanceSection
+            );
+
+        }
+
+
+        if (fieldHealthSection) {
+
+            performanceObserver.observe(
+                fieldHealthSection
+            );
+
+        }
+
+
+        if (tableSection) {
+
+            performanceObserver.observe(
+                tableSection
+            );
+
+        }
+
+    } else {
+
+        animateBars(
+            performanceSection,
+            ".crop-bar span",
+            100
+        );
+
+
+        animateBars(
+            fieldHealthSection,
+            ".field-progress-bar span",
+            100
+        );
+
+
+        animateBars(
+            tableSection,
+            ".mini-progress span",
+            100
+        );
+
+    }
+
+
+    /* =========================================================
+       DASHBOARD CARD HOVER
+    ========================================================= */
 
     const dashboardCards =
         document.querySelectorAll(
-            ".crop-dashboard-card, .field-health-card, .crop-feature-card"
+            ".crop-dashboard-card, " +
+            ".field-health-card, " +
+            ".crop-feature-card"
         );
 
 
-    dashboardCards.forEach(function (card) {
+    dashboardCards.forEach(
+        function (card) {
 
-        card.addEventListener(
-            "mouseenter",
-            function () {
+            card.addEventListener(
+                "mouseenter",
+                function () {
 
-                card.classList.add(
-                    "crop-card-hover"
-                );
+                    card.classList.add(
+                        "crop-card-hover"
+                    );
 
-            }
-        );
-
-
-        card.addEventListener(
-            "mouseleave",
-            function () {
-
-                card.classList.remove(
-                    "crop-card-hover"
-                );
-
-            }
-        );
-
-    });
+                }
+            );
 
 
-    /* =====================================================
-       GROWTH STAGE CLICK EFFECT
-    ===================================================== */
+            card.addEventListener(
+                "mouseleave",
+                function () {
+
+                    card.classList.remove(
+                        "crop-card-hover"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       GROWTH STAGES
+    ========================================================= */
 
     const growthStages =
         document.querySelectorAll(
@@ -1269,34 +2294,38 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    growthStages.forEach(function (stage) {
+    growthStages.forEach(
+        function (stage) {
 
-        stage.addEventListener(
-            "click",
-            function () {
+            stage.addEventListener(
+                "click",
+                function () {
 
-                growthStages.forEach(function (item) {
+                    growthStages.forEach(
+                        function (item) {
 
-                    item.classList.remove(
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    stage.classList.add(
                         "active"
                     );
 
-                });
+                }
+            );
+
+        }
+    );
 
 
-                stage.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       FIELD HEALTH CARD CLICK EFFECT
-    ===================================================== */
+    /* =========================================================
+       FIELD HEALTH CARDS
+    ========================================================= */
 
     const fieldCards =
         document.querySelectorAll(
@@ -1304,34 +2333,38 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    fieldCards.forEach(function (card) {
+    fieldCards.forEach(
+        function (card) {
 
-        card.addEventListener(
-            "click",
-            function () {
+            card.addEventListener(
+                "click",
+                function () {
 
-                fieldCards.forEach(function (item) {
+                    fieldCards.forEach(
+                        function (item) {
 
-                    item.classList.remove(
+                            item.classList.remove(
+                                "selected"
+                            );
+
+                        }
+                    );
+
+
+                    card.classList.add(
                         "selected"
                     );
 
-                });
+                }
+            );
+
+        }
+    );
 
 
-                card.classList.add(
-                    "selected"
-                );
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       HARVEST TIMELINE
-    ===================================================== */
+    /* =========================================================
+       HARVEST DAYS
+    ========================================================= */
 
     const harvestDays =
         document.querySelectorAll(
@@ -1339,34 +2372,38 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    harvestDays.forEach(function (day) {
+    harvestDays.forEach(
+        function (day) {
 
-        day.addEventListener(
-            "click",
-            function () {
+            day.addEventListener(
+                "click",
+                function () {
 
-                harvestDays.forEach(function (item) {
+                    harvestDays.forEach(
+                        function (item) {
 
-                    item.classList.remove(
+                            item.classList.remove(
+                                "active"
+                            );
+
+                        }
+                    );
+
+
+                    day.classList.add(
                         "active"
                     );
 
-                });
+                }
+            );
+
+        }
+    );
 
 
-                day.classList.add(
-                    "active"
-                );
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       TABLE ROW HOVER / CLICK
-    ===================================================== */
+    /* =========================================================
+       TABLE ROW SELECTION
+    ========================================================= */
 
     const tableRows =
         document.querySelectorAll(
@@ -1374,105 +2411,136 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    tableRows.forEach(function (row) {
+    tableRows.forEach(
+        function (row) {
 
-        row.addEventListener(
-            "click",
-            function () {
+            row.addEventListener(
+                "click",
+                function () {
 
-                tableRows.forEach(function (item) {
+                    tableRows.forEach(
+                        function (item) {
 
-                    item.classList.remove(
+                            item.classList.remove(
+                                "selected-row"
+                            );
+
+                        }
+                    );
+
+
+                    row.classList.add(
                         "selected-row"
                     );
 
-                });
+                }
+            );
+
+        }
+    );
 
 
-                row.classList.add(
-                    "selected-row"
-                );
+    /* =========================================================
+       RIPPLE EFFECT
+    ========================================================= */
 
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       FEATURE CARD RIPPLE EFFECT
-    ===================================================== */
-
-    const buttons =
+    const rippleButtons =
         document.querySelectorAll(
-            ".crop-primary-btn, .crop-secondary-btn, .crop-table-actions a"
+            ".crop-primary-btn, " +
+            ".crop-secondary-btn, " +
+            ".crop-table-actions a"
         );
 
 
-    buttons.forEach(function (button) {
+    rippleButtons.forEach(
+        function (button) {
 
-        button.addEventListener(
-            "click",
-            function (event) {
+            button.addEventListener(
+                "click",
+                function (event) {
 
-                const ripple =
-                    document.createElement("span");
-
-                ripple.classList.add(
-                    "crop-ripple"
-                );
-
-
-                const rect =
-                    button.getBoundingClientRect();
+                    const ripple =
+                        document.createElement(
+                            "span"
+                        );
 
 
-                const size =
-                    Math.max(
-                        rect.width,
-                        rect.height
+                    ripple.className =
+                        "crop-ripple";
+
+
+                    const rect =
+                        button.getBoundingClientRect();
+
+
+                    const size =
+                        Math.max(
+                            rect.width,
+                            rect.height
+                        );
+
+
+                    ripple.style.width =
+                        size + "px";
+
+                    ripple.style.height =
+                        size + "px";
+
+
+                    const x =
+                        typeof event.clientX ===
+                        "number"
+                            ? event.clientX
+                            : rect.left +
+                              rect.width / 2;
+
+
+                    const y =
+                        typeof event.clientY ===
+                        "number"
+                            ? event.clientY
+                            : rect.top +
+                              rect.height / 2;
+
+
+                    ripple.style.left =
+                        x -
+                        rect.left -
+                        size / 2 +
+                        "px";
+
+
+                    ripple.style.top =
+                        y -
+                        rect.top -
+                        size / 2 +
+                        "px";
+
+
+                    button.appendChild(
+                        ripple
                     );
 
 
-                ripple.style.width =
-                    size + "px";
+                    setTimeout(
+                        function () {
 
-                ripple.style.height =
-                    size + "px";
+                            ripple.remove();
 
-                ripple.style.left =
-                    event.clientX -
-                    rect.left -
-                    size / 2 +
-                    "px";
+                        },
+                        600
+                    );
 
-                ripple.style.top =
-                    event.clientY -
-                    rect.top -
-                    size / 2 +
-                    "px";
+                }
+            );
+
+        }
+    );
 
 
-                button.appendChild(
-                    ripple
-                );
-
-
-                setTimeout(function () {
-
-                    ripple.remove();
-
-                }, 600);
-
-            }
-        );
-
-    });
-
-
-    /* =====================================================
-       ANIMATE HERO VISUAL
-    ===================================================== */
+    /* =========================================================
+       HERO VISUAL
+    ========================================================= */
 
     const heroVisual =
         document.querySelector(
@@ -1489,347 +2557,355 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       ACCESSIBILITY
-    ===================================================== */
+    /* =========================================================
+       HARVEST ANALYTICS
+    ========================================================= */
 
-    const interactiveElements =
+    const harvestChartBars =
         document.querySelectorAll(
-            "a, button, select, .growth-stage, .field-health-card"
+            ".stackly-chart-bar"
         );
 
 
-    interactiveElements.forEach(function (element) {
-
-        element.addEventListener(
-            "focus",
-            function () {
-
-                element.classList.add(
-                    "crop-keyboard-focus"
-                );
-
-            }
+    const harvestFilterButtons =
+        document.querySelectorAll(
+            ".stackly-chart-filters button"
         );
 
 
-        element.addEventListener(
-            "blur",
-            function () {
-
-                element.classList.remove(
-                    "crop-keyboard-focus"
-                );
-
-            }
+    const harvestYAxis =
+        document.querySelectorAll(
+            ".stackly-chart-y-axis span"
         );
 
-    });
-
-
-    /* =====================================================
-       REDUCED MOTION SUPPORT
-    ===================================================== */
-
-    const reducedMotion =
-        window.matchMedia(
-            "(prefers-reduced-motion: reduce)"
-        );
-
-
-    if (reducedMotion.matches) {
-
-        document.documentElement.classList.add(
-            "reduce-motion"
-        );
-
-    }
-
-
-    /* =====================================================
-       PAGE LOAD COMPLETE
-    ===================================================== */
-
-    document.body.classList.add(
-        "crop-page-loaded"
-    );
-
-});
-
-/* =========================================================
-   STACKLY HARVEST - PRODUCTION ANALYTICS
-   WEEKLY / MONTHLY / YEARLY CHART
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const chartBars = document.querySelectorAll(
-        ".stackly-chart-bar"
-    );
-
-    const filterButtons = document.querySelectorAll(
-        ".stackly-chart-filters button"
-    );
-
-    const yAxis = document.querySelectorAll(
-        ".stackly-chart-y-axis span"
-    );
-
-
-    /* =====================================================
-       CHART DATA
-    ====================================================== */
 
     const chartData = {
 
         Weekly: {
-            values: [48, 67, 58, 82, 73, 91, 64],
-            labels: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
-            max: "2,000",
-            axis: ["2,000", "1,500", "1,000", "500", "0"]
+
+            values: [
+                48, 67, 58,
+                82, 73, 91, 64
+            ],
+
+            labels: [
+                "Mon",
+                "Tue",
+                "Wed",
+                "Thu",
+                "Fri",
+                "Sat",
+                "Sun"
+            ],
+
+            axis: [
+                "2,000",
+                "1,500",
+                "1,000",
+                "500",
+                "0"
+            ]
+
         },
+
 
         Monthly: {
-            values: [62, 74, 58, 86, 69, 92, 77],
-            labels: ["Week 1", "Week 2", "Week 3", "Week 4", "Week 5", "Week 6", "Week 7"],
-            max: "8,000",
-            axis: ["8,000", "6,000", "4,000", "2,000", "0"]
+
+            values: [
+                62, 74, 58,
+                86, 69, 92, 77
+            ],
+
+            labels: [
+                "Week 1",
+                "Week 2",
+                "Week 3",
+                "Week 4",
+                "Week 5",
+                "Week 6",
+                "Week 7"
+            ],
+
+            axis: [
+                "8,000",
+                "6,000",
+                "4,000",
+                "2,000",
+                "0"
+            ]
+
         },
 
+
         Yearly: {
-            values: [52, 68, 74, 61, 83, 94, 78],
-            labels: ["Jan", "Mar", "May", "Jul", "Sep", "Nov", "Dec"],
-            max: "20,000",
-            axis: ["20,000", "15,000", "10,000", "5,000", "0"]
+
+            values: [
+                52, 68, 74,
+                61, 83, 94, 78
+            ],
+
+            labels: [
+                "Jan",
+                "Mar",
+                "May",
+                "Jul",
+                "Sep",
+                "Nov",
+                "Dec"
+            ],
+
+            axis: [
+                "20,000",
+                "15,000",
+                "10,000",
+                "5,000",
+                "0"
+            ]
+
         }
 
     };
 
 
-    /* =====================================================
-       UPDATE CHART
-    ====================================================== */
+    /* =========================================================
+       UPDATE HARVEST CHART
+    ========================================================= */
 
     function updateHarvestChart(type) {
 
-        const data = chartData[type];
-
-        if (!data) return;
-
-
-        chartBars.forEach(function (bar, index) {
-
-            if (!data.values[index]) return;
+        const data =
+            chartData[type];
 
 
-            /* Remove previous animation */
-
-            bar.classList.remove(
-                "stackly-chart-bar-animate"
-            );
+        if (!data) {
+            return;
+        }
 
 
-            /* Force browser reflow */
+        harvestChartBars.forEach(
+            function (bar, index) {
 
-            void bar.offsetWidth;
-
-
-            /* Update height */
-
-            bar.style.height =
-                data.values[index] + "%";
+                const value =
+                    data.values[index] ?? 0;
 
 
-            /* Update day/month label */
+                const label =
+                    bar.querySelector(
+                        "span"
+                    );
 
-            const label = bar.querySelector("span");
 
-            if (label) {
-                label.textContent =
-                    data.labels[index];
+                bar.classList.remove(
+                    "stackly-chart-bar-animate"
+                );
+
+
+                void bar.offsetWidth;
+
+
+                bar.style.height =
+                    value + "%";
+
+
+                if (label) {
+
+                    label.textContent =
+                        data.labels[index] || "";
+
+                }
+
+
+                bar.classList.add(
+                    "stackly-chart-bar-animate"
+                );
+
             }
+        );
 
 
-            /* Add animation */
-
-            bar.classList.add(
-                "stackly-chart-bar-animate"
-            );
-
-        });
-
-
-        /* =================================================
-           UPDATE Y AXIS
-        ================================================== */
-
-        yAxis.forEach(function (axis, index) {
-
-            if (data.axis[index]) {
+        harvestYAxis.forEach(
+            function (axis, index) {
 
                 axis.textContent =
-                    data.axis[index];
+                    data.axis[index] || "";
 
             }
-
-        });
+        );
 
     }
 
 
-    /* =====================================================
-       FILTER BUTTON CLICK
-    ====================================================== */
+    /* =========================================================
+       HARVEST FILTER BUTTONS
+    ========================================================= */
 
-    filterButtons.forEach(function (button) {
+    harvestFilterButtons.forEach(
+        function (button) {
 
-        button.addEventListener("click", function () {
+            button.addEventListener(
+                "click",
+                function () {
 
-            /* Remove active class */
+                    harvestFilterButtons.forEach(
+                        function (item) {
 
-            filterButtons.forEach(function (btn) {
+                            item.classList.remove(
+                                "active"
+                            );
 
-                btn.classList.remove("active");
-
-            });
-
-
-            /* Add active class */
-
-            this.classList.add("active");
-
-
-            /* Get selected chart */
-
-            const selectedType =
-                this.textContent.trim();
+                        }
+                    );
 
 
-            /* Update chart */
+                    button.classList.add(
+                        "active"
+                    );
 
-            updateHarvestChart(
-                selectedType
+
+                    updateHarvestChart(
+                        button.textContent.trim()
+                    );
+
+                }
             );
 
-        });
-
-    });
-
-
-    /* =====================================================
-       INITIAL CHART
-    ====================================================== */
-
-    updateHarvestChart("Weekly");
-
-
-    /* =====================================================
-       BAR HOVER - SHOW VALUE
-    ====================================================== */
-
-    chartBars.forEach(function (bar, index) {
-
-        bar.addEventListener("mouseenter", function () {
-
-            const selectedButton =
-                document.querySelector(
-                    ".stackly-chart-filters button.active"
-                );
-
-            const selectedType =
-                selectedButton
-                    ? selectedButton.textContent.trim()
-                    : "Weekly";
-
-
-            const data =
-                chartData[selectedType];
-
-
-            if (!data || !data.values[index]) {
-                return;
-            }
-
-
-            /* Remove existing tooltip */
-
-            const oldTooltip =
-                bar.querySelector(
-                    ".stackly-chart-tooltip"
-                );
-
-            if (oldTooltip) {
-                oldTooltip.remove();
-            }
-
-
-            /* Create tooltip */
-
-            const tooltip =
-                document.createElement("div");
-
-            tooltip.className =
-                "stackly-chart-tooltip";
-
-
-            tooltip.textContent =
-                data.values[index] + "%";
-
-
-            bar.appendChild(tooltip);
-
-        });
-
-
-        bar.addEventListener("mouseleave", function () {
-
-            const tooltip =
-                bar.querySelector(
-                    ".stackly-chart-tooltip"
-                );
-
-            if (tooltip) {
-                tooltip.remove();
-            }
-
-        });
-
-    });
-
-});
-
-/* =========================================================
-   STACKLY REPORTS
-   REPORT PERIOD FILTER
-   7 DAYS / 30 DAYS / 6 MONTHS / 1 YEAR
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const periodButtons = document.querySelectorAll(
-        ".stackly-report-periods button"
-    );
-
-    const productionBars = document.querySelectorAll(
-        ".production-bar"
-    );
-
-    const yAxisLabels = document.querySelectorAll(
-        ".production-y-axis span"
-    );
-
-    const highestOutputText = document.querySelector(
-        ".stackly-report-chart-footer strong"
-    );
-
-    const chartPositive = document.querySelector(
-        ".chart-positive"
+        }
     );
 
 
-    /* =====================================================
-       REPORT PERIOD DATA
-    ====================================================== */
+    updateHarvestChart(
+        "Weekly"
+    );
+
+
+    /* =========================================================
+       HARVEST TOOLTIP
+    ========================================================= */
+
+    harvestChartBars.forEach(
+        function (bar, index) {
+
+            bar.addEventListener(
+                "mouseenter",
+                function () {
+
+                    const activeButton =
+                        document.querySelector(
+                            ".stackly-chart-filters button.active"
+                        );
+
+
+                    const selectedType =
+                        activeButton
+                            ? activeButton.textContent.trim()
+                            : "Weekly";
+
+
+                    const data =
+                        chartData[
+                            selectedType
+                        ];
+
+
+                    if (
+                        !data ||
+                        data.values[index] ===
+                        undefined
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    const oldTooltip =
+                        bar.querySelector(
+                            ".stackly-chart-tooltip"
+                        );
+
+
+                    if (oldTooltip) {
+                        oldTooltip.remove();
+                    }
+
+
+                    const tooltip =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    tooltip.className =
+                        "stackly-chart-tooltip";
+
+
+                    tooltip.textContent =
+                        data.values[index] +
+                        "%";
+
+
+                    bar.appendChild(
+                        tooltip
+                    );
+
+                }
+            );
+
+
+            bar.addEventListener(
+                "mouseleave",
+                function () {
+
+                    const tooltip =
+                        bar.querySelector(
+                            ".stackly-chart-tooltip"
+                        );
+
+
+                    if (tooltip) {
+                        tooltip.remove();
+                    }
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       REPORT PERIOD CHART
+    ========================================================= */
+
+    const periodButtons =
+        document.querySelectorAll(
+            ".stackly-report-periods button"
+        );
+
+
+    const productionBars =
+        document.querySelectorAll(
+            ".production-bar"
+        );
+
+
+    const yAxisLabels =
+        document.querySelectorAll(
+            ".production-y-axis span"
+        );
+
+
+    const highestOutputText =
+        document.querySelector(
+            ".stackly-report-chart-footer strong"
+        );
+
+
+    const chartPositive =
+        document.querySelector(
+            ".chart-positive"
+        );
+
 
     const reportPeriods = {
 
@@ -1843,7 +2919,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Fri",
                 "Sat",
                 "Sun",
-                "",
+                ""
             ],
 
             values: [
@@ -1999,88 +3075,71 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
 
-    /* =====================================================
-       UPDATE CHART
-    ====================================================== */
+    /* =========================================================
+       UPDATE REPORT CHART
+    ========================================================= */
 
     function updateReportChart(period) {
 
-        const data = reportPeriods[period];
+        const data =
+            reportPeriods[period];
+
 
         if (!data) {
             return;
         }
 
 
-        /* =================================================
-           UPDATE Y AXIS
-        ================================================== */
-
-        yAxisLabels.forEach(function (label, index) {
-
-            if (data.axis[index]) {
+        yAxisLabels.forEach(
+            function (label, index) {
 
                 label.textContent =
-                    data.axis[index];
+                    data.axis[index] || "";
 
             }
-
-        });
-
-
-        /* =================================================
-           UPDATE BARS
-        ================================================== */
-
-        productionBars.forEach(function (bar, index) {
-
-            const value =
-                data.values[index] ?? 0;
-
-            const label =
-                bar.querySelector("span");
+        );
 
 
-            /* Reset animation */
+        productionBars.forEach(
+            function (bar, index) {
 
-            bar.classList.remove(
-                "report-period-animation"
-            );
-
-
-            /* Force browser reflow */
-
-            void bar.offsetWidth;
+                const value =
+                    data.values[index] ?? 0;
 
 
-            /* Update height */
+                const label =
+                    bar.querySelector(
+                        "span"
+                    );
 
-            bar.style.height =
-                value + "%";
+
+                bar.classList.remove(
+                    "report-period-animation"
+                );
 
 
-            /* Update label */
+                void bar.offsetWidth;
 
-            if (label) {
 
-                label.textContent =
-                    data.labels[index] || "";
+                bar.style.height =
+                    value + "%";
+
+
+                if (label) {
+
+                    label.textContent =
+                        data.labels[index] || "";
+
+                }
+
+
+                bar.classList.add(
+                    "report-period-animation"
+                );
 
             }
+        );
 
-
-            /* Animate */
-
-            bar.classList.add(
-                "report-period-animation"
-            );
-
-        });
-
-
-        /* =================================================
-           UPDATE HIGHEST OUTPUT
-        ================================================== */
 
         if (highestOutputText) {
 
@@ -2090,185 +3149,111 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* =================================================
-           UPDATE GROWTH
-        ================================================== */
-
         if (chartPositive) {
 
-            chartPositive.innerHTML = `
-                <i class="fa-solid fa-arrow-trend-up"></i>
-                ${data.growth}
-            `;
+            chartPositive.innerHTML =
+                '<i class="fa-solid fa-arrow-trend-up"></i> ' +
+                data.growth;
 
         }
 
     }
 
 
-    /* =====================================================
-       PERIOD BUTTON EVENTS
-    ====================================================== */
+    /* =========================================================
+       REPORT BUTTONS
+    ========================================================= */
 
-    periodButtons.forEach(function (button) {
+    periodButtons.forEach(
+        function (button) {
 
-        button.addEventListener("click", function () {
+            button.addEventListener(
+                "click",
+                function () {
 
-            /* Remove active state */
+                    periodButtons.forEach(
+                        function (item) {
 
-            periodButtons.forEach(function (item) {
+                            item.classList.remove(
+                                "active"
+                            );
 
-                item.classList.remove(
-                    "active"
-                );
-
-            });
+                        }
+                    );
 
 
-            /* Add active state */
+                    button.classList.add(
+                        "active"
+                    );
 
-            this.classList.add(
-                "active"
+
+                    updateReportChart(
+                        button.textContent.trim()
+                    );
+
+                }
             );
 
-
-            /* Get selected period */
-
-            const selectedPeriod =
-                this.textContent.trim();
+        }
+    );
 
 
-            /* Update chart */
-
-            updateReportChart(
-                selectedPeriod
-            );
-
-        });
-
-    });
+    updateReportChart(
+        "7 Days"
+    );
 
 
-    /* =====================================================
-       INITIAL LOAD
-    ====================================================== */
+    /* =========================================================
+       SETTINGS ELEMENTS
+    ========================================================= */
 
-    updateReportChart("7 Days");
-
-});
-
-/* =========================================================
-   SETTINGS - DISPLAY USERNAME FROM EMAIL
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    const adminNameInput = document.getElementById("stacklyAdminName");
-
-    if (!adminNameInput) {
-        return;
-    }
-
-    /*
-       Get logged-in email from localStorage
-    */
-    const userEmail = localStorage.getItem("stacklyUserEmail");
+    const settingsName =
+        document.getElementById(
+            "stacklyAdminName"
+        );
 
 
-    if (userEmail && userEmail.includes("@")) {
-
-        /*
-           Take the first part of the email
-           Example:
-           admin@stacklyfarm.com → admin
-        */
-        let userName = userEmail.split("@")[0];
+    const settingsEmail =
+        document.getElementById(
+            "stacklyAdminEmail"
+        );
 
 
-        /*
-           Convert username into a cleaner display name
-           admin → Admin
-           farm.admin → Farm Admin
-           john_doe → John Doe
-        */
-        userName = userName
-            .replace(/[._-]+/g, " ")
-            .replace(/\s+/g, " ")
-            .trim()
-            .toLowerCase()
-            .replace(/\b\w/g, function (letter) {
-                return letter.toUpperCase();
-            });
+    const settingsRole =
+        document.getElementById(
+            "stacklyAdminRole"
+        );
 
-
-        adminNameInput.value = userName;
-
-    } else {
-
-        /*
-           Fallback when email is not available
-        */
-        adminNameInput.value = "Farm Admin";
-
-    }
-
-});
-
-/* =========================================================
-   SETTINGS - DISPLAY LOGGED-IN EMAIL
-========================================================= */
-
-const adminEmailInput = document.getElementById("stacklyAdminEmail");
-
-if (adminEmailInput) {
-
-    const userEmail = localStorage.getItem("stacklyUserEmail");
-
-    if (userEmail && userEmail.trim() !== "") {
-
-        adminEmailInput.value = userEmail.trim();
-
-    } else {
-
-        adminEmailInput.value = "admin@stacklyfarm.com";
-
-    }
-
-}
-/* =========================================================
-   STACKLY SETTINGS PAGE
-   SAVE + RESET SETTINGS
-========================================================= */
-
-document.addEventListener("DOMContentLoaded", function () {
-
-    /* =====================================================
-       ELEMENTS
-    ====================================================== */
-
-    const adminNameInput =
-        document.getElementById("stacklyAdminName");
-
-    const adminEmailInput =
-        document.getElementById("stacklyAdminEmail");
-
-    const adminRoleInput =
-        document.getElementById("stacklyAdminRole");
 
     const farmTypeInput =
-        document.getElementById("stacklyFarmType");
+        document.getElementById(
+            "stacklyFarmType"
+        );
+
 
     const farmUnitInput =
-        document.getElementById("stacklyFarmUnit");
+        document.getElementById(
+            "stacklyFarmUnit"
+        );
+
 
     const farmLocationInput =
-        document.getElementById("stacklyFarmLocation");
+        document.getElementById(
+            "stacklyFarmLocation"
+        );
 
-    const resetButton =
-        document.querySelector(".stackly-settings-reset-btn");
 
     const saveButton =
-        document.querySelector(".stackly-settings-save-btn");
+        document.querySelector(
+            ".stackly-settings-save-btn"
+        );
+
+
+    const resetButton =
+        document.querySelector(
+            ".stackly-settings-reset-btn"
+        );
+
 
     const notificationInputs =
         document.querySelectorAll(
@@ -2276,177 +3261,128 @@ document.addEventListener("DOMContentLoaded", function () {
         );
 
 
-    /* =====================================================
-       DEFAULT VALUES
-    ====================================================== */
+    /* =========================================================
+       DEFAULT SETTINGS
+    ========================================================= */
 
     const defaultSettings = {
 
-        farmName: "Farm Admin",
+        farmName:
+            "Farm Admin",
 
-        farmEmail: "admin@stacklyfarm.com",
+        farmEmail:
+            "admin@stacklyfarm.com",
 
-        farmRole: "Farm Administrator",
+        farmRole:
+            "Farm Administrator",
 
-        farmType: "Organic Farming",
+        farmType:
+            "Organic Farming",
 
-        farmUnit: "Metric (kg / hectare)",
+        farmUnit:
+            "Metric (kg / hectare)",
 
-        farmLocation: "Tamil Nadu, India",
+        farmLocation:
+            "Tamil Nadu, India",
 
-        harvestAlerts: true,
+        harvestAlerts:
+            true,
 
-        inventoryAlerts: true,
+        inventoryAlerts:
+            true,
 
-        irrigationAlerts: true,
+        irrigationAlerts:
+            true,
 
-        weeklyReports: false
+        weeklyReports:
+            false
 
     };
 
 
-    /* =====================================================
-       GET LOGGED-IN EMAIL
-       EMAIL IS STORED BY LOGIN SYSTEM
-    ====================================================== */
-
-    const loggedInEmail =
-        localStorage.getItem("stacklyUserEmail");
-
-
-    /* =====================================================
-       DISPLAY LOGGED-IN EMAIL
-    ====================================================== */
-
-    if (
-        loggedInEmail &&
-        loggedInEmail.trim() !== "" &&
-        adminEmailInput
-    ) {
-
-        adminEmailInput.value =
-            loggedInEmail.trim();
-
-    }
-
-
-    /* =====================================================
-       GET NAME FROM EMAIL
-       Example:
-       john.doe@gmail.com
-       ↓
-       John Doe
-    ====================================================== */
-
-    function getNameFromEmail(email) {
-
-        if (
-            !email ||
-            !email.includes("@")
-        ) {
-
-            return defaultSettings.farmName;
-
-        }
-
-        let name =
-            email.split("@")[0];
-
-        name = name
-            .replace(/[._-]+/g, " ")
-            .replace(/\s+/g, " ")
-            .trim()
-            .toLowerCase()
-            .replace(/\b\w/g, function (letter) {
-
-                return letter.toUpperCase();
-
-            });
-
-        return name || defaultSettings.farmName;
-
-    }
-
-
-    /* =====================================================
-       DEFAULT USERNAME FROM EMAIL
-    ====================================================== */
-
-    if (
-        loggedInEmail &&
-        adminNameInput
-    ) {
-
-        adminNameInput.value =
-            getNameFromEmail(loggedInEmail);
-
-    }
-
-
-    /* =====================================================
-       LOAD SAVED SETTINGS
-    ====================================================== */
+    /* =========================================================
+       LOAD SETTINGS
+    ========================================================= */
 
     function loadSavedSettings() {
 
-        const savedSettings =
-            JSON.parse(
+        let savedSettings = null;
+
+
+        try {
+
+            const storedSettings =
                 localStorage.getItem(
                     "stacklySettings"
-                )
+                );
+
+
+            if (storedSettings) {
+
+                savedSettings =
+                    JSON.parse(
+                        storedSettings
+                    );
+
+            }
+
+        } catch (error) {
+
+            console.warn(
+                "Unable to load Stackly settings.",
+                error
             );
 
+            savedSettings = null;
+
+        }
+
+
         if (!savedSettings) {
+
+            syncAllCustomDropdowns();
 
             return;
 
         }
 
 
-        /* NAME */
-
         if (
-            savedSettings.farmName &&
-            adminNameInput
+            settingsName &&
+            savedSettings.farmName
         ) {
 
-            adminNameInput.value =
+            settingsName.value =
                 savedSettings.farmName;
 
         }
 
 
-        /* EMAIL */
-
         if (
-            savedSettings.farmEmail &&
-            adminEmailInput
+            settingsEmail &&
+            savedSettings.farmEmail
         ) {
 
-            adminEmailInput.value =
+            settingsEmail.value =
                 savedSettings.farmEmail;
 
         }
 
 
-        /* ROLE */
-
         if (
-            savedSettings.farmRole &&
-            adminRoleInput
+            settingsRole &&
+            savedSettings.farmRole
         ) {
 
-            adminRoleInput.value =
+            settingsRole.value =
                 savedSettings.farmRole;
 
         }
 
 
-        /* FARM TYPE */
-
         if (
-            savedSettings.farmType &&
-            farmTypeInput
+            farmTypeInput &&
+            savedSettings.farmType
         ) {
 
             farmTypeInput.value =
@@ -2455,11 +3391,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* FARM UNIT */
-
         if (
-            savedSettings.farmUnit &&
-            farmUnitInput
+            farmUnitInput &&
+            savedSettings.farmUnit
         ) {
 
             farmUnitInput.value =
@@ -2468,11 +3402,9 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* FARM LOCATION */
-
         if (
-            savedSettings.farmLocation &&
-            farmLocationInput
+            farmLocationInput &&
+            savedSettings.farmLocation
         ) {
 
             farmLocationInput.value =
@@ -2481,30 +3413,38 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
 
-        /* NOTIFICATIONS */
-
         if (notificationInputs.length >= 4) {
 
             notificationInputs[0].checked =
-                savedSettings.harvestAlerts ?? true;
+                savedSettings.harvestAlerts ??
+                true;
+
 
             notificationInputs[1].checked =
-                savedSettings.inventoryAlerts ?? true;
+                savedSettings.inventoryAlerts ??
+                true;
+
 
             notificationInputs[2].checked =
-                savedSettings.irrigationAlerts ?? true;
+                savedSettings.irrigationAlerts ??
+                true;
+
 
             notificationInputs[3].checked =
-                savedSettings.weeklyReports ?? false;
+                savedSettings.weeklyReports ??
+                false;
 
         }
+
+
+        syncAllCustomDropdowns();
 
     }
 
 
-    /* =====================================================
+    /* =========================================================
        SAVE SETTINGS
-    ====================================================== */
+    ========================================================= */
 
     if (saveButton) {
 
@@ -2515,18 +3455,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 const settings = {
 
                     farmName:
-                        adminNameInput
-                            ? adminNameInput.value.trim()
+                        settingsName
+                            ? settingsName.value.trim()
                             : defaultSettings.farmName,
 
                     farmEmail:
-                        adminEmailInput
-                            ? adminEmailInput.value.trim()
+                        settingsEmail
+                            ? settingsEmail.value.trim()
                             : defaultSettings.farmEmail,
 
                     farmRole:
-                        adminRoleInput
-                            ? adminRoleInput.value
+                        settingsRole
+                            ? settingsRole.value
                             : defaultSettings.farmRole,
 
                     farmType:
@@ -2567,39 +3507,11 @@ document.addEventListener("DOMContentLoaded", function () {
                 };
 
 
-                /* =========================================
-                   SAVE TO LOCAL STORAGE
-                ========================================== */
-
                 localStorage.setItem(
                     "stacklySettings",
                     JSON.stringify(settings)
                 );
 
-
-                /* =========================================
-                   UPDATE SIDEBAR USERNAME
-                ========================================== */
-
-                const sidebarUserName =
-                    document.getElementById(
-                        "stacklyAdminUserName"
-                    );
-
-                if (
-                    sidebarUserName &&
-                    settings.farmName
-                ) {
-
-                    sidebarUserName.textContent =
-                        settings.farmName;
-
-                }
-
-
-                /* =========================================
-                   SAVE USER NAME SEPARATELY
-                ========================================== */
 
                 localStorage.setItem(
                     "stacklyUserName",
@@ -2607,31 +3519,46 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* =========================================
-                   SAVE BUTTON SUCCESS STATE
-                ========================================== */
+                if (userNameElement) {
 
-                const originalButtonHTML =
+                    userNameElement.textContent =
+                        settings.farmName;
+
+                }
+
+
+                if (adminNameInput) {
+
+                    adminNameInput.value =
+                        settings.farmName;
+
+                }
+
+
+                const originalHTML =
                     saveButton.innerHTML;
+
 
                 saveButton.innerHTML =
                     '<i class="fa-solid fa-check"></i> Saved!';
 
-                saveButton.disabled = true;
+
+                saveButton.disabled =
+                    true;
 
 
-                /* =========================================
-                   RESTORE BUTTON AFTER 2 SECONDS
-                ========================================== */
+                setTimeout(
+                    function () {
 
-                setTimeout(function () {
+                        saveButton.innerHTML =
+                            originalHTML;
 
-                    saveButton.innerHTML =
-                        originalButtonHTML;
+                        saveButton.disabled =
+                            false;
 
-                    saveButton.disabled = false;
-
-                }, 2000);
+                    },
+                    2000
+                );
 
             }
         );
@@ -2639,9 +3566,9 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
+    /* =========================================================
        RESET SETTINGS
-    ====================================================== */
+    ========================================================= */
 
     if (resetButton) {
 
@@ -2649,51 +3576,40 @@ document.addEventListener("DOMContentLoaded", function () {
             "click",
             function () {
 
-                /*
-                   Get current login email again
-                */
-
                 const currentEmail =
                     localStorage.getItem(
                         "stacklyUserEmail"
                     );
 
 
-                /*
-                   Name should come from current
-                   logged-in email
-                */
-
                 const resetName =
                     currentEmail
-                        ? getNameFromEmail(currentEmail)
+                        ? getNameFromEmail(
+                            currentEmail
+                        )
                         : defaultSettings.farmName;
 
 
-                /* =========================================
-                   RESTORE FORM VALUES
-                ========================================== */
+                if (settingsName) {
 
-                if (adminNameInput) {
-
-                    adminNameInput.value =
+                    settingsName.value =
                         resetName;
 
                 }
 
 
-                if (adminEmailInput) {
+                if (settingsEmail) {
 
-                    adminEmailInput.value =
+                    settingsEmail.value =
                         currentEmail ||
                         defaultSettings.farmEmail;
 
                 }
 
 
-                if (adminRoleInput) {
+                if (settingsRole) {
 
-                    adminRoleInput.value =
+                    settingsRole.value =
                         defaultSettings.farmRole;
 
                 }
@@ -2723,10 +3639,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* =========================================
-                   RESET NOTIFICATIONS
-                ========================================== */
-
                 if (notificationInputs.length >= 4) {
 
                     notificationInputs[0].checked =
@@ -2744,30 +3656,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
 
-                /* =========================================
-                   REMOVE SAVED SETTINGS
-                ========================================== */
-
                 localStorage.removeItem(
                     "stacklySettings"
                 );
-
-
-                /* =========================================
-                   UPDATE SIDEBAR
-                ========================================== */
-
-                const sidebarUserName =
-                    document.getElementById(
-                        "stacklyAdminUserName"
-                    );
-
-                if (sidebarUserName) {
-
-                    sidebarUserName.textContent =
-                        resetName;
-
-                }
 
 
                 localStorage.setItem(
@@ -2776,27 +3667,41 @@ document.addEventListener("DOMContentLoaded", function () {
                 );
 
 
-                /* =========================================
-                   RESET BUTTON FEEDBACK
-                ========================================== */
+                if (userNameElement) {
 
-                const originalResetText =
+                    userNameElement.textContent =
+                        resetName;
+
+                }
+
+
+                syncAllCustomDropdowns();
+
+
+                const originalText =
                     resetButton.textContent;
+
 
                 resetButton.textContent =
                     "Reset Done";
 
-                resetButton.disabled = true;
+
+                resetButton.disabled =
+                    true;
 
 
-                setTimeout(function () {
+                setTimeout(
+                    function () {
 
-                    resetButton.textContent =
-                        originalResetText;
+                        resetButton.textContent =
+                            originalText;
 
-                    resetButton.disabled = false;
+                        resetButton.disabled =
+                            false;
 
-                }, 1500);
+                    },
+                    1500
+                );
 
             }
         );
@@ -2804,30 +3709,111 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
 
-    /* =====================================================
-       LOAD SETTINGS AFTER PAGE LOAD
-    ====================================================== */
+    /* =========================================================
+       LOAD SETTINGS AFTER DROPDOWNS INITIALIZED
+       IMPORTANT FIX
+    ========================================================= */
 
     loadSavedSettings();
 
 
-    /* =====================================================
-       KEEP SIDEBAR NAME IN SYNC
-    ====================================================== */
+    /* =========================================================
+       ACCESSIBILITY FOCUS
+    ========================================================= */
 
-    const sidebarUserName =
-        document.getElementById(
-            "stacklyAdminUserName"
+    const interactiveElements =
+        document.querySelectorAll(
+            "a, button, input, select, textarea, " +
+            ".growth-stage, " +
+            ".field-health-card, " +
+            ".stackly-js-option, " +
+            ".stackly-card-option, " +
+            ".stackly-crop-option"
         );
 
-    if (
-        sidebarUserName &&
-        adminNameInput
-    ) {
 
-        sidebarUserName.textContent =
-            adminNameInput.value;
+    interactiveElements.forEach(
+        function (element) {
+
+            element.addEventListener(
+                "focus",
+                function () {
+
+                    element.classList.add(
+                        "crop-keyboard-focus"
+                    );
+
+                }
+            );
+
+
+            element.addEventListener(
+                "blur",
+                function () {
+
+                    element.classList.remove(
+                        "crop-keyboard-focus"
+                    );
+
+                }
+            );
+
+        }
+    );
+
+
+    /* =========================================================
+       REDUCED MOTION
+    ========================================================= */
+
+    const reducedMotion =
+        window.matchMedia(
+            "(prefers-reduced-motion: reduce)"
+        );
+
+
+    function updateReducedMotion() {
+
+        if (reducedMotion.matches) {
+
+            document.documentElement.classList.add(
+                "reduce-motion"
+            );
+
+        } else {
+
+            document.documentElement.classList.remove(
+                "reduce-motion"
+            );
+
+        }
 
     }
+
+
+    updateReducedMotion();
+
+
+    if (
+        typeof reducedMotion.addEventListener ===
+        "function"
+    ) {
+
+        reducedMotion.addEventListener(
+            "change",
+            updateReducedMotion
+        );
+
+    }
+
+
+    /* =========================================================
+       PAGE LOADED
+    ========================================================= */
+
+    document.body.classList.add(
+        "crop-page-loaded"
+    );
+
 
 });

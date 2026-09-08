@@ -734,23 +734,67 @@
                         </div>
 
 
-                        <select
-                            class="stackly-card-select"
-                        >
+                        <div class="stackly-card-dropdown" id="stacklyYearDropdown">
 
-                            <option>
-                                This Year
-                            </option>
+    <button
+        type="button"
+        class="stackly-card-dropdown-btn"
+        id="stacklyYearDropdownBtn"
+    >
 
-                            <option>
-                                Last Year
-                            </option>
+        <span id="stacklyYearSelected">
+            <i class="fa-solid fa-calendar-days"></i>
+            This Year
+        </span>
 
-                            <option>
-                                This Season
-                            </option>
+        <i class="fa-solid fa-chevron-down stackly-card-arrow"></i>
 
-                        </select>
+    </button>
+
+
+    <div
+        class="stackly-card-dropdown-menu"
+        id="stacklyYearDropdownMenu"
+    >
+
+        <div
+            class="stackly-card-option active"
+            data-value="This Year"
+        >
+            <i class="fa-solid fa-calendar-days"></i>
+            <span>This Year</span>
+        </div>
+
+
+        <div
+            class="stackly-card-option"
+            data-value="Last Year"
+        >
+            <i class="fa-solid fa-calendar-minus"></i>
+            <span>Last Year</span>
+        </div>
+
+
+        <div
+            class="stackly-card-option"
+            data-value="This Season"
+        >
+            <i class="fa-solid fa-seedling"></i>
+            <span>This Season</span>
+        </div>
+
+    </div>
+
+
+    <!-- Hidden selected value -->
+    <input
+        type="hidden"
+        class="stackly-card-select"
+        id="stacklyYearValue"
+        value="This Year"
+    >
+
+</div>
 
                     </div>
 

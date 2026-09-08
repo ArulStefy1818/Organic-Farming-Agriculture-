@@ -653,21 +653,63 @@
                     </div>
 
 
-                    <select class="crop-filter">
+                    <div class="stackly-crop-dropdown" id="stacklyCropDropdown">
 
-                        <option>
-                            This Season
-                        </option>
+    <button
+        type="button"
+        class="stackly-crop-dropdown-btn"
+        id="stacklyCropDropdownBtn"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+    >
+        <span id="stacklyCropSelected">This Season</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
 
-                        <option>
-                            This Year
-                        </option>
+    <div
+        class="stackly-crop-dropdown-menu"
+        id="stacklyCropDropdownMenu"
+        role="listbox"
+    >
 
-                        <option>
-                            Last Year
-                        </option>
+        <div
+            class="stackly-crop-option active"
+            data-value="This Season"
+            role="option"
+            aria-selected="true"
+        >
+            This Season
+        </div>
 
-                    </select>
+        <div
+            class="stackly-crop-option"
+            data-value="This Year"
+            role="option"
+            aria-selected="false"
+        >
+            This Year
+        </div>
+
+        <div
+            class="stackly-crop-option"
+            data-value="Last Year"
+            role="option"
+            aria-selected="false"
+        >
+            Last Year
+        </div>
+
+    </div>
+
+    <!-- Hidden value for JavaScript/form compatibility -->
+    <input
+        type="hidden"
+        id="stacklyCropFilter"
+        name="cropFilter"
+        value="This Season"
+    >
+
+</div>
 
                 </div>
 

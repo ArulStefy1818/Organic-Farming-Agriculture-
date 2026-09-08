@@ -776,23 +776,62 @@
                         </div>
 
 
-                        <select
-                            class="stackly-client-card-select"
-                        >
+                        <div class="stackly-client-dropdown" id="stacklyClientYearDropdown">
 
-                            <option>
-                                This Year
-                            </option>
+    <button
+        type="button"
+        class="stackly-client-dropdown-btn"
+        id="stacklyClientYearDropdownBtn"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+    >
+        <span id="stacklyClientYearSelected">This Year</span>
+        <i class="fa-solid fa-chevron-down"></i>
+    </button>
 
-                            <option>
-                                This Season
-                            </option>
+    <div
+        class="stackly-client-dropdown-menu"
+        id="stacklyClientYearDropdownMenu"
+        role="listbox"
+    >
 
-                            <option>
-                                Last Year
-                            </option>
+        <div
+            class="stackly-client-dropdown-option active"
+            data-value="This Year"
+            role="option"
+            aria-selected="true"
+        >
+            This Year
+        </div>
 
-                        </select>
+        <div
+            class="stackly-client-dropdown-option"
+            data-value="This Season"
+            role="option"
+            aria-selected="false"
+        >
+            This Season
+        </div>
+
+        <div
+            class="stackly-client-dropdown-option"
+            data-value="Last Year"
+            role="option"
+            aria-selected="false"
+        >
+            Last Year
+        </div>
+
+    </div>
+
+    <!-- Hidden value used by JavaScript -->
+    <input
+        type="hidden"
+        id="stacklyClientYearValue"
+        value="This Year"
+    >
+
+</div>
 
                     </div>
 

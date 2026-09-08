@@ -783,50 +783,146 @@
 
             <div class="stackly-settings-form">
 
-                <div class="stackly-settings-field">
+    <div class="stackly-settings-field">
 
-                    <label for="stacklyFarmType">
-                        Farming Type
-                    </label>
+        <label>
+            Farming Type
+        </label>
 
-                    <select id="stacklyFarmType">
+        <div class="stackly-js-dropdown" id="stacklyFarmDropdown">
 
-                        <option>
-                            Organic Farming
-                        </option>
+            <button
+                type="button"
+                class="stackly-js-dropdown-btn"
+                id="stacklyFarmDropdownBtn"
+            >
+                <span id="stacklyFarmSelected">
+                    <i class="fa-solid fa-leaf"></i>
+                    Organic Farming
+                </span>
 
-                        <option>
-                            Sustainable Farming
-                        </option>
+                <i class="fa-solid fa-chevron-down stackly-arrow"></i>
+            </button>
 
-                        <option>
-                            Mixed Farming
-                        </option>
+            <div
+                class="stackly-js-dropdown-menu"
+                id="stacklyFarmDropdownMenu"
+            >
 
-                    </select>
-
+                <div
+                    class="stackly-js-option active"
+                    data-value="Organic Farming"
+                >
+                    <i class="fa-solid fa-leaf"></i>
+                    <span>Organic Farming</span>
                 </div>
 
+                <div
+                    class="stackly-js-option"
+                    data-value="Sustainable Farming"
+                >
+                    <i class="fa-solid fa-seedling"></i>
+                    <span>Sustainable Farming</span>
+                </div>
+
+                <div
+                    class="stackly-js-option"
+                    data-value="Mixed Farming"
+                >
+                    <i class="fa-solid fa-wheat-awn"></i>
+                    <span>Mixed Farming</span>
+                </div>
+
+            </div>
+
+            <!-- Selected value -->
+            <input
+                type="hidden"
+                id="stacklyFarmType"
+                name="farmingType"
+                value="Organic Farming"
+            >
+
+        </div>
+
+    </div>
+
+
 
                 <div class="stackly-settings-field">
 
-                    <label for="stacklyFarmUnit">
-                        Measurement Unit
-                    </label>
+    <label>
+        Measurement Unit
+    </label>
 
-                    <select id="stacklyFarmUnit">
+    <div
+        class="stackly-js-dropdown"
+        id="stacklyFarmUnitDropdown"
+    >
 
-                        <option>
-                            Metric (kg / hectare)
-                        </option>
+        <button
+            type="button"
+            class="stackly-js-dropdown-btn"
+            id="stacklyFarmUnitDropdownBtn"
+        >
 
-                        <option>
-                            Metric (ton / hectare)
-                        </option>
+            <span id="stacklyFarmUnitSelected">
+                <i class="fa-solid fa-weight-scale"></i>
+                Metric (kg / hectare)
+            </span>
 
-                    </select>
+            <i class="fa-solid fa-chevron-down stackly-arrow"></i>
 
-                </div>
+        </button>
+
+
+        <div
+            class="stackly-js-dropdown-menu"
+            id="stacklyFarmUnitDropdownMenu"
+        >
+
+            <div
+                class="stackly-js-option active"
+                data-value="Metric (kg / hectare)"
+            >
+
+                <i class="fa-solid fa-weight-scale"></i>
+
+                <span>
+                    Metric (kg / hectare)
+                </span>
+
+            </div>
+
+
+            <div
+                class="stackly-js-option"
+                data-value="Metric (ton / hectare)"
+            >
+
+                <i class="fa-solid fa-scale-balanced"></i>
+
+                <span>
+                    Metric (ton / hectare)
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hidden value -->
+
+        <input
+            type="hidden"
+            id="stacklyFarmUnit"
+            name="measurementUnit"
+            value="Metric (kg / hectare)"
+        >
+
+    </div>
+
+</div>
 
 
                 <div class="stackly-settings-field">
@@ -894,12 +990,12 @@
 
                     </div>
 
-                    <button
+                    <a href="404-admin.html"><button
                         type="button"
                         class="stackly-settings-outline-btn"
                     >
                         Change
-                    </button>
+                    </button></a>
 
                 </div>
 
@@ -918,12 +1014,12 @@
 
                     </div>
 
-                    <button
+                    <a href="404-admin.html"><button
                         type="button"
                         class="stackly-settings-outline-btn"
                     >
                         Enable
-                    </button>
+                    </button></a>
 
                 </div>
 
@@ -942,12 +1038,12 @@
 
                     </div>
 
-                    <button
+                    <a href="404-admin.html"><button
                         type="button"
                         class="stackly-settings-outline-btn"
                     >
                         Manage
-                    </button>
+                    </button></a>
 
                 </div>
 

@@ -36186,3 +36186,170 @@ body.stackly-client-sidebar-open {
     }
 
 }
+
+/* =========================================================
+   STACKLY CLIENT CUSTOM DROPDOWN
+========================================================= */
+
+.stackly-client-dropdown {
+    position: relative;
+    width: 180px;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 50;
+}
+
+
+/* =========================================================
+   DROPDOWN BUTTON
+========================================================= */
+
+.stackly-client-dropdown-btn {
+    width: 100%;
+    min-height: 44px;
+    padding: 10px 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+
+    border: 1px solid #dfe5df;
+    border-radius: 10px;
+
+    background: #ffffff;
+    color: #26352a;
+
+    font-size: 14px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.25s ease,
+        box-shadow 0.25s ease,
+        background 0.25s ease;
+}
+
+
+.stackly-client-dropdown-btn:hover {
+    border-color: #6fa87a;
+    background: #f8fbf8;
+}
+
+
+.stackly-client-dropdown-btn:focus {
+    outline: none;
+    border-color: #4d965b;
+    box-shadow: 0 0 0 3px rgba(77, 150, 91, 0.14);
+}
+
+
+/* =========================================================
+   CHEVRON
+========================================================= */
+
+.stackly-client-dropdown-btn i {
+    font-size: 11px;
+    transition: transform 0.25s ease;
+}
+
+
+.stackly-client-dropdown.open
+.stackly-client-dropdown-btn i {
+    transform: rotate(180deg);
+}
+
+
+/* =========================================================
+   DROPDOWN MENU
+========================================================= */
+
+.stackly-client-dropdown-menu {
+    position: absolute;
+
+    top: calc(100% + 7px);
+    left: 0;
+    right: 0;
+
+    padding: 6px;
+
+    background: #ffffff;
+
+    border: 1px solid #e1e8e2;
+    border-radius: 10px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.10);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-8px);
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.stackly-client-dropdown.open
+.stackly-client-dropdown-menu {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.stackly-client-dropdown-option {
+    padding: 11px 12px;
+
+    border-radius: 7px;
+
+    color: #405047;
+
+    font-size: 14px;
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.stackly-client-dropdown-option:hover {
+    background: #f0f7f1;
+    color: #397547;
+}
+
+
+.stackly-client-dropdown-option.active {
+    background: #eaf5ec;
+    color: #327142;
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .stackly-client-dropdown {
+        width: 100%;
+        max-width: 180px;
+    }
+
+}
