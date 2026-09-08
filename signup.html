@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Farming Sign Up"
+    >
+
+    <title>Stackly | Sign Up</title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         SAME LOGIN CSS
+    ====================================================== -->
+
+    <link rel="stylesheet" href="signup.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         SIGNUP PAGE
+    ====================================================== -->
+
+    <main class="stackly-login-page">
+
+
+        <!-- =================================================
+             LEFT FARMING PANEL
+        ================================================== -->
+
+        <section class="stackly-login-left">
+
+
+            <!-- =============================================
+                 DECORATIVE LEAVES
+            ============================================== -->
+
+            <img
+                src="leaf1.webp"
+                alt=""
+                class="stackly-leaf stackly-leaf-1"
+            >
+
+            <img
+                src="leaf2.webp"
+                alt=""
+                class="stackly-leaf stackly-leaf-2"
+            >
+
+
+            <!-- =============================================
+                 LEFT CONTENT
+            ============================================== -->
+
+            <div class="stackly-login-left-content">
+
+                <h1 class="stackly-login-left-title">
+
+                    Bringing nature
+
+                    <span>
+                        Back to Life
+                    </span>
+
+                </h1>
+
+
+                <p class="stackly-login-left-description">
+
+                    Stackly farms is well known to produce fresh organic,
+                    natural products for healthier tomorrow
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RIGHT SIGNUP PANEL
+        ================================================== -->
+
+        <section class="stackly-login-right">
+
+
+            <!-- =============================================
+                 DECORATIVE LEAVES
+            ============================================== -->
+
+            <img
+                src="leaf3.webp"
+                alt=""
+                class="stackly-leaf stackly-leaf-3"
+            >
+
+            <img
+                src="leaf4.webp"
+                alt=""
+                class="stackly-leaf stackly-leaf-4"
+            >
+
+
+            <!-- =============================================
+                 HEADER
+            ============================================== -->
+
+            <header class="stackly-login-header">
+
+
+                <!-- LOGO -->
+
+                <a
+                    href="index.html"
+                    class="stackly-login-logo"
+                >
+
+                    <img
+                        src="404-logo.webp"
+                        alt="Stackly"
+                    >
+
+                </a>
+
+
+                <!-- HEADER ACTIONS -->
+
+                <div class="stackly-login-header-actions">
+
+                    <a href="login.html">
+                        Login
+                    </a>
+
+                    <a
+                        href="signup.html"
+                        class="stackly-login-signup"
+                    >
+                        Sign up
+                    </a>
+
+                </div>
+
+            </header>
+
+
+
+            <!-- =============================================
+                 SIGNUP CONTENT
+            ============================================== -->
+
+            <div class="stackly-login-content">
+
+
+                <!-- HEADING -->
+
+                <h2 class="stackly-login-title">
+
+                    Create Account
+
+                </h2>
+
+
+                <!-- DESCRIPTION -->
+
+                <p class="stackly-login-subtitle">
+
+                    Join Stackly and discover a better way of farming
+
+                </p>
+
+
+                <!-- =========================================
+                     GOOGLE SIGNUP
+                ========================================== -->
+
+                <a
+    href="404.html"
+    class="stackly-google-btn"
+>
+
+    <i class="fa-brands fa-google"></i>
+
+    <span>
+        Sign up with Google
+    </span>
+
+</a>
+
+
+                <!-- =========================================
+                     DIVIDER
+                ========================================== -->
+
+                <div class="stackly-divider">
+
+                    <span>
+                        Or
+                    </span>
+
+                </div>
+
+
+
+                <!-- =========================================
+                     SIGNUP FORM
+                ========================================== -->
+
+                <form
+                    class="stackly-login-form"
+                    id="stacklySignupForm"
+                >
+
+
+                    <!-- =====================================
+                         ROLE DROPDOWN
+                    ====================================== -->
+
+                    <div class="stackly-input-group stackly-role-group">
+
+                        <i class="fa-solid fa-user-shield"></i>
+
+                        <div class="stackly-custom-select">
+
+
+                            <!-- SELECTED ROLE -->
+
+                            <button
+                                type="button"
+                                class="stackly-select-button"
+                                id="stacklyRoleButton"
+                                aria-haspopup="listbox"
+                                aria-expanded="false"
+                            >
+
+                                <span id="stacklySelectedRole">
+                                    Select Role
+                                </span>
+
+                                <i
+                                    class="fa-solid fa-chevron-down stackly-select-arrow"
+                                ></i>
+
+                            </button>
+
+
+                            <!-- DROPDOWN OPTIONS -->
+
+                            <div
+                                class="stackly-select-dropdown"
+                                id="stacklyRoleDropdown"
+                                role="listbox"
+                            >
+
+                                <!-- ADMIN -->
+
+                                <div
+                                    class="stackly-role-option"
+                                    data-value="admin"
+                                    role="option"
+                                >
+
+                                    <i class="fa-solid fa-user-tie"></i>
+
+                                    <span>
+                                        Admin
+                                    </span>
+
+                                </div>
+
+
+                                <!-- CLIENT -->
+
+                                <div
+                                    class="stackly-role-option"
+                                    data-value="client"
+                                    role="option"
+                                >
+
+                                    <i class="fa-solid fa-user"></i>
+
+                                    <span>
+                                        Client
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- HIDDEN ROLE VALUE -->
+
+                            <input
+                                type="hidden"
+                                name="role"
+                                id="stacklyRole"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         FULL NAME
+                    ====================================== -->
+
+                    <div class="stackly-input-group">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input
+                            type="text"
+                            id="stacklyName"
+                            name="name"
+                            placeholder="Enter your Name"
+                            autocomplete="name"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         EMAIL
+                    ====================================== -->
+
+                    <div class="stackly-input-group">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="stacklyEmail"
+                            name="email"
+                            placeholder="Enter your Email"
+                            autocomplete="email"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         PHONE
+                    ====================================== -->
+
+                    <div class="stackly-input-group">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="stacklyPhone"
+                            name="phone"
+                            placeholder="Enter your Phone Number"
+                            maxlength="10"
+                            inputmode="numeric"
+                            autocomplete="tel"
+                            required
+                        >
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         PASSWORD
+                    ====================================== -->
+
+                    <div class="stackly-input-group">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="stacklyPassword"
+                            name="password"
+                            placeholder="Create Password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="stackly-password-toggle"
+                            id="stacklyPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         CONFIRM PASSWORD
+                    ====================================== -->
+
+                    <div class="stackly-input-group">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                        <input
+                            type="password"
+                            id="stacklyConfirmPassword"
+                            name="confirmPassword"
+                            placeholder="Confirm Password"
+                            autocomplete="new-password"
+                            required
+                        >
+
+                        <button
+                            type="button"
+                            class="stackly-password-toggle"
+                            id="stacklyConfirmPasswordToggle"
+                            aria-label="Show password"
+                        >
+
+                            <i class="fa-solid fa-eye"></i>
+
+                        </button>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         TERMS
+                    ====================================== -->
+
+                    <div class="stackly-login-options">
+
+                        <label class="stackly-remember">
+
+                            <input
+                                type="checkbox"
+                                id="stacklyTerms"
+                                required
+                            >
+
+                            <span>
+                                I agree to Terms & Conditions
+                            </span>
+
+                        </label>
+
+                    </div>
+
+
+
+                    <!-- =====================================
+                         SIGN UP BUTTON
+                    ====================================== -->
+
+                    <button
+                        type="submit"
+                        class="stackly-login-btn"
+                    >
+
+                        Create Account
+
+                    </button>
+
+
+
+                    <!-- =====================================
+                         LOGIN LINK
+                    ====================================== -->
+
+                    <p class="stackly-account-text">
+
+                        Already have an account?
+
+                        <a href="login.html">
+                            Login
+                        </a>
+
+                    </p>
+
+
+                </form>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================================
+         SIGNUP JAVASCRIPT
+    ====================================================== -->
+
+     <script src="signup.js"></script>
+
+
+</body>
+
+</html>

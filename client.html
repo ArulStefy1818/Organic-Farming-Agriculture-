@@ -1,0 +1,1607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================================
+             DASHBOARD CONTENT
+        ================================================== -->
+
+        <section class="stackly-client-dashboard-content">
+
+
+            <!-- =================================================
+                 WELCOME BANNER
+            ================================================== -->
+
+            <section class="stackly-client-welcome-banner">
+
+
+                <div class="stackly-client-welcome-content">
+
+
+                    <span class="stackly-client-welcome-tag">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                        YOUR ORGANIC FARM
+
+                    </span>
+
+
+                    <h2>
+
+                        Grow Naturally.
+                        <span>
+                            Harvest Better.
+                        </span>
+
+                    </h2>
+
+
+                    <p>
+
+                        Monitor your crops, soil health,
+                        irrigation and harvest performance
+                        from one simple farm dashboard.
+
+                    </p>
+
+
+                    <a
+                        href="404-client.html"
+                        class="stackly-client-welcome-button"
+                    >
+
+                        View My Farm
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+
+                <div class="stackly-client-welcome-visual">
+
+
+                    <div class="stackly-client-leaf-circle">
+
+                        <i class="fa-solid fa-seedling"></i>
+
+                    </div>
+
+
+                    <span class="stackly-client-floating-leaf one">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </span>
+
+
+                    <span class="stackly-client-floating-leaf two">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </span>
+
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 FARM STATISTICS
+            ================================================== -->
+
+            <section class="stackly-client-stat-grid">
+
+
+                <!-- FARM AREA -->
+
+                <article class="stackly-client-stat-card">
+
+
+                    <div class="stackly-client-stat-icon green">
+
+                        <i class="fa-solid fa-landmark"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-stat-info">
+
+                        <span>
+                            Farm Area
+                        </span>
+
+                        <strong>
+                            12.5
+                        </strong>
+
+                        <small>
+                            Acres under organic farming
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- CROPS -->
+
+                <article class="stackly-client-stat-card">
+
+
+                    <div class="stackly-client-stat-icon lime">
+
+                        <i class="fa-solid fa-seedling"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-stat-info">
+
+                        <span>
+                            Active Crops
+                        </span>
+
+                        <strong>
+                            08
+                        </strong>
+
+                        <small class="positive">
+
+                            <i class="fa-solid fa-arrow-up"></i>
+
+                            2 new crops this season
+
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- HARVEST -->
+
+                <article class="stackly-client-stat-card">
+
+
+                    <div class="stackly-client-stat-icon orange">
+
+                        <i class="fa-solid fa-basket-shopping"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-stat-info">
+
+                        <span>
+                            Harvest Ready
+                        </span>
+
+                        <strong>
+                            1.8K
+                        </strong>
+
+                        <small>
+                            kg expected this month
+                        </small>
+
+                    </div>
+
+                </article>
+
+
+                <!-- SOIL -->
+
+                <article class="stackly-client-stat-card">
+
+
+                    <div class="stackly-client-stat-icon blue">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-stat-info">
+
+                        <span>
+                            Soil Health
+                        </span>
+
+                        <strong>
+                            89%
+                        </strong>
+
+                        <small class="positive">
+
+                            <i class="fa-solid fa-arrow-up"></i>
+
+                            5.2% improvement
+
+                        </small>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 MIDDLE GRID
+            ================================================== -->
+
+            <section class="stackly-client-dashboard-grid">
+
+
+                <!-- =================================================
+                     CROP PERFORMANCE
+                ================================================== -->
+
+                <article class="stackly-client-dashboard-card stackly-client-production-card">
+
+
+                    <div class="stackly-client-card-header">
+
+
+                        <div>
+
+                            <span>
+                                FARM PERFORMANCE
+                            </span>
+
+                            <h3>
+                                Crop Production
+                            </h3>
+
+                        </div>
+
+
+                        <select
+                            class="stackly-client-card-select"
+                        >
+
+                            <option>
+                                This Year
+                            </option>
+
+                            <option>
+                                This Season
+                            </option>
+
+                            <option>
+                                Last Year
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- CHART -->
+
+                    <div class="stackly-client-production-chart">
+
+
+                        <div class="stackly-client-chart-y">
+
+                            <span>
+                                10K
+                            </span>
+
+                            <span>
+                                7.5K
+                            </span>
+
+                            <span>
+                                5K
+                            </span>
+
+                            <span>
+                                2.5K
+                            </span>
+
+                            <span>
+                                0
+                            </span>
+
+                        </div>
+
+
+                        <div class="stackly-client-chart-area">
+
+
+                            <div class="stackly-client-chart-line">
+
+                                <span
+                                    style="height:36%;"
+                                ></span>
+
+                                <span
+                                    style="height:47%;"
+                                ></span>
+
+                                <span
+                                    style="height:42%;"
+                                ></span>
+
+                                <span
+                                    style="height:58%;"
+                                ></span>
+
+                                <span
+                                    style="height:66%;"
+                                ></span>
+
+                                <span
+                                    style="height:73%;"
+                                ></span>
+
+                                <span
+                                    style="height:84%;"
+                                ></span>
+
+                                <span
+                                    style="height:79%;"
+                                ></span>
+
+                                <span
+                                    style="height:91%;"
+                                ></span>
+
+                                <span
+                                    style="height:87%;"
+                                ></span>
+
+                                <span
+                                    style="height:96%;"
+                                ></span>
+
+                                <span
+                                    style="height:92%;"
+                                ></span>
+
+                            </div>
+
+
+                            <div class="stackly-client-chart-months">
+
+                                <span>
+                                    Jan
+                                </span>
+
+                                <span>
+                                    Feb
+                                </span>
+
+                                <span>
+                                    Mar
+                                </span>
+
+                                <span>
+                                    Apr
+                                </span>
+
+                                <span>
+                                    May
+                                </span>
+
+                                <span>
+                                    Jun
+                                </span>
+
+                                <span>
+                                    Jul
+                                </span>
+
+                                <span>
+                                    Aug
+                                </span>
+
+                                <span>
+                                    Sep
+                                </span>
+
+                                <span>
+                                    Oct
+                                </span>
+
+                                <span>
+                                    Nov
+                                </span>
+
+                                <span>
+                                    Dec
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     FARM HEALTH
+                ================================================== -->
+
+                <article class="stackly-client-dashboard-card stackly-client-health-card">
+
+
+                    <div class="stackly-client-card-header">
+
+
+                        <div>
+
+                            <span>
+                                ORGANIC FARM HEALTH
+                            </span>
+
+                            <h3>
+                                Overall Health
+                            </h3>
+
+                        </div>
+
+
+                        <a
+                            href="404-client.html"
+                            class="stackly-client-view-link"
+                        >
+
+                            View Details
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="stackly-client-health-score">
+
+
+                        <div class="stackly-client-health-circle">
+
+                            <div>
+
+                                <strong>
+                                    89%
+                                </strong>
+
+                                <span>
+                                    Excellent
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stackly-client-health-details">
+
+
+                            <div>
+
+                                <span>
+                                    Soil Quality
+                                </span>
+
+                                <strong>
+                                    92%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Crop Health
+                                </span>
+
+                                <strong>
+                                    88%
+                                </strong>
+
+                            </div>
+
+
+                            <div>
+
+                                <span>
+                                    Water Efficiency
+                                </span>
+
+                                <strong>
+                                    87%
+                                </strong>
+
+                            </div>
+
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 LOWER GRID
+            ================================================== -->
+
+            <section class="stackly-client-lower-grid">
+
+
+                <!-- =================================================
+                     MY CROPS
+                ================================================== -->
+
+                <article class="stackly-client-dashboard-card">
+
+
+                    <div class="stackly-client-card-header">
+
+
+                        <div>
+
+                            <span>
+                                LIVE FARM MONITORING
+                            </span>
+
+                            <h3>
+                                My Crop Health
+                            </h3>
+
+                        </div>
+
+
+                        <a
+                            href="404-client.html"
+                            class="stackly-client-view-link"
+                        >
+
+                            See All
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+
+                    <div class="stackly-client-crop-list">
+
+
+                        <!-- CROP 1 -->
+
+                        <div class="stackly-client-crop-item">
+
+
+                            <div class="stackly-client-crop-icon">
+
+                                <i class="fa-solid fa-wheat-awn"></i>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-name">
+
+                                <strong>
+                                    Organic Rice
+                                </strong>
+
+                                <span>
+                                    Field A · 4.2 Acres
+                                </span>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-progress">
+
+                                <div>
+
+                                    <span>
+                                        94%
+                                    </span>
+
+                                </div>
+
+                                <div class="stackly-client-progress-bar">
+
+                                    <span
+                                        style="width:94%;"
+                                    ></span>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="stackly-client-status healthy">
+                                Healthy
+                            </span>
+
+                        </div>
+
+
+                        <!-- CROP 2 -->
+
+                        <div class="stackly-client-crop-item">
+
+
+                            <div class="stackly-client-crop-icon">
+
+                                <i class="fa-solid fa-carrot"></i>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-name">
+
+                                <strong>
+                                    Organic Carrot
+                                </strong>
+
+                                <span>
+                                    Field B · 2.1 Acres
+                                </span>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-progress">
+
+                                <div>
+
+                                    <span>
+                                        86%
+                                    </span>
+
+                                </div>
+
+                                <div class="stackly-client-progress-bar">
+
+                                    <span
+                                        style="width:86%;"
+                                    ></span>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="stackly-client-status healthy">
+                                Healthy
+                            </span>
+
+                        </div>
+
+
+                        <!-- CROP 3 -->
+
+                        <div class="stackly-client-crop-item">
+
+
+                            <div class="stackly-client-crop-icon">
+
+                                <i class="fa-solid fa-leaf"></i>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-name">
+
+                                <strong>
+                                    Green Vegetables
+                                </strong>
+
+                                <span>
+                                    Field C · 1.8 Acres
+                                </span>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-progress">
+
+                                <div>
+
+                                    <span>
+                                        72%
+                                    </span>
+
+                                </div>
+
+                                <div class="stackly-client-progress-bar">
+
+                                    <span
+                                        style="width:72%;"
+                                    ></span>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="stackly-client-status attention">
+                                Attention
+                            </span>
+
+                        </div>
+
+
+                        <!-- CROP 4 -->
+
+                        <div class="stackly-client-crop-item">
+
+
+                            <div class="stackly-client-crop-icon">
+
+                                <i class="fa-solid fa-pepper-hot"></i>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-name">
+
+                                <strong>
+                                    Organic Chilli
+                                </strong>
+
+                                <span>
+                                    Field D · 2.6 Acres
+                                </span>
+
+                            </div>
+
+
+                            <div class="stackly-client-crop-progress">
+
+                                <div>
+
+                                    <span>
+                                        91%
+                                    </span>
+
+                                </div>
+
+                                <div class="stackly-client-progress-bar">
+
+                                    <span
+                                        style="width:91%;"
+                                    ></span>
+
+                                </div>
+
+                            </div>
+
+
+                            <span class="stackly-client-status healthy">
+                                Healthy
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+
+                <!-- =================================================
+                     RECENT FARM ACTIVITY
+                ================================================== -->
+
+                <article class="stackly-client-dashboard-card">
+
+
+                    <div class="stackly-client-card-header">
+
+
+                        <div>
+
+                            <span>
+                                RECENT ACTIVITY
+                            </span>
+
+                            <h3>
+                                My Farm Updates
+                            </h3>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-client-activity-list">
+
+
+                        <!-- ACTIVITY 1 -->
+
+                        <div class="stackly-client-activity-item">
+
+                            <div class="stackly-client-activity-icon">
+
+                                <i class="fa-solid fa-droplet"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Irrigation completed
+                                </strong>
+
+                                <span>
+                                    North Field · 15 minutes ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIVITY 2 -->
+
+                        <div class="stackly-client-activity-item">
+
+                            <div class="stackly-client-activity-icon">
+
+                                <i class="fa-solid fa-seedling"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Crop growth updated
+                                </strong>
+
+                                <span>
+                                    Organic Tomato · 1 hour ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIVITY 3 -->
+
+                        <div class="stackly-client-activity-item">
+
+                            <div class="stackly-client-activity-icon">
+
+                                <i class="fa-solid fa-basket-shopping"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Harvest recorded
+                                </strong>
+
+                                <span>
+                                    420 kg organic rice · 3 hours ago
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ACTIVITY 4 -->
+
+                        <div class="stackly-client-activity-item">
+
+                            <div class="stackly-client-activity-icon">
+
+                                <i class="fa-solid fa-certificate"></i>
+
+                            </div>
+
+                            <div>
+
+                                <strong>
+                                    Organic certification updated
+                                </strong>
+
+                                <span>
+                                    Certificate valid · Yesterday
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+            <!-- =================================================
+                 BOTTOM FEATURE ROW
+            ================================================== -->
+
+            <section class="stackly-client-feature-grid">
+
+
+                <!-- WATER MANAGEMENT -->
+
+                <article class="stackly-client-feature-card water-card">
+
+
+                    <div class="stackly-client-feature-icon">
+
+                        <i class="fa-solid fa-water"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-feature-content">
+
+                        <span>
+                            WATER MANAGEMENT
+                        </span>
+
+                        <h3>
+                            87% Efficient
+                        </h3>
+
+                        <p>
+                            Smart irrigation helped save
+                            approximately 12,800 litres of water
+                            this week.
+                        </p>
+
+
+                        <a
+                            href="404-client.html"
+                        >
+
+                            Manage Irrigation
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- ORGANIC CERTIFICATION -->
+
+                <article class="stackly-client-feature-card organic-card">
+
+
+                    <div class="stackly-client-feature-icon">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-feature-content">
+
+                        <span>
+                            ORGANIC CERTIFICATION
+                        </span>
+
+                        <h3>
+                            Certified Farm
+                        </h3>
+
+                        <p>
+                            Your farm currently meets the required
+                            organic production standards.
+                        </p>
+
+
+                        <a
+                            href="404-client.html"
+                        >
+
+                            View Certification
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+                <!-- UPCOMING HARVEST -->
+
+                <article class="stackly-client-feature-card harvest-card">
+
+
+                    <div class="stackly-client-feature-icon">
+
+                        <i class="fa-solid fa-basket-shopping"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-feature-content">
+
+                        <span>
+                            UPCOMING HARVEST
+                        </span>
+
+                        <h3>
+                            1.8 Tonnes
+                        </h3>
+
+                        <p>
+                            Estimated organic harvest from
+4 active fields this week directly and efficiently.
+                        </p>
+
+
+                        <a
+                            href="404-client.html"
+                        >
+
+                            View Harvest Plan
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+            </section>
+
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

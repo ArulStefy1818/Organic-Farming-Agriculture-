@@ -1,0 +1,2112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+
+                 
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     SOIL HEALTH PAGE CONTENT
+     STACKLY ORGANIC FARMING ADMIN DASHBOARD
+========================================================= -->
+
+<section class="stackly-dashboard-content stackly-soil-health-page">
+
+    <!-- =====================================================
+         SOIL HEALTH HERO
+    ====================================================== -->
+
+    <section class="soil-health-hero">
+
+        <div class="soil-hero-content">
+
+            <span class="soil-hero-label">
+                <i class="fa-solid fa-mountain-sun"></i>
+                SOIL INTELLIGENCE
+            </span>
+
+            <h2>
+                Healthy soil.
+                <span>Stronger crops.</span>
+            </h2>
+
+            <p>
+                Monitor soil quality, nutrient balance, moisture,
+                pH levels and field conditions to maintain
+                productive and sustainable organic farms.
+            </p>
+
+            <div class="soil-hero-actions">
+
+                <a
+                    href="404-admin.html"
+                    class="soil-primary-btn"
+                >
+                    <i class="fa-solid fa-flask"></i>
+                    Run Soil Test
+                </a>
+
+                <a
+                    href="404-admin.html"
+                    class="soil-secondary-btn"
+                >
+                    <i class="fa-solid fa-file-chart-column"></i>
+                    Soil Reports
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOIL VISUAL -->
+
+        <div class="soil-hero-visual">
+
+            <div class="soil-circle soil-circle-one"></div>
+
+            <div class="soil-circle soil-circle-two"></div>
+
+            <div class="soil-center-icon">
+                <i class="fa-solid fa-mountain-sun"></i>
+            </div>
+
+            <div class="soil-floating-card soil-card-top">
+
+                <i class="fa-solid fa-droplet"></i>
+
+                <div>
+                    <strong>78%</strong>
+                    <span>Moisture</span>
+                </div>
+
+            </div>
+
+
+            <div class="soil-floating-card soil-card-bottom">
+
+                <i class="fa-solid fa-leaf"></i>
+
+                <div>
+                    <strong>Excellent</strong>
+                    <span>Soil Quality</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         SOIL CONDITION + NUTRIENT BALANCE
+    ====================================================== -->
+
+    <section class="soil-main-grid">
+
+
+        <!-- =================================================
+             SOIL CONDITION
+        ================================================== -->
+
+        <article class="soil-dashboard-card soil-condition-card">
+
+            <div class="soil-card-header">
+
+                <div>
+
+                    <span>
+                        FIELD CONDITION
+                    </span>
+
+                    <h3>
+                        Overall Soil Condition
+                    </h3>
+
+                </div>
+
+                <span class="soil-health-badge">
+                    Excellent
+                </span>
+
+            </div>
+
+
+            <div class="soil-condition-content">
+
+                <div class="soil-score-wrapper">
+
+                    <div class="soil-score-circle">
+
+                        <div>
+
+                            <strong>
+                                91%
+                            </strong>
+
+                            <span>
+                                Healthy
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                    <p>
+                        Soil conditions across active
+                        organic farming fields.
+                    </p>
+
+                </div>
+
+
+                <div class="soil-condition-metrics">
+
+                    <div class="soil-metric">
+
+                        <div>
+
+                            <span>
+                                Organic Matter
+                            </span>
+
+                            <strong>
+                                84%
+                            </strong>
+
+                        </div>
+
+                        <div class="soil-metric-bar">
+                            <span style="width:84%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="soil-metric">
+
+                        <div>
+
+                            <span>
+                                Soil Moisture
+                            </span>
+
+                            <strong>
+                                78%
+                            </strong>
+
+                        </div>
+
+                        <div class="soil-metric-bar">
+                            <span style="width:78%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="soil-metric">
+
+                        <div>
+
+                            <span>
+                                Microbial Activity
+                            </span>
+
+                            <strong>
+                                89%
+                            </strong>
+
+                        </div>
+
+                        <div class="soil-metric-bar">
+                            <span style="width:89%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div class="soil-metric">
+
+                        <div>
+
+                            <span>
+                                Drainage
+                            </span>
+
+                            <strong>
+                                82%
+                            </strong>
+
+                        </div>
+
+                        <div class="soil-metric-bar">
+                            <span style="width:82%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             NUTRIENT BALANCE
+        ================================================== -->
+
+        <article class="soil-dashboard-card nutrient-balance-card">
+
+            <div class="soil-card-header">
+
+                <div>
+
+                    <span>
+                        NUTRIENTS
+                    </span>
+
+                    <h3>
+                        Nutrient Balance
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="nutrient-list">
+
+
+                <div class="nutrient-item">
+
+                    <div class="nutrient-icon nitrogen">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="nutrient-info">
+
+                        <strong>
+                            Nitrogen
+                        </strong>
+
+                        <span>
+                            82 kg/ha
+                        </span>
+
+                    </div>
+
+                    <span class="nutrient-status optimal">
+                        Optimal
+                    </span>
+
+                </div>
+
+
+
+                <div class="nutrient-item">
+
+                    <div class="nutrient-icon phosphorus">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div class="nutrient-info">
+
+                        <strong>
+                            Phosphorus
+                        </strong>
+
+                        <span>
+                            46 kg/ha
+                        </span>
+
+                    </div>
+
+                    <span class="nutrient-status optimal">
+                        Optimal
+                    </span>
+
+                </div>
+
+
+
+                <div class="nutrient-item">
+
+                    <div class="nutrient-icon potassium">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <div class="nutrient-info">
+
+                        <strong>
+                            Potassium
+                        </strong>
+
+                        <span>
+                            68 kg/ha
+                        </span>
+
+                    </div>
+
+                    <span class="nutrient-status good">
+                        Good
+                    </span>
+
+                </div>
+
+
+
+                <div class="nutrient-item">
+
+                    <div class="nutrient-icon calcium">
+                        <i class="fa-solid fa-circle-plus"></i>
+                    </div>
+
+                    <div class="nutrient-info">
+
+                        <strong>
+                            Calcium
+                        </strong>
+
+                        <span>
+                            71 kg/ha
+                        </span>
+
+                    </div>
+
+                    <span class="nutrient-status attention">
+                        Monitor
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FIELD SOIL MONITORING
+    ====================================================== -->
+
+    <section class="soil-dashboard-card field-soil-section">
+
+        <div class="soil-card-header">
+
+            <div>
+
+                <span>
+                    FIELD MONITORING
+                </span>
+
+                <h3>
+                    Soil Health by Field
+                </h3>
+
+            </div>
+
+            <a
+                href="404-admin.html"
+                class="soil-view-link"
+            >
+                View All
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="soil-field-grid">
+
+
+            <!-- FIELD A -->
+
+            <div class="soil-field-card">
+
+                <div class="soil-field-top">
+
+                    <div class="soil-field-icon rice">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <span class="soil-status excellent">
+                        Excellent
+                    </span>
+
+                </div>
+
+                <h4>
+                    Field A-12
+                </h4>
+
+                <span class="soil-field-crop">
+                    Organic Rice
+                </span>
+
+
+                <div class="soil-field-details">
+
+                    <div>
+
+                        <span>
+                            pH Level
+                        </span>
+
+                        <strong>
+                            6.8
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Moisture
+                        </span>
+
+                        <strong>
+                            81%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Organic
+                        </span>
+
+                        <strong>
+                            86%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="soil-field-progress">
+
+                    <span>
+                        Soil Score
+                    </span>
+
+                    <strong>
+                        94%
+                    </strong>
+
+                    <div>
+                        <span style="width:94%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FIELD B -->
+
+            <div class="soil-field-card">
+
+                <div class="soil-field-top">
+
+                    <div class="soil-field-icon carrot">
+                        <i class="fa-solid fa-carrot"></i>
+                    </div>
+
+                    <span class="soil-status good">
+                        Good
+                    </span>
+
+                </div>
+
+                <h4>
+                    Field B-07
+                </h4>
+
+                <span class="soil-field-crop">
+                    Organic Carrot
+                </span>
+
+
+                <div class="soil-field-details">
+
+                    <div>
+
+                        <span>
+                            pH Level
+                        </span>
+
+                        <strong>
+                            6.5
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Moisture
+                        </span>
+
+                        <strong>
+                            74%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Organic
+                        </span>
+
+                        <strong>
+                            79%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="soil-field-progress">
+
+                    <span>
+                        Soil Score
+                    </span>
+
+                    <strong>
+                        87%
+                    </strong>
+
+                    <div>
+                        <span style="width:87%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FIELD C -->
+
+            <div class="soil-field-card">
+
+                <div class="soil-field-top">
+
+                    <div class="soil-field-icon tomato">
+                        <i class="fa-solid fa-apple-whole"></i>
+                    </div>
+
+                    <span class="soil-status attention">
+                        Attention
+                    </span>
+
+                </div>
+
+                <h4>
+                    Field C-03
+                </h4>
+
+                <span class="soil-field-crop">
+                    Organic Tomato
+                </span>
+
+
+                <div class="soil-field-details">
+
+                    <div>
+
+                        <span>
+                            pH Level
+                        </span>
+
+                        <strong>
+                            5.9
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Moisture
+                        </span>
+
+                        <strong>
+                            68%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Organic
+                        </span>
+
+                        <strong>
+                            67%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="soil-field-progress">
+
+                    <span>
+                        Soil Score
+                    </span>
+
+                    <strong>
+                        72%
+                    </strong>
+
+                    <div>
+                        <span style="width:72%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FIELD D -->
+
+            <div class="soil-field-card">
+
+                <div class="soil-field-top">
+
+                    <div class="soil-field-icon chilli">
+                        <i class="fa-solid fa-pepper-hot"></i>
+                    </div>
+
+                    <span class="soil-status good">
+                        Good
+                    </span>
+
+                </div>
+
+                <h4>
+                    Field D-09
+                </h4>
+
+                <span class="soil-field-crop">
+                    Organic Chilli
+                </span>
+
+
+                <div class="soil-field-details">
+
+                    <div>
+
+                        <span>
+                            pH Level
+                        </span>
+
+                        <strong>
+                            6.4
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Moisture
+                        </span>
+
+                        <strong>
+                            77%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Organic
+                        </span>
+
+                        <strong>
+                            81%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="soil-field-progress">
+
+                    <span>
+                        Soil Score
+                    </span>
+
+                    <strong>
+                        89%
+                    </strong>
+
+                    <div>
+                        <span style="width:89%;"></span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOIL TESTING TIMELINE + RECOMMENDATIONS
+    ====================================================== -->
+
+    <section class="soil-bottom-grid">
+
+
+        <!-- SOIL TEST TIMELINE -->
+
+        <article class="soil-dashboard-card soil-testing-card">
+
+            <div class="soil-card-header">
+
+                <div>
+
+                    <span>
+                        TESTING ACTIVITY
+                    </span>
+
+                    <h3>
+                        Soil Testing Schedule
+                    </h3>
+
+                </div>
+
+                <a
+                    href="404-admin.html"
+                    class="soil-view-link"
+                >
+                    Full Schedule
+                </a>
+
+            </div>
+
+
+            <div class="soil-testing-timeline">
+
+
+                <div class="soil-test-item active">
+
+                    <div class="soil-test-date">
+
+                        <strong>
+                            08
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+                    <div class="soil-test-line"></div>
+
+                    <div class="soil-test-info">
+
+                        <strong>
+                            Field C-03
+                        </strong>
+
+                        <span>
+                            pH & nutrient analysis
+                        </span>
+
+                    </div>
+
+                    <span class="soil-test-status pending">
+                        Pending
+                    </span>
+
+                </div>
+
+
+
+                <div class="soil-test-item">
+
+                    <div class="soil-test-date">
+
+                        <strong>
+                            10
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+                    <div class="soil-test-line"></div>
+
+                    <div class="soil-test-info">
+
+                        <strong>
+                            Field B-07
+                        </strong>
+
+                        <span>
+                            Organic matter test
+                        </span>
+
+                    </div>
+
+                    <span class="soil-test-status scheduled">
+                        Scheduled
+                    </span>
+
+                </div>
+
+
+
+                <div class="soil-test-item">
+
+                    <div class="soil-test-date">
+
+                        <strong>
+                            13
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+                    <div class="soil-test-line"></div>
+
+                    <div class="soil-test-info">
+
+                        <strong>
+                            Field D-09
+                        </strong>
+
+                        <span>
+                            Complete soil analysis
+                        </span>
+
+                    </div>
+
+                    <span class="soil-test-status scheduled">
+                        Scheduled
+                    </span>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- RECOMMENDATIONS -->
+
+        <article class="soil-dashboard-card soil-recommendations-card">
+
+            <div class="soil-card-header">
+
+                <div>
+
+                    <span>
+                        SMART ADVICE
+                    </span>
+
+                    <h3>
+                        Soil Recommendations
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="soil-recommendation-list">
+
+
+                <div class="soil-recommendation">
+
+                    <div class="soil-recommendation-icon green">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Increase organic compost
+                        </strong>
+
+                        <span>
+                            Field C-03 needs more organic
+                            matter to improve soil structure.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="soil-recommendation">
+
+                    <div class="soil-recommendation-icon blue">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Improve moisture balance
+                        </strong>
+
+                        <span>
+                            Reduce irrigation intervals in
+                            Field C-03 during dry periods.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="soil-recommendation">
+
+                    <div class="soil-recommendation-icon orange">
+                        <i class="fa-solid fa-vial"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Monitor soil acidity
+                        </strong>
+
+                        <span>
+                            Tomato field pH is slightly below
+                            the preferred range.
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="soil-recommendation">
+
+                    <div class="soil-recommendation-icon purple">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Rotate crop zones
+                        </strong>
+
+                        <span>
+                            Crop rotation can improve long-term
+                            nutrient availability.
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOIL ACTIVITY TABLE
+    ====================================================== -->
+
+    <section class="soil-dashboard-card soil-activity-section">
+
+        <div class="soil-card-header">
+
+            <div>
+
+                <span>
+                    SOIL RECORDS
+                </span>
+
+                <h3>
+                    Recent Soil Test Results
+                </h3>
+
+            </div>
+
+            <div class="soil-table-actions">
+
+                <a href="404-admin.html">
+                    <i class="fa-solid fa-plus"></i>
+                    Add Test
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="soil-table-wrapper">
+
+            <table class="soil-management-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Field
+                        </th>
+
+                        <th>
+                            Crop
+                        </th>
+
+                        <th>
+                            pH
+                        </th>
+
+                        <th>
+                            Moisture
+                        </th>
+
+                        <th>
+                            Organic Matter
+                        </th>
+
+                        <th>
+                            Soil Score
+                        </th>
+
+                        <th>
+                            Tested
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="soil-table-field">
+
+                                <div class="soil-table-icon rice">
+                                    <i class="fa-solid fa-wheat-awn"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Field A-12
+                                    </strong>
+
+                                    <span>
+                                        North Block
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Organic Rice
+                        </td>
+
+
+                        <td>
+                            6.8
+                        </td>
+
+
+                        <td>
+                            81%
+                        </td>
+
+
+                        <td>
+                            86%
+                        </td>
+
+
+                        <td>
+
+                            <div class="soil-table-score">
+
+                                <strong>
+                                    94%
+                                </strong>
+
+                                <div>
+                                    <span style="width:94%;"></span>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            05 Sep
+                        </td>
+
+
+                        <td>
+
+                            <span class="soil-table-status excellent">
+                                Excellent
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="soil-table-field">
+
+                                <div class="soil-table-icon carrot">
+                                    <i class="fa-solid fa-carrot"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Field B-07
+                                    </strong>
+
+                                    <span>
+                                        East Block
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Organic Carrot
+                        </td>
+
+
+                        <td>
+                            6.5
+                        </td>
+
+
+                        <td>
+                            74%
+                        </td>
+
+
+                        <td>
+                            79%
+                        </td>
+
+
+                        <td>
+
+                            <div class="soil-table-score">
+
+                                <strong>
+                                    87%
+                                </strong>
+
+                                <div>
+                                    <span style="width:87%;"></span>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            04 Sep
+                        </td>
+
+
+                        <td>
+
+                            <span class="soil-table-status good">
+                                Good
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="soil-table-field">
+
+                                <div class="soil-table-icon tomato">
+                                    <i class="fa-solid fa-apple-whole"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Field C-03
+                                    </strong>
+
+                                    <span>
+                                        South Block
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Organic Tomato
+                        </td>
+
+
+                        <td>
+                            5.9
+                        </td>
+
+
+                        <td>
+                            68%
+                        </td>
+
+
+                        <td>
+                            67%
+                        </td>
+
+
+                        <td>
+
+                            <div class="soil-table-score">
+
+                                <strong>
+                                    72%
+                                </strong>
+
+                                <div>
+                                    <span style="width:72%;"></span>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            03 Sep
+                        </td>
+
+
+                        <td>
+
+                            <span class="soil-table-status attention">
+                                Attention
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="soil-table-field">
+
+                                <div class="soil-table-icon chilli">
+                                    <i class="fa-solid fa-pepper-hot"></i>
+                                </div>
+
+                                <div>
+
+                                    <strong>
+                                        Field D-09
+                                    </strong>
+
+                                    <span>
+                                        West Block
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            Organic Chilli
+                        </td>
+
+
+                        <td>
+                            6.4
+                        </td>
+
+
+                        <td>
+                            77%
+                        </td>
+
+
+                        <td>
+                            81%
+                        </td>
+
+
+                        <td>
+
+                            <div class="soil-table-score">
+
+                                <strong>
+                                    89%
+                                </strong>
+
+                                <div>
+                                    <span style="width:89%;"></span>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+
+                        <td>
+                            02 Sep
+                        </td>
+
+
+                        <td>
+
+                            <span class="soil-table-status good">
+                                Good
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SOIL MANAGEMENT FEATURE CARDS
+    ====================================================== -->
+
+    <section class="soil-feature-grid">
+
+
+        <article class="soil-feature-card">
+
+            <div class="soil-feature-icon">
+
+                <i class="fa-solid fa-flask"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL TESTING
+                </span>
+
+                <h3>
+                    Schedule Laboratory Tests
+                </h3>
+
+                <p>
+                    Plan regular soil testing to understand
+                    nutrient levels and improve field productivity.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+                Schedule Test
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+
+        <article class="soil-feature-card">
+
+            <div class="soil-feature-icon">
+
+                <i class="fa-solid fa-recycle"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    ORGANIC MATTER
+                </span>
+
+                <h3>
+                    Improve Soil Structure
+                </h3>
+
+                <p>
+                    Use compost, crop residues and natural
+                    amendments to maintain healthy soil biology.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Recommendations
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+
+        <article class="soil-feature-card">
+
+            <div class="soil-feature-icon">
+
+                <i class="fa-solid fa-droplet"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    WATER MANAGEMENT
+                </span>
+
+                <h3>
+                    Smart Soil <br>Moisture
+                </h3>
+
+                <p>
+                    Track moisture levels and adjust irrigation
+                    according to crop and soil requirements.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+                Manage Irrigation
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+
+
+        <article class="soil-feature-card">
+
+            <div class="soil-feature-icon">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    SOIL ANALYTICS
+                </span>
+
+                <h3>
+                    Track Long-Term Health
+                </h3>
+
+                <p>
+                    Compare soil performance over time and
+                    identify fields that need additional attention.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Analytics
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </article>
+
+    </section>
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

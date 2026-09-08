@@ -1,0 +1,1596 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+ 
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     STACKLY INVENTORY PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-inventory-page">
+
+
+    <!-- =====================================================
+         INVENTORY HERO / INTRO
+    ====================================================== -->
+
+    <section class="stackly-inventory-hero">
+
+        <div class="stackly-inventory-hero-content">
+
+            <span class="stackly-inventory-eyebrow">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                FARM INVENTORY
+            </span>
+
+            <h2>
+                Smart Stock,
+                <span>Better Farming</span>
+            </h2>
+
+            <p>
+                Track seeds, fertilizers, equipment, harvested products
+                and farm supplies with complete inventory visibility
+                across your agricultural operations.
+            </p>
+
+            <div class="stackly-inventory-actions">
+
+                <a href="404-admin.html">
+                    <button
+                        type="button"
+                        class="stackly-inventory-primary-btn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add Inventory
+                    </button>
+                </a>
+
+                <a href="404-admin.html">
+                    <button
+                        type="button"
+                        class="stackly-inventory-secondary-btn"
+                    >
+                        <i class="fa-solid fa-file-export"></i>
+                        Export Stock
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-inventory-hero-visual">
+
+            <div class="stackly-inventory-visual-circle">
+
+                <i class="fa-solid fa-warehouse"></i>
+
+            </div>
+
+            <div class="stackly-inventory-floating-card">
+
+                <span>
+                    Stock Availability
+                </span>
+
+                <strong>
+                    94.6%
+                </strong>
+
+                <small>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    5.8% this month
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STOCK OVERVIEW GRID
+    ====================================================== -->
+
+    <section class="stackly-inventory-overview-grid">
+
+
+        <!-- =================================================
+             STOCK DISTRIBUTION
+        ================================================== -->
+
+        <div class="stackly-inventory-panel stackly-stock-distribution">
+
+            <div class="stackly-inventory-panel-heading">
+
+                <div>
+
+                    <span>
+                        INVENTORY ANALYTICS
+                    </span>
+
+                    <h3>
+                        Stock Distribution
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+            </div>
+
+
+            <div class="stackly-stock-distribution-content">
+
+
+                <div class="stackly-stock-donut">
+
+                    <div class="stackly-stock-donut-inner">
+
+                        <strong>
+                            2.4K
+                        </strong>
+
+                        <span>
+                            Items
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-stock-legend">
+
+                    <div>
+
+                        <span class="legend-dot seeds"></span>
+
+                        <span>
+                            Seeds
+                        </span>
+
+                        <strong>
+                            32%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot fertilizer"></span>
+
+                        <span>
+                            Fertilizers
+                        </span>
+
+                        <strong>
+                            24%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot equipment"></span>
+
+                        <span>
+                            Equipment
+                        </span>
+
+                        <strong>
+                            18%
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span class="legend-dot harvest"></span>
+
+                        <span>
+                            Harvest Stock
+                        </span>
+
+                        <strong>
+                            26%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             LOW STOCK ALERT
+        ================================================== -->
+
+        <div class="stackly-inventory-panel stackly-low-stock-panel">
+
+            <div class="stackly-inventory-panel-heading">
+
+                <div>
+
+                    <span>
+                        INVENTORY ALERTS
+                    </span>
+
+                    <h3>
+                        Low Stock Items
+                    </h3>
+
+                </div>
+
+                <span class="stackly-alert-count">
+                    18
+                </span>
+
+            </div>
+
+
+            <div class="stackly-low-stock-list">
+
+
+                <div class="stackly-low-stock-item">
+
+                    <div class="stackly-low-stock-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Tomato Seeds
+                        </strong>
+
+                        <span>
+                            Seed Storage · SKU-1042
+                        </span>
+
+                    </div>
+
+                    <strong class="stock-danger">
+                        12 packs
+                    </strong>
+
+                </div>
+
+
+                <div class="stackly-low-stock-item">
+
+                    <div class="stackly-low-stock-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Organic Fertilizer
+                        </strong>
+
+                        <span>
+                            Warehouse B · SKU-2048
+                        </span>
+
+                    </div>
+
+                    <strong class="stock-danger">
+                        38 kg
+                    </strong>
+
+                </div>
+
+
+                <div class="stackly-low-stock-item">
+
+                    <div class="stackly-low-stock-icon">
+                        <i class="fa-solid fa-spray-can"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Neem Spray
+                        </strong>
+
+                        <span>
+                            Chemical Store · SKU-3091
+                        </span>
+
+                    </div>
+
+                    <strong class="stock-warning">
+                        16 bottles
+                    </strong>
+
+                </div>
+
+
+                <div class="stackly-low-stock-item">
+
+                    <div class="stackly-low-stock-icon">
+                        <i class="fa-solid fa-hand-holding-droplet"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Drip Connectors
+                        </strong>
+
+                        <span>
+                            Equipment Store · SKU-4120
+                        </span>
+
+                    </div>
+
+                    <strong class="stock-warning">
+                        26 units
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-view-inventory"
+            >
+                View All Alerts
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WAREHOUSE STATUS
+    ====================================================== -->
+
+    <section class="stackly-warehouse-section">
+
+
+        <div class="stackly-inventory-section-heading">
+
+            <div>
+
+                <span>
+                    STORAGE MANAGEMENT
+                </span>
+
+                <h3>
+                    Warehouse Status
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                Manage Warehouses
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-warehouse-grid">
+
+
+            <article class="stackly-warehouse-card">
+
+                <div class="stackly-warehouse-top">
+
+                    <div class="stackly-warehouse-icon">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+
+                    <span class="warehouse-active">
+                        Active
+                    </span>
+
+                </div>
+
+                <h4>
+                    Main Farm Warehouse
+                </h4>
+
+                <p>
+                    Seeds, tools and fertilizers
+                </p>
+
+                <div class="stackly-warehouse-capacity">
+
+                    <div>
+
+                        <span>
+                            Storage Used
+                        </span>
+
+                        <strong>
+                            78%
+                        </strong>
+
+                    </div>
+
+                    <div class="capacity-bar">
+                        <span style="width:78%;"></span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="stackly-warehouse-card">
+
+                <div class="stackly-warehouse-top">
+
+                    <div class="stackly-warehouse-icon">
+                        <i class="fa-solid fa-temperature-low"></i>
+                    </div>
+
+                    <span class="warehouse-active">
+                        Active
+                    </span>
+
+                </div>
+
+                <h4>
+                    Cold Storage <br>Unit
+                </h4>
+
+                <p>
+                    Fresh fruits and vegetables
+                </p>
+
+                <div class="stackly-warehouse-capacity">
+
+                    <div>
+
+                        <span>
+                            Storage Used
+                        </span>
+
+                        <strong>
+                            64%
+                        </strong>
+
+                    </div>
+
+                    <div class="capacity-bar">
+                        <span style="width:64%;"></span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="stackly-warehouse-card">
+
+                <div class="stackly-warehouse-top">
+
+                    <div class="stackly-warehouse-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                    <span class="warehouse-active">
+                        Active
+                    </span>
+
+                </div>
+
+                <h4>
+                    Harvest Storage <br>Center
+                </h4>
+
+                <p>
+                    Packed organic fresh produce
+                </p>
+
+                <div class="stackly-warehouse-capacity">
+
+                    <div>
+
+                        <span>
+                            Storage Used
+                        </span>
+
+                        <strong>
+                            86%
+                        </strong>
+
+                    </div>
+
+                    <div class="capacity-bar">
+                        <span style="width:86%;"></span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article class="stackly-warehouse-card">
+
+                <div class="stackly-warehouse-top">
+
+                    <div class="stackly-warehouse-icon">
+                        <i class="fa-solid fa-tractor"></i>
+                    </div>
+
+                    <span class="warehouse-active">
+                        Active
+                    </span>
+
+                </div>
+
+                <h4>
+                    Equipment Shed <br>Center
+                </h4>
+
+                <p>
+                    Tractors and farm equipment
+                </p>
+
+                <div class="stackly-warehouse-capacity">
+
+                    <div>
+
+                        <span>
+                            Storage Used
+                        </span>
+
+                        <strong>
+                            52%
+                        </strong>
+
+                    </div>
+
+                    <div class="capacity-bar">
+                        <span style="width:52%;"></span>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         RECENT INVENTORY MOVEMENTS
+    ====================================================== -->
+
+    <section class="stackly-inventory-movement-section">
+
+
+        <div class="stackly-inventory-section-heading">
+
+            <div>
+
+                <span>
+                    STOCK ACTIVITY
+                </span>
+
+                <h3>
+                    Recent Inventory Movements
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Full History
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-inventory-table-wrapper">
+
+            <table class="stackly-inventory-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Item
+                        </th>
+
+                        <th>
+                            Category
+                        </th>
+
+                        <th>
+                            Movement
+                        </th>
+
+                        <th>
+                            Quantity
+                        </th>
+
+                        <th>
+                            Location
+                        </th>
+
+                        <th>
+                            Date
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-table-item">
+
+                                <span>
+                                    <i class="fa-solid fa-seedling"></i>
+                                </span>
+
+                                <strong>
+                                    Rice Seeds
+                                </strong>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Seeds
+                        </td>
+
+                        <td>
+                            <span class="movement-in">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                Stock In
+                            </span>
+                        </td>
+
+                        <td>
+                            250 packs
+                        </td>
+
+                        <td>
+                            Warehouse A
+                        </td>
+
+                        <td>
+                            07 Sep 2026
+                        </td>
+
+                        <td>
+                            <span class="stackly-inventory-status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-table-item">
+
+                                <span>
+                                    <i class="fa-solid fa-flask"></i>
+                                </span>
+
+                                <strong>
+                                    Organic Compost
+                                </strong>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Fertilizer
+                        </td>
+
+                        <td>
+                            <span class="movement-out">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                Stock Out
+                            </span>
+                        </td>
+
+                        <td>
+                            480 kg
+                        </td>
+
+                        <td>
+                            Field B-02
+                        </td>
+
+                        <td>
+                            06 Sep 2026
+                        </td>
+
+                        <td>
+                            <span class="stackly-inventory-status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-table-item">
+
+                                <span>
+                                    <i class="fa-solid fa-box"></i>
+                                </span>
+
+                                <strong>
+                                    Packaging Boxes
+                                </strong>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Packaging
+                        </td>
+
+                        <td>
+                            <span class="movement-in">
+                                <i class="fa-solid fa-arrow-down"></i>
+                                Stock In
+                            </span>
+                        </td>
+
+                        <td>
+                            1,200 units
+                        </td>
+
+                        <td>
+                            Harvest Store
+                        </td>
+
+                        <td>
+                            05 Sep 2026
+                        </td>
+
+                        <td>
+                            <span class="stackly-inventory-status processing">
+                                Processing
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-table-item">
+
+                                <span>
+                                    <i class="fa-solid fa-wrench"></i>
+                                </span>
+
+                                <strong>
+                                    Farm Tools
+                                </strong>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Equipment
+                        </td>
+
+                        <td>
+                            <span class="movement-out">
+                                <i class="fa-solid fa-arrow-up"></i>
+                                Stock Out
+                            </span>
+                        </td>
+
+                        <td>
+                            42 units
+                        </td>
+
+                        <td>
+                            Field C-08
+                        </td>
+
+                        <td>
+                            04 Sep 2026
+                        </td>
+
+                        <td>
+                            <span class="stackly-inventory-status completed">
+                                Completed
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         INVENTORY CATEGORIES
+    ====================================================== -->
+
+    <section class="stackly-inventory-categories">
+
+
+        <div class="stackly-inventory-section-heading">
+
+            <div>
+
+                <span>
+                    STOCK CATALOG
+                </span>
+
+                <h3>
+                    Inventory Categories
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-category-grid">
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <span>
+                    Seeds
+                </span>
+
+                <strong>
+                    486 Items
+                </strong>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <span>
+                    Fertilizers
+                </span>
+
+                <strong>
+                    328 Items
+                </strong>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-tractor"></i>
+                </div>
+
+                <span>
+                    Equipment
+                </span>
+
+                <strong>
+                    214 Items
+                </strong>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <span>
+                    Packaging
+                </span>
+
+                <strong>
+                    652 Items
+                </strong>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-carrot"></i>
+                </div>
+
+                <span>
+                    Harvest
+                </span>
+
+                <strong>
+                    514 Items
+                </strong>
+
+            </a>
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-category-card"
+            >
+
+                <div>
+                    <i class="fa-solid fa-gears"></i>
+                </div>
+
+                <span>
+                    Spare Parts
+                </span>
+
+                <strong>
+                    292 Items
+                </strong>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         PROCUREMENT SUMMARY
+    ====================================================== -->
+
+    <section class="stackly-procurement-banner">
+
+
+        <div class="stackly-procurement-icon">
+
+            <i class="fa-solid fa-truck-fast"></i>
+
+        </div>
+
+
+        <div class="stackly-procurement-content">
+
+            <span>
+                PROCUREMENT OVERVIEW
+            </span>
+
+            <h3>
+                24 inventory orders are currently
+                <strong>in progress.</strong>
+            </h3>
+
+            <p>
+                Review supplier deliveries and replenish
+                low-stock items before they affect farm operations.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-procurement-progress">
+
+            <div class="stackly-procurement-progress-top">
+
+                <span>
+                    Orders Delivered
+                </span>
+
+                <strong>
+                    76%
+                </strong>
+
+            </div>
+
+            <div class="stackly-procurement-progress-bar">
+
+                <span style="width:76%;"></span>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="404-admin.html"
+            class="stackly-procurement-btn"
+        >
+            Review Orders
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

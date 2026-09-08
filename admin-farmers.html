@@ -1,0 +1,1802 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+ 
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     STACKLY ORGANIC FARMING
+     FARMERS MANAGEMENT PAGE
+========================================================= -->
+
+<section class="stackly-dashboard-content stackly-farmers-page">
+
+
+    <!-- =====================================================
+         FARMERS HERO
+    ====================================================== -->
+
+    <section class="farmers-hero" data-aos="fade-up">
+
+        <div class="farmers-hero-content">
+
+            <span class="farmers-hero-label">
+
+                <i class="fa-solid fa-people-group"></i>
+
+                FARMER COMMUNITY
+
+            </span>
+
+
+            <h2>
+
+                Growing together.
+
+                <span>Farming smarter.</span>
+
+            </h2>
+
+
+            <p>
+
+                Manage farmer profiles, monitor farm activities,
+                track productivity and build stronger connections
+                across your organic farming community.
+
+            </p>
+
+
+            <div class="farmers-hero-actions">
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-primary-btn"
+                >
+
+                    <i class="fa-solid fa-user-plus"></i>
+
+                    Add New Farmer
+
+                </a>
+
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-secondary-btn"
+                >
+
+                    <i class="fa-solid fa-file-export"></i>
+
+                    Export Farmers
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- HERO VISUAL -->
+
+        <div class="farmers-hero-visual">
+
+            <div class="farmers-circle circle-one"></div>
+
+            <div class="farmers-circle circle-two"></div>
+
+
+            <div class="farmers-community-icon">
+
+                <i class="fa-solid fa-people-group"></i>
+
+                <strong>
+                    248
+                </strong>
+
+                <span>
+                    Active Farmers
+                </span>
+
+            </div>
+
+
+            <div class="farmers-floating-card farmers-float-one">
+
+                <i class="fa-solid fa-seedling"></i>
+
+                <div>
+
+                    <strong>
+                        86%
+                    </strong>
+
+                    <span>
+                        Organic Adoption
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="farmers-floating-card farmers-float-two">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+                <div>
+
+                    <strong>
+                        +18%
+                    </strong>
+
+                    <span>
+                        Productivity
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- =====================================================
+         FEATURED FARMERS
+    ====================================================== -->
+
+    <!-- =========================================================
+     FARMER SPOTLIGHT / FEATURED FARMERS
+========================================================= -->
+
+<section class="farmers-featured-section">
+
+    <!-- =====================================================
+         SECTION HEADER
+    ====================================================== -->
+
+    <div class="farmers-section-header">
+
+        <div>
+
+            <span>
+                FARMER SPOTLIGHT
+            </span>
+
+            <h3>
+                Featured Farmers
+            </h3>
+
+        </div>
+
+
+        <a
+            href="404-admin.html"
+            class="farmers-view-link"
+        >
+
+            View All Farmers
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+
+    <!-- =====================================================
+         FARMER PROFILE GRID
+    ====================================================== -->
+
+    <div class="farmers-profile-grid">
+
+
+        <!-- =================================================
+             FARMER 1
+        ================================================== -->
+
+        <article
+            class="farmers-profile-card"
+            data-status="active"
+            data-crop="rice"
+            data-aos="fade-up"
+        >
+
+            <!-- FARMER IMAGE -->
+
+            <div class="farmers-profile-cover">
+
+                <img
+                    src="rice.webp"
+                    alt="Rice farming field"
+                    class="farmers-cover-image"
+                >
+
+                <div class="farmers-cover-overlay"></div>
+
+
+                <span class="farmers-profile-status active">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Active
+
+                </span>
+
+            </div>
+
+
+            <!-- PROFILE CONTENT -->
+
+            <div class="farmers-profile-body">
+
+
+                <!-- AVATAR -->
+
+                <div class="farmers-avatar green">
+
+                    <img
+                        src="Arjun Prakash.webp"
+                        alt="Arjun Kumar"
+                    >
+
+                </div>
+
+
+                <h4>
+                    Arjun Kumar
+                </h4>
+
+
+                <span class="farmers-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Thanjavur, Tamil Nadu
+
+                </span>
+
+
+                <!-- FARM INFORMATION -->
+
+                <div class="farmers-profile-info">
+
+                    <div>
+
+                        <span>
+                            FARM ID
+                        </span>
+
+                        <strong>
+                            FM-1024
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            FARM SIZE
+                        </span>
+
+                        <strong>
+                            12.5 Acres
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="farmers-crop-tag">
+
+                    <i class="fa-solid fa-wheat-awn"></i>
+
+                    Organic Rice
+
+                </div>
+
+
+                <!-- PROFILE BUTTON -->
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-profile-btn"
+                >
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARMER 2
+        ================================================== -->
+
+        <article
+            class="farmers-profile-card"
+            data-status="active"
+            data-crop="vegetables"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+
+            <!-- FARMER IMAGE -->
+
+            <div class="farmers-profile-cover">
+
+                <img
+                    src="vegetables.webp"
+                    alt="Organic vegetable farming"
+                    class="farmers-cover-image"
+                >
+
+                <div class="farmers-cover-overlay"></div>
+
+
+                <span class="farmers-profile-status active">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Active
+
+                </span>
+
+            </div>
+
+
+            <!-- PROFILE CONTENT -->
+
+            <div class="farmers-profile-body">
+
+
+                <!-- AVATAR -->
+
+                <div class="farmers-avatar blue">
+
+                    <img
+                        src="Meera Nair.webp"
+                        alt="Meena Devi"
+                    >
+
+                </div>
+
+
+                <h4>
+                    Meena Devi
+                </h4>
+
+
+                <span class="farmers-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Coimbatore, Tamil Nadu
+
+                </span>
+
+
+                <!-- FARM INFORMATION -->
+
+                <div class="farmers-profile-info">
+
+                    <div>
+
+                        <span>
+                            FARM ID
+                        </span>
+
+                        <strong>
+                            FM-1087
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            FARM SIZE
+                        </span>
+
+                        <strong>
+                            8.2 Acres
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="farmers-crop-tag">
+
+                    <i class="fa-solid fa-carrot"></i>
+
+                    Organic Vegetables
+
+                </div>
+
+
+                <!-- PROFILE BUTTON -->
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-profile-btn"
+                >
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARMER 3
+        ================================================== -->
+
+        <article
+            class="farmers-profile-card"
+            data-status="active"
+            data-crop="fruits"
+            data-aos="fade-up"
+            data-aos-delay="150"
+        >
+
+            <!-- FARMER IMAGE -->
+
+            <div class="farmers-profile-cover">
+
+                <img
+                    src="fruit.webp"
+                    alt="Fruit farming"
+                    class="farmers-cover-image"
+                >
+
+                <div class="farmers-cover-overlay"></div>
+
+
+                <span class="farmers-profile-status active">
+
+                    <i class="fa-solid fa-circle"></i>
+
+                    Active
+
+                </span>
+
+            </div>
+
+
+            <!-- PROFILE CONTENT -->
+
+            <div class="farmers-profile-body">
+
+
+                <!-- AVATAR -->
+
+                <div class="farmers-avatar orange">
+
+                    <img
+                        src="Karthik R.webp"
+                        alt="Ravi Prakash"
+                    >
+
+                </div>
+
+
+                <h4>
+                    Ravi Prakash
+                </h4>
+
+
+                <span class="farmers-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Salem, Tamil Nadu
+
+                </span>
+
+
+                <!-- FARM INFORMATION -->
+
+                <div class="farmers-profile-info">
+
+                    <div>
+
+                        <span>
+                            FARM ID
+                        </span>
+
+                        <strong>
+                            FM-1142
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            FARM SIZE
+                        </span>
+
+                        <strong>
+                            16.8 Acres
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="farmers-crop-tag">
+
+                    <i class="fa-solid fa-apple-whole"></i>
+
+                    Organic Fruits
+
+                </div>
+
+
+                <!-- PROFILE BUTTON -->
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-profile-btn"
+                >
+
+                    View Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARMER 4
+        ================================================== -->
+
+        <article
+            class="farmers-profile-card"
+            data-status="pending"
+            data-crop="spices"
+            data-aos="fade-up"
+            data-aos-delay="200"
+        >
+
+            <!-- FARMER IMAGE -->
+
+            <div class="farmers-profile-cover">
+
+                <img
+                    src="spices.webp"
+                    alt="Organic spice farming"
+                    class="farmers-cover-image"
+                >
+
+                <div class="farmers-cover-overlay"></div>
+
+
+                <span class="farmers-profile-status pending">
+
+                    <i class="fa-solid fa-clock"></i>
+
+                    Pending
+
+                </span>
+
+            </div>
+
+
+            <!-- PROFILE CONTENT -->
+
+            <div class="farmers-profile-body">
+
+
+                <!-- AVATAR -->
+
+                <div class="farmers-avatar purple">
+
+                    <img
+                        src="Suresh.webp"
+                        alt="Suresh Raj"
+                    >
+
+                </div>
+
+
+                <h4>
+                    Suresh Raj
+                </h4>
+
+
+                <span class="farmers-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+
+                    Erode, Tamil Nadu
+
+                </span>
+
+
+                <!-- FARM INFORMATION -->
+
+                <div class="farmers-profile-info">
+
+                    <div>
+
+                        <span>
+                            FARM ID
+                        </span>
+
+                        <strong>
+                            FM-1198
+                        </strong>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            FARM SIZE
+                        </span>
+
+                        <strong>
+                            6.4 Acres
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CROP -->
+
+                <div class="farmers-crop-tag">
+
+                    <i class="fa-solid fa-pepper-hot"></i>
+
+                    Organic Spices
+
+                </div>
+
+
+                <!-- PROFILE BUTTON -->
+
+                <a
+                    href="404-admin.html"
+                    class="farmers-profile-btn"
+                >
+
+                    Review Profile
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+        </article>
+
+
+    </div>
+
+</section>
+
+    <!-- =====================================================
+         FARMER PERFORMANCE + ACTIVITY
+    ====================================================== -->
+
+    <section class="farmers-main-grid">
+
+
+        <!-- =================================================
+             FARMER PERFORMANCE
+        ================================================== -->
+
+        <article
+            class="farmers-dashboard-card farmers-performance-card"
+            data-aos="fade-up"
+        >
+
+            <div class="farmers-card-header">
+
+                <div>
+
+                    <span>
+                        PERFORMANCE
+                    </span>
+
+                    <h3>
+                        Community Performance
+                    </h3>
+
+                </div>
+
+
+                <a href="404-admin.html">
+                    View Report
+                </a>
+
+            </div>
+
+
+            <div class="farmers-performance-content">
+
+
+                <div class="farmers-performance-score">
+
+                    <div class="farmers-score-circle">
+
+                        <strong>
+                            87%
+                        </strong>
+
+                        <span>
+                            Overall
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="farmers-performance-stats">
+
+                    <div>
+
+                        <span>
+                            Productivity
+                        </span>
+
+                        <strong>
+                            91%
+                        </strong>
+
+                        <div class="farmers-mini-progress">
+                            <span style="width:91%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Organic Adoption
+                        </span>
+
+                        <strong>
+                            86%
+                        </strong>
+
+                        <div class="farmers-mini-progress">
+                            <span style="width:86%;"></span>
+                        </div>
+
+                    </div>
+
+
+                    <div>
+
+                        <span>
+                            Water Efficiency
+                        </span>
+
+                        <strong>
+                            82%
+                        </strong>
+
+                        <div class="farmers-mini-progress">
+                            <span style="width:82%;"></span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             FARM ACTIVITY
+        ================================================== -->
+
+        <article
+            class="farmers-dashboard-card farmers-activity-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+
+            <div class="farmers-card-header">
+
+                <div>
+
+                    <span>
+                        RECENT ACTIVITY
+                    </span>
+
+                    <h3>
+                        Farmer Activity
+                    </h3>
+
+                </div>
+
+            </div>
+
+
+            <div class="farmers-activity-list">
+
+
+                <div class="farmers-activity-item">
+
+                    <div class="farmers-activity-icon green">
+
+                        <i class="fa-solid fa-seedling"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Arjun added a new crop
+                        </strong>
+
+                        <span>
+                            Organic Rice · Field A-12
+                        </span>
+
+                    </div>
+
+                    <small>
+                        12 min
+                    </small>
+
+                </div>
+
+
+                <div class="farmers-activity-item">
+
+                    <div class="farmers-activity-icon blue">
+
+                        <i class="fa-solid fa-droplet"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Meena updated irrigation
+                        </strong>
+
+                        <span>
+                            Field B-07 · 3.6K L used
+                        </span>
+
+                    </div>
+
+                    <small>
+                        38 min
+                    </small>
+
+                </div>
+
+
+                <div class="farmers-activity-item">
+
+                    <div class="farmers-activity-icon orange">
+
+                        <i class="fa-solid fa-box-open"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Ravi recorded a harvest
+                        </strong>
+
+                        <span>
+                            420 kg organic produce
+                        </span>
+
+                    </div>
+
+                    <small>
+                        1 hr
+                    </small>
+
+                </div>
+
+
+                <div class="farmers-activity-item">
+
+                    <div class="farmers-activity-icon purple">
+
+                        <i class="fa-solid fa-certificate"></i>
+
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Certification approved
+                        </strong>
+
+                        <span>
+                            Farm FM-1087
+                        </span>
+
+                    </div>
+
+                    <small>
+                        2 hrs
+                    </small>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER REGISTRATION PIPELINE
+    ====================================================== -->
+
+    <section
+        class="farmers-dashboard-card farmers-registration-section"
+        data-aos="fade-up"
+    >
+
+        <div class="farmers-card-header">
+
+            <div>
+
+                <span>
+                    ONBOARDING
+                </span>
+
+                <h3>
+                    Farmer Registration Pipeline
+                </h3>
+
+            </div>
+
+
+            <a
+                href="404-admin.html"
+                class="farmers-view-link"
+            >
+
+                Manage Applications
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="farmers-pipeline">
+
+
+            <div class="farmers-pipeline-step completed">
+
+                <div class="farmers-pipeline-icon">
+
+                    <i class="fa-solid fa-file-circle-check"></i>
+
+                </div>
+
+                <strong>
+                    Applications
+                </strong>
+
+                <span>
+                    38 received
+                </span>
+
+            </div>
+
+
+            <div class="farmers-pipeline-line"></div>
+
+
+            <div class="farmers-pipeline-step completed">
+
+                <div class="farmers-pipeline-icon">
+
+                    <i class="fa-solid fa-user-check"></i>
+
+                </div>
+
+                <strong>
+                    Verified
+                </strong>
+
+                <span>
+                    29 approved
+                </span>
+
+            </div>
+
+
+            <div class="farmers-pipeline-line"></div>
+
+
+            <div class="farmers-pipeline-step active">
+
+                <div class="farmers-pipeline-icon">
+
+                    <i class="fa-solid fa-house-farm"></i>
+
+                </div>
+
+                <strong>
+                    Farm Setup
+                </strong>
+
+                <span>
+                    21 in progress
+                </span>
+
+            </div>
+
+
+            <div class="farmers-pipeline-line"></div>
+
+
+            <div class="farmers-pipeline-step">
+
+                <div class="farmers-pipeline-icon">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                </div>
+
+                <strong>
+                    Activated
+                </strong>
+
+                <span>
+                    17 completed
+                </span>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER INSIGHTS
+    ====================================================== -->
+
+    <section class="farmers-insights-grid">
+
+
+        <!-- INSIGHT 1 -->
+
+        <article
+            class="farmers-insight-card"
+            data-aos="fade-up"
+        >
+
+            <div class="farmers-insight-icon green">
+
+                <i class="fa-solid fa-seedling"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    TOP CROP
+                </span>
+
+                <h3>
+                    Organic Rice
+                </h3>
+
+                <p>
+                    74 farmers are currently growing
+                    certified organic rice.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+
+                Explore Crop Data
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- INSIGHT 2 -->
+
+        <article
+            class="farmers-insight-card"
+            data-aos="fade-up"
+            data-aos-delay="100"
+        >
+
+            <div class="farmers-insight-icon blue">
+
+                <i class="fa-solid fa-droplet"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    WATER SAVING
+                </span>
+
+                <h3>
+                    18.4K Litres
+                </h3>
+
+                <p>
+                    Farmers collectively saved water
+                    through smart irrigation this week.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+
+                View Water Report
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
+
+
+
+        <!-- INSIGHT 3 -->
+
+        <article
+            class="farmers-insight-card"
+            data-aos="fade-up"
+            data-aos-delay="150"
+        >
+
+            <div class="farmers-insight-icon orange">
+
+                <i class="fa-solid fa-chart-line"></i>
+
+            </div>
+
+            <div>
+
+                <span>
+                    PRODUCTIVITY
+                </span>
+
+                <h3>
+                    +18.6%
+                </h3>
+
+                <p>
+                    Average farmer productivity has
+                    increased compared with last month.
+                </p>
+
+            </div>
+
+            <a href="404-admin.html">
+
+                View Performance
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FARMER SUPPORT BANNER
+    ====================================================== -->
+
+    <section
+        class="farmers-support-banner"
+        data-aos="fade-up"
+    >
+
+        <div class="farmers-support-icon">
+
+            <i class="fa-solid fa-headset"></i>
+
+        </div>
+
+
+        <div class="farmers-support-content">
+
+            <span>
+                FARMER SUPPORT
+            </span>
+
+            <h3>
+                Need help managing your farming community?
+            </h3>
+
+            <p>
+                Connect with farmers, resolve requests and
+                provide timely support from one central place.
+            </p>
+
+        </div>
+
+
+        <a
+            href="404-admin.html"
+            class="farmers-support-btn"
+        >
+
+            Open Support Center
+
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </section>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

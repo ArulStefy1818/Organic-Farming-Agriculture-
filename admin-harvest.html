@@ -1,0 +1,1463 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+ 
+
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     HARVESTING PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-harvest-page">
+
+
+    <!-- =====================================================
+         HARVEST HERO / INTRO
+    ====================================================== -->
+
+    <section class="stackly-harvest-hero">
+
+        <div class="stackly-harvest-hero-content">
+
+            <span class="stackly-harvest-eyebrow">
+                <i class="fa-solid fa-wheat-awn"></i>
+                HARVEST MANAGEMENT
+            </span>
+
+            <h2>
+                Fresh from the
+                <span>Field to Storage</span>
+            </h2>
+
+            <p>
+                Monitor crop harvesting, track field productivity,
+                manage harvest quality and keep your farm production
+                organized in one place.
+            </p>
+
+            <div class="stackly-harvest-actions">
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-harvest-primary-btn"
+                >
+                    <i class="fa-solid fa-plus"></i>
+                    Record New Harvest
+                </button></a>
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-harvest-secondary-btn"
+                >
+                    <i class="fa-solid fa-download"></i>
+                    Export Report
+                </button></a>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-harvest-hero-visual">
+
+            <div class="stackly-harvest-circle">
+
+                <i class="fa-solid fa-wheat-awn"></i>
+
+            </div>
+
+            <div class="stackly-harvest-floating-card">
+
+                <span>
+                    Harvest Efficiency
+                </span>
+
+                <strong>
+                    92.8%
+                </strong>
+
+                <small>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    8.4% this season
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         MAIN HARVEST GRID
+    ====================================================== -->
+
+    <section class="stackly-harvest-grid">
+
+
+        <!-- =================================================
+             TODAY'S HARVEST
+        ================================================== -->
+
+        <div class="stackly-harvest-panel stackly-today-harvest">
+
+            <div class="stackly-panel-heading">
+
+                <div>
+
+                    <span>
+                        DAILY PRODUCTION
+                    </span>
+
+                    <h3>
+                        Today's Harvest
+                    </h3>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="stackly-harvest-list">
+
+
+                <div class="stackly-harvest-item">
+
+                    <div class="stackly-crop-icon">
+                        <i class="fa-solid fa-carrot"></i>
+                    </div>
+
+                    <div class="stackly-harvest-item-info">
+
+                        <strong>
+                            Organic Carrots
+                        </strong>
+
+                        <span>
+                            Field A-04
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-harvest-weight">
+
+                        <strong>
+                            480 kg
+                        </strong>
+
+                        <span>
+                            Premium
+                        </span>
+
+                    </div>
+
+                    <span class="stackly-harvest-status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-harvest-item">
+
+                    <div class="stackly-crop-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="stackly-harvest-item-info">
+
+                        <strong>
+                            Spinach
+                        </strong>
+
+                        <span>
+                            Field B-02
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-harvest-weight">
+
+                        <strong>
+                            320 kg
+                        </strong>
+
+                        <span>
+                            Grade A
+                        </span>
+
+                    </div>
+
+                    <span class="stackly-harvest-status processing">
+                        Processing
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-harvest-item">
+
+                    <div class="stackly-crop-icon">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <div class="stackly-harvest-item-info">
+
+                        <strong>
+                            Wheat
+                        </strong>
+
+                        <span>
+                            Field C-08
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-harvest-weight">
+
+                        <strong>
+                            760 kg
+                        </strong>
+
+                        <span>
+                            Grade A+
+                        </span>
+
+                    </div>
+
+                    <span class="stackly-harvest-status completed">
+                        Completed
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-harvest-item">
+
+                    <div class="stackly-crop-icon">
+                        <i class="fa-solid fa-pepper-hot"></i>
+                    </div>
+
+                    <div class="stackly-harvest-item-info">
+
+                        <strong>
+                            Red Pepper
+                        </strong>
+
+                        <span>
+                            Field D-01
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-harvest-weight">
+
+                        <strong>
+                            210 kg
+                        </strong>
+
+                        <span>
+                            Grade A
+                        </span>
+
+                    </div>
+
+                    <span class="stackly-harvest-status pending">
+                        Pending
+                    </span>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             HARVEST QUALITY
+        ================================================== -->
+
+        <div class="stackly-harvest-panel stackly-quality-panel">
+
+            <div class="stackly-panel-heading">
+
+                <div>
+
+                    <span>
+                        QUALITY CONTROL
+                    </span>
+
+                    <h3>
+                        Harvest Quality
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-certificate"></i>
+
+            </div>
+
+
+            <div class="stackly-quality-score">
+
+                <div class="stackly-quality-circle">
+
+                    <strong>
+                        87%
+                    </strong>
+
+                    <span>
+                        Premium
+                    </span>
+
+                </div>
+
+                <div class="stackly-quality-summary">
+
+                    <div>
+
+                        <span>
+                            Grade A+
+                        </span>
+
+                        <strong>
+                            42%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Grade A
+                        </span>
+
+                        <strong>
+                            45%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Grade B
+                        </span>
+
+                        <strong>
+                            13%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-quality-bar">
+
+                <div
+                    class="stackly-quality-progress"
+                    style="width: 87%;"
+                ></div>
+
+            </div>
+
+
+            <p class="stackly-quality-note">
+
+                <i class="fa-solid fa-circle-check"></i>
+
+                Harvest quality is above the seasonal
+                farm target.
+
+            </p>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST PERFORMANCE
+    ====================================================== -->
+
+    <section class="stackly-harvest-performance">
+
+
+        <div class="stackly-performance-header">
+
+            <div>
+
+                <span>
+                    PRODUCTION ANALYTICS
+                </span>
+
+                <h3>
+                    Harvest Performance
+                </h3>
+
+            </div>
+
+
+            <div class="stackly-chart-filters">
+
+                <button class="active">
+                    Weekly
+                </button>
+
+                <button>
+                    Monthly
+                </button>
+
+                <button>
+                    Yearly
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-harvest-chart">
+
+            <div class="stackly-chart-y-axis">
+
+                <span>2,000</span>
+                <span>1,500</span>
+                <span>1,000</span>
+                <span>500</span>
+                <span>0</span>
+
+            </div>
+
+
+            <div class="stackly-chart-area">
+
+                <div class="stackly-chart-grid-line"></div>
+                <div class="stackly-chart-grid-line"></div>
+                <div class="stackly-chart-grid-line"></div>
+                <div class="stackly-chart-grid-line"></div>
+
+
+                <div class="stackly-chart-bars">
+
+                    <div class="stackly-chart-bar"
+                         style="height: 48%;">
+                        <span>Mon</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 67%;">
+                        <span>Tue</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 58%;">
+                        <span>Wed</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 82%;">
+                        <span>Thu</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 73%;">
+                        <span>Fri</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 91%;">
+                        <span>Sat</span>
+                    </div>
+
+                    <div class="stackly-chart-bar"
+                         style="height: 64%;">
+                        <span>Sun</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         UPCOMING HARVESTS
+    ====================================================== -->
+
+    <section class="stackly-upcoming-harvest-section">
+
+
+        <div class="stackly-section-title-row">
+
+            <div>
+
+                <span>
+                    FIELD PLANNING
+                </span>
+
+                <h3>
+                    Upcoming Harvests
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Calendar
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-upcoming-harvest-grid">
+
+
+            <article class="stackly-upcoming-card">
+
+                <div class="stackly-upcoming-date">
+
+                    <strong>
+                        12
+                    </strong>
+
+                    <span>
+                        SEP
+                    </span>
+
+                </div>
+
+                <div class="stackly-upcoming-content">
+
+                    <span class="crop-tag">
+                        VEGETABLE
+                    </span>
+
+                    <h4>
+                        Organic Tomatoes
+                    </h4>
+
+                    <p>
+                        Field A-07 · 620 kg estimated
+                    </p>
+
+                </div>
+
+                
+
+            </article>
+
+
+            <article class="stackly-upcoming-card">
+
+                <div class="stackly-upcoming-date">
+
+                    <strong>
+                        15
+                    </strong>
+
+                    <span>
+                        SEP
+                    </span>
+
+                </div>
+
+                <div class="stackly-upcoming-content">
+
+                    <span class="crop-tag">
+                        GRAIN
+                    </span>
+
+                    <h4>
+                        Organic Rice
+                    </h4>
+
+                    <p>
+                        Field B-09 · 1,240 kg estimated
+                    </p>
+
+                </div>
+
+                 
+
+            </article>
+
+
+            <article class="stackly-upcoming-card">
+
+                <div class="stackly-upcoming-date">
+
+                    <strong>
+                        19
+                    </strong>
+
+                    <span>
+                        SEP
+                    </span>
+
+                </div>
+
+                <div class="stackly-upcoming-content">
+
+                    <span class="crop-tag">
+                        FRUIT
+                    </span>
+
+                    <h4>
+                        Fresh Bananas
+                    </h4>
+
+                    <p>
+                        Field C-03 · 840 kg estimated
+                    </p>
+
+                </div>
+
+               
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST FIELD MONITORING
+    ====================================================== -->
+
+    <section class="stackly-field-monitoring">
+
+
+        <div class="stackly-section-title-row">
+
+            <div>
+
+                <span>
+                    LIVE FIELD STATUS
+                </span>
+
+                <h3>
+                    Harvest Readiness
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-field-table-wrapper">
+
+            <table class="stackly-field-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Field
+                        </th>
+
+                        <th>
+                            Crop
+                        </th>
+
+                        <th>
+                            Readiness
+                        </th>
+
+                        <th>
+                            Estimated Yield
+                        </th>
+
+                        <th>
+                            Harvest Date
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Field A-04
+                            </strong>
+                        </td>
+
+                        <td>
+                            Carrots
+                        </td>
+
+                        <td>
+
+                            <div class="stackly-readiness">
+
+                                <span>
+                                    96%
+                                </span>
+
+                                <div>
+                                    <i style="width:96%;"></i>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            480 kg
+                        </td>
+
+                        <td>
+                            Today
+                        </td>
+
+                        <td>
+                            <span class="stackly-table-status ready">
+                                Ready
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Field B-02
+                            </strong>
+                        </td>
+
+                        <td>
+                            Spinach
+                        </td>
+
+                        <td>
+
+                            <div class="stackly-readiness">
+
+                                <span>
+                                    82%
+                                </span>
+
+                                <div>
+                                    <i style="width:82%;"></i>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            320 kg
+                        </td>
+
+                        <td>
+                            10 Sep
+                        </td>
+
+                        <td>
+                            <span class="stackly-table-status soon">
+                                Soon
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Field C-08
+                            </strong>
+                        </td>
+
+                        <td>
+                            Wheat
+                        </td>
+
+                        <td>
+
+                            <div class="stackly-readiness">
+
+                                <span>
+                                    74%
+                                </span>
+
+                                <div>
+                                    <i style="width:74%;"></i>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            760 kg
+                        </td>
+
+                        <td>
+                            14 Sep
+                        </td>
+
+                        <td>
+                            <span class="stackly-table-status growing">
+                                Growing
+                            </span>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <strong>
+                                Field D-01
+                            </strong>
+                        </td>
+
+                        <td>
+                            Red Pepper
+                        </td>
+
+                        <td>
+
+                            <div class="stackly-readiness">
+
+                                <span>
+                                    91%
+                                </span>
+
+                                <div>
+                                    <i style="width:91%;"></i>
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            210 kg
+                        </td>
+
+                        <td>
+                            09 Sep
+                        </td>
+
+                        <td>
+                            <span class="stackly-table-status ready">
+                                Ready
+                            </span>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST SUMMARY FOOTER
+    ====================================================== -->
+
+    <section class="stackly-harvest-summary">
+
+
+        <div class="stackly-summary-icon">
+
+            <i class="fa-solid fa-tractor"></i>
+
+        </div>
+
+
+        <div class="stackly-summary-content">
+
+            <span>
+                THIS SEASON
+            </span>
+
+            <h3>
+                Your farm has completed
+                <strong>68%</strong>
+                of the planned harvest.
+            </h3>
+
+            <p>
+                Keep monitoring crop readiness to maintain
+                the expected harvesting schedule.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-summary-progress">
+
+            <div class="stackly-summary-progress-top">
+
+                <span>
+                    Season Progress
+                </span>
+
+                <strong>
+                    68%
+                </strong>
+
+            </div>
+
+            <div class="stackly-summary-progress-bar">
+
+                <span style="width:68%;"></span>
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

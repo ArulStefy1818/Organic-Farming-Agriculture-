@@ -1,0 +1,2934 @@
+/* =========================================================
+   STACKLY LOGIN PAGE
+   COMPLETE RESPONSIVE CSS
+   NO PAGE SCROLL + LARGER FONT + HOVER EFFECTS
+========================================================= */
+
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root {
+
+    --green: #587c00;
+    --green-dark: #476600;
+    --green-light: #6f9800;
+    --lime: #c8f72f;
+
+    --dark: #071630;
+    --text: #555b65;
+    --muted: #8b9098;
+
+    --border: #d6d9de;
+
+    --white: #ffffff;
+
+    --shadow:
+        0 8px 25px rgba(0, 0, 0, 0.08);
+
+    --transition:
+        0.3s ease;
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+body {
+
+    font-family: Arial, sans-serif;
+
+    background: #ffffff;
+
+    color: var(--dark);
+
+    overflow: hidden;
+}
+
+
+button,
+input {
+    font-family: inherit;
+}
+
+
+button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+
+/* =========================================================
+   MAIN LOGIN PAGE
+========================================================= */
+
+.stackly-login-page {
+
+    width: 100%;
+
+    height: 100vh;
+    height: 100svh;
+
+    display: flex;
+
+    overflow: hidden;
+
+    background: #ffffff;
+}
+
+
+/* =========================================================
+   LEFT FARMING IMAGE
+========================================================= */
+
+.stackly-login-left {
+
+    position: relative;
+
+    width: 53.7%;
+    height: 100vh;
+    height: 100svh;
+
+    overflow: hidden;
+
+    background-image:
+
+        linear-gradient(
+            rgba(0, 20, 5, 0.03),
+            rgba(0, 20, 5, 0.03)
+        ),
+
+        url("login-img.webp");
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+    transition:
+        background-position 0.6s ease;
+}
+
+
+/* =========================================================
+   LEFT IMAGE OVERLAY
+========================================================= */
+
+.stackly-login-left::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, 0.02) 0%,
+            rgba(0, 20, 5, 0.04) 50%,
+            rgba(0, 25, 5, 0.16) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 1;
+}
+
+/* =========================================================
+   TOP LEFT LEAF
+========================================================= */
+
+.stackly-leaf-1 {
+    top: 0;
+    left: 28px;
+    width: 100px;
+}
+
+
+/* =========================================================
+   SMALL LEFT LEAF
+========================================================= */
+
+.stackly-leaf-2 {
+    top: 85px;
+    left: 3px;
+    width: 60px;
+}
+
+/* =========================================================
+   LEFT CONTENT
+========================================================= */
+
+.stackly-login-left-content {
+
+    position: absolute;
+
+    left: 30px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    width: calc(100% - 60px);
+
+    max-width: 560px;
+
+    z-index: 5;
+
+    transition:
+        transform 0.4s ease;
+}
+
+
+.stackly-login-left-content:hover {
+
+    transform:
+        translateY(-50%)
+        translateX(3px);
+}
+
+
+/* =========================================================
+   LEFT HEADING
+========================================================= */
+
+.stackly-login-left-title {
+
+    font-size:
+        clamp(
+            48px,
+            4.8vw,
+            68px
+        );
+
+    line-height: 1.08;
+
+    font-weight: 600;
+
+    color: #ffffff;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+
+    text-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.22);
+
+    transition:
+        text-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-login-left-title span {
+
+    display: block;
+
+    color: var(--lime);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+.stackly-login-left-content:hover
+.stackly-login-left-title span {
+
+    color: #d5ff4d;
+
+    transform: translateX(6px);
+
+    text-shadow:
+        0 0 18px rgba(200, 247, 47, 0.25);
+}
+
+
+/* =========================================================
+   LEFT DESCRIPTION
+========================================================= */
+
+.stackly-login-left-description {
+
+    width: 100%;
+
+    max-width: 470px;
+
+    color: rgba(255, 255, 255, 0.95);
+
+    font-size: 16px;
+
+    line-height: 1.6;
+
+    text-shadow:
+        0 1px 6px rgba(0, 0, 0, 0.4);
+
+    transition:
+        opacity 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-login-left-content:hover
+.stackly-login-left-description {
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   RIGHT LOGIN AREA
+========================================================= */
+
+.stackly-login-right {
+
+    position: relative;
+
+    width: 46.3%;
+
+    height: 100vh;
+    height: 100svh;
+
+    background: #ffffff;
+
+    display: flex;
+
+    flex-direction: column;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   TOP HEADER
+========================================================= */
+
+.stackly-login-header {
+
+    width: 100%;
+
+    height: 78px;
+
+    flex-shrink: 0;
+
+    padding: 0 28px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    position: relative;
+
+    z-index: 20;
+}
+
+
+/* =========================================================
+   LOGO
+========================================================= */
+
+.stackly-login-logo {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    transition:
+        transform 0.3s ease,
+        opacity 0.3s ease,
+        filter 0.3s ease;
+}
+
+
+.stackly-login-logo:hover {
+
+    transform:
+        scale(1.06)
+        rotate(-1deg);
+
+    opacity: 0.92;
+
+    filter:
+        drop-shadow(
+            0 5px 8px
+            rgba(88, 124, 0, 0.18)
+        );
+}
+
+
+.stackly-login-logo img {
+
+    width: 118px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+}
+
+
+/* =========================================================
+   HEADER ACTIONS
+========================================================= */
+
+.stackly-login-header-actions {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+}
+
+
+.stackly-login-header-actions a {
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    color: #101010;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-login-header-actions a:hover {
+
+    color: var(--green);
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   SIGN UP BUTTON
+========================================================= */
+
+.stackly-login-signup {
+
+    display: flex !important;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 92px;
+
+    height: 42px;
+
+    padding: 0 20px;
+
+    border-radius: 30px;
+
+    background: var(--green);
+
+    color: #ffffff !important;
+
+    font-size: 13px !important;
+
+    box-shadow:
+        0 6px 16px rgba(75, 105, 0, 0.22);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.stackly-login-signup:hover {
+
+    background: var(--green-dark) !important;
+
+    transform:
+        translateY(-3px)
+        scale(1.04);
+
+    box-shadow:
+        0 11px 24px rgba(75, 105, 0, 0.30);
+}
+
+
+.stackly-login-signup:active {
+
+    transform:
+        translateY(0)
+        scale(0.98);
+}
+
+
+/* =========================================================
+   LOGIN CONTENT
+========================================================= */
+
+.stackly-login-content {
+
+    position: relative;
+
+    z-index: 10;
+
+    width: 100%;
+
+    max-width: 410px;
+
+    margin: auto;
+
+    padding: 15px 15px 25px;
+
+    flex-shrink: 1;
+}
+
+
+/* =========================================================
+   WELCOME HEADING
+========================================================= */
+
+.stackly-login-title {
+
+    margin-bottom: 9px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size: 38px;
+
+    line-height: 1.15;
+
+    font-style: italic;
+
+    font-weight: 600;
+
+    color: var(--green);
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease,
+        text-shadow 0.3s ease;
+}
+
+
+.stackly-login-title:hover {
+
+    color: var(--green-dark);
+
+    transform: translateX(4px);
+
+    text-shadow:
+        0 4px 12px rgba(88, 124, 0, 0.14);
+}
+
+
+/* =========================================================
+   SUBTITLE
+========================================================= */
+
+.stackly-login-subtitle {
+
+    margin-bottom: 18px;
+
+    color: #747a83;
+
+    font-size: 14px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   GOOGLE BUTTON
+========================================================= */
+
+.stackly-google-btn {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: 1px solid #7b8797;
+
+    border-radius: 7px;
+
+    background: #ffffff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 11px;
+
+    color: #1f2630;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+
+
+.stackly-google-btn i {
+
+    font-size: 18px;
+
+    color: #4285f4;
+
+    transition:
+        transform 0.3s ease;
+}
+
+
+.stackly-google-btn:hover {
+
+    border-color: var(--green);
+
+    background: #fbfdf7;
+
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 9px 22px rgba(0, 0, 0, 0.10);
+}
+
+
+.stackly-google-btn:hover i {
+
+    transform:
+        scale(1.18)
+        rotate(-5deg);
+}
+
+
+.stackly-google-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 3px 8px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================================================
+   DIVIDER
+========================================================= */
+
+.stackly-divider {
+
+    width: 100%;
+
+    margin: 17px 0;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    color: #777e87;
+
+    font-size: 12px;
+}
+
+
+.stackly-divider::before,
+.stackly-divider::after {
+
+    content: "";
+
+    height: 1px;
+
+    flex: 1;
+
+    background: #c8ccd1;
+
+    transition:
+        background 0.3s ease;
+}
+
+
+.stackly-divider:hover::before,
+.stackly-divider:hover::after {
+
+    background: var(--green);
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.stackly-login-form {
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   INPUT GROUP
+========================================================= */
+
+.stackly-input-group {
+
+    position: relative;
+
+    width: 100%;
+
+    margin-bottom: 13px;
+}
+
+
+.stackly-input-group > i {
+
+    position: absolute;
+
+    left: 15px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #a4a8ad;
+
+    font-size: 14px;
+
+    pointer-events: none;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+
+    z-index: 2;
+}
+
+
+/* =========================================================
+   NORMAL INPUT
+========================================================= */
+
+.stackly-input-group input {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding:
+        0 15px 0 42px;
+
+    border: 1px solid #d1d3d6;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    outline: none;
+
+    color: #333;
+
+    font-size: 14px;
+
+    transition:
+        border-color 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-input-group input::placeholder {
+
+    color: #aeb2b7;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.stackly-input-group input:hover {
+
+    border-color: #9ca5ae;
+
+    background: #fcfdfb;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+.stackly-input-group input:focus {
+
+    border-color: var(--green);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(88, 124, 0, 0.10);
+}
+
+
+.stackly-input-group:focus-within > i {
+
+    color: var(--green);
+
+    transform:
+        translateY(-50%)
+        scale(1.15);
+}
+
+
+.stackly-input-group input:focus::placeholder {
+
+    color: #c2c5c9;
+}
+
+
+/* =========================================================
+   CUSTOM ROLE DROPDOWN
+========================================================= */
+
+.stackly-role-group {
+
+    position: relative;
+
+    z-index: 50;
+
+    margin-bottom: 13px;
+}
+
+
+.stackly-custom-select {
+
+    position: relative;
+
+    width: 100%;
+}
+
+
+/* =========================================================
+   ROLE SELECT BUTTON
+========================================================= */
+
+.stackly-select-button {
+
+    width: 100%;
+
+    height: 46px;
+
+    padding:
+        0 15px 0 42px;
+
+    border: 1px solid #d1d3d6;
+
+    border-radius: 8px;
+
+    background: #ffffff;
+
+    color: #555b65;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    text-align: left;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    outline: none;
+
+    transition:
+        border-color 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-select-button:hover {
+
+    border-color: #9ca5ae;
+
+    background: #fcfdfb;
+
+    transform: translateY(-1px);
+
+    box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.04);
+}
+
+
+.stackly-select-button.active {
+
+    border-color: var(--green);
+
+    background: #ffffff;
+
+    box-shadow:
+        0 0 0 4px rgba(88, 124, 0, 0.10);
+}
+
+
+/* =========================================================
+   ROLE SELECTED TEXT
+========================================================= */
+
+#stacklySelectedRole {
+
+    color: #555b65;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+#stacklySelectedRole.selected {
+
+    color: #333333;
+
+    font-weight: 600;
+}
+
+
+/* =========================================================
+   ROLE ARROW
+========================================================= */
+
+.stackly-select-arrow {
+
+    position: static !important;
+
+    transform: none !important;
+
+    color: #8b9098 !important;
+
+    font-size: 11px !important;
+
+    pointer-events: none;
+
+    transition:
+        transform 0.3s ease,
+        color 0.3s ease;
+}
+
+
+.stackly-select-button.active
+.stackly-select-arrow {
+
+    transform:
+        rotate(180deg) !important;
+
+    color: var(--green) !important;
+}
+
+
+/* =========================================================
+   ROLE DROPDOWN
+========================================================= */
+
+.stackly-select-dropdown {
+
+    position: absolute;
+
+    top: calc(100% + 6px);
+
+    left: 0;
+
+    width: 100%;
+
+    padding: 5px;
+
+    background: #ffffff;
+
+    border: 1px solid #dfe2e5;
+
+    border-radius: 9px;
+
+    box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.12);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transform:
+        translateY(-8px)
+        scale(0.98);
+
+    transform-origin: top center;
+
+    transition:
+        opacity 0.25s ease,
+        visibility 0.25s ease,
+        transform 0.25s ease;
+
+    z-index: 100;
+}
+
+
+.stackly-select-dropdown.show {
+
+    opacity: 1;
+
+    visibility: visible;
+
+    transform:
+        translateY(0)
+        scale(1);
+}
+
+
+/* =========================================================
+   ROLE OPTION
+========================================================= */
+
+.stackly-role-option {
+
+    width: 100%;
+
+    min-height: 42px;
+
+    padding: 0 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 11px;
+
+    border-radius: 7px;
+
+    color: #555b65;
+
+    font-size: 13px;
+
+    font-weight: 500;
+
+    cursor: pointer;
+
+    transition:
+        background 0.25s ease,
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.stackly-role-option i {
+
+    position: static !important;
+
+    transform: none !important;
+
+    width: 20px;
+
+    color: #8b9098;
+
+    font-size: 14px;
+
+    transition:
+        color 0.25s ease,
+        transform 0.25s ease;
+}
+
+
+.stackly-role-option:hover {
+
+    background: #f2f7e7;
+
+    color: var(--green);
+
+    transform: translateX(3px);
+}
+
+
+.stackly-role-option:hover i {
+
+    color: var(--green);
+
+    transform:
+        scale(1.12);
+}
+
+
+.stackly-role-option.selected {
+
+    background:
+        rgba(88, 124, 0, 0.10);
+
+    color: var(--green);
+
+    font-weight: 600;
+}
+
+
+.stackly-role-option.selected i {
+
+    color: var(--green);
+}
+
+
+/* =========================================================
+   ROLE FOCUS
+========================================================= */
+
+.stackly-select-button:focus-visible {
+
+    outline:
+        3px solid rgba(88, 124, 0, 0.20);
+
+    outline-offset: 2px;
+}
+
+
+/* =========================================================
+   OPTIONS
+========================================================= */
+
+.stackly-login-options {
+
+    width: 100%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: -1px;
+
+    margin-bottom: 15px;
+}
+
+
+.stackly-remember {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    color: #4f555d;
+
+    font-size: 12px;
+
+    cursor: pointer;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+.stackly-remember:hover {
+
+    color: var(--green);
+}
+
+
+.stackly-remember input {
+
+    width: 14px;
+
+    height: 14px;
+
+    accent-color: var(--green);
+
+    cursor: pointer;
+
+    transition:
+        transform 0.2s ease;
+}
+
+
+.stackly-remember input:hover {
+
+    transform: scale(1.12);
+}
+
+
+.stackly-forgot {
+
+    color: #4f555d;
+
+    font-size: 12px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+.stackly-forgot:hover {
+
+    color: var(--green);
+
+    transform: translateX(-3px);
+}
+
+
+/* =========================================================
+   LOGIN BUTTON
+========================================================= */
+
+.stackly-login-btn {
+
+    width: 100%;
+
+    height: 46px;
+
+    border: none;
+
+    border-radius: 26px;
+
+    background: var(--green);
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 7px 17px rgba(76, 106, 0, 0.18);
+
+    transition:
+        background 0.3s ease,
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+
+.stackly-login-btn:hover {
+
+    background: var(--green-dark);
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        0 11px 25px rgba(76, 106, 0, 0.30);
+}
+
+
+.stackly-login-btn:active {
+
+    transform: translateY(0);
+
+    box-shadow:
+        0 4px 10px rgba(76, 106, 0, 0.18);
+}
+
+
+/* =========================================================
+   ACCOUNT TEXT
+========================================================= */
+
+.stackly-account-text {
+
+    margin-top: 14px;
+
+    text-align: center;
+
+    color: #68707a;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.stackly-account-text a {
+
+    color: var(--green);
+
+    font-weight: 600;
+
+    transition:
+        color 0.3s ease,
+        text-decoration 0.3s ease;
+}
+
+
+.stackly-account-text a:hover {
+
+    color: var(--green-dark);
+
+    text-decoration: underline;
+}
+
+
+/* =========================================================
+   DECORATIVE LEAVES
+========================================================= */
+
+.stackly-leaf {
+
+    position: absolute;
+
+    display: block;
+
+    z-index: 3;
+
+    pointer-events: none;
+
+    user-select: none;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+
+    animation:
+        stacklyLeafFloat
+        5s
+        ease-in-out
+        infinite;
+}
+
+
+/* =========================================================
+   TOP LEFT LEAF
+========================================================= */
+
+.stackly-leaf-1 {
+
+    top: 0;
+
+    left: 28px;
+
+    width: 62px;
+
+    animation-name:
+        stacklyLeafOne;
+}
+
+
+/* =========================================================
+   SMALL LEFT LEAF
+========================================================= */
+
+.stackly-leaf-2 {
+
+    top: 85px;
+
+    left: 3px;
+
+    width: 29px;
+
+    animation-name:
+        stacklyLeafTwo;
+
+    animation-delay:
+        -1.5s;
+}
+
+
+/* =========================================================
+   BOTTOM LEAF
+========================================================= */
+
+.stackly-leaf-3 {
+
+    left: 8px;
+
+    bottom: 67px;
+
+    width: 42px;
+
+    animation-name:
+        stacklyLeafThree;
+
+    animation-delay:
+        -2.5s;
+}
+
+
+/* =========================================================
+   BOTTOM SMALL LEAF
+========================================================= */
+
+.stackly-leaf-4 {
+
+    left: 28px;
+
+    bottom: 18px;
+
+    width: 27px;
+
+    animation-name:
+        stacklyLeafFour;
+
+    animation-delay:
+        -3.5s;
+}
+
+
+/* =========================================================
+   LEAF ANIMATIONS
+========================================================= */
+
+@keyframes stacklyLeafFloat {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-12deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(-7deg);
+    }
+}
+
+
+@keyframes stacklyLeafOne {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-12deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-8px)
+            rotate(-7deg);
+    }
+}
+
+
+@keyframes stacklyLeafTwo {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(25deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px)
+            rotate(31deg);
+    }
+}
+
+
+@keyframes stacklyLeafThree {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(-18deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-7px)
+            rotate(-11deg);
+    }
+}
+
+
+@keyframes stacklyLeafFour {
+
+    0%,
+    100% {
+
+        transform:
+            translateY(0)
+            rotate(28deg);
+    }
+
+    50% {
+
+        transform:
+            translateY(-6px)
+            rotate(34deg);
+    }
+}
+
+
+/* =========================================================
+   ROLE ERROR
+========================================================= */
+
+.stackly-role-error {
+
+    border-color: #d62828 !important;
+
+    animation:
+        stacklyRoleShake
+        0.35s
+        ease;
+}
+
+
+@keyframes stacklyRoleShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-3px);
+    }
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stackly-login-left {
+        width: 52%;
+    }
+
+
+    .stackly-login-right {
+        width: 48%;
+    }
+
+
+    .stackly-login-header {
+        padding: 0 22px;
+    }
+
+
+    .stackly-login-logo img {
+        width: 108px;
+    }
+
+
+    .stackly-login-content {
+
+        max-width: 380px;
+
+        padding-top: 10px;
+    }
+
+
+    .stackly-login-left-content {
+
+        left: 25px;
+
+        width: calc(100% - 50px);
+
+        max-width: 480px;
+    }
+
+
+    .stackly-login-left-title {
+
+        font-size: 48px;
+    }
+
+
+    .stackly-login-left-description {
+
+        font-size: 15px;
+    }
+}
+
+
+/* =========================================================
+   SMALL TABLET
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .stackly-login-left {
+        width: 50%;
+    }
+
+
+    .stackly-login-right {
+        width: 50%;
+    }
+
+
+    .stackly-login-header {
+
+        height: 70px;
+
+        padding: 0 18px;
+    }
+
+
+    .stackly-login-content {
+
+        max-width: 350px;
+
+        padding-top: 5px;
+
+        padding-bottom: 15px;
+    }
+
+
+    .stackly-login-left-content {
+
+        left: 22px;
+
+        width: calc(100% - 44px);
+
+        max-width: 420px;
+    }
+
+
+    .stackly-login-left-title {
+
+        font-size: 43px;
+
+        margin-bottom: 15px;
+    }
+
+
+    .stackly-login-left-description {
+
+        font-size: 14px;
+    }
+
+
+    .stackly-login-title {
+
+        font-size: 34px;
+    }
+
+
+    .stackly-login-subtitle {
+
+        font-size: 13px;
+
+        margin-bottom: 16px;
+    }
+
+
+    .stackly-google-btn,
+    .stackly-login-btn,
+    .stackly-select-button,
+    .stackly-input-group input {
+
+        height: 44px;
+    }
+
+
+    .stackly-input-group {
+
+        margin-bottom: 11px;
+    }
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    html,
+    body {
+
+        width: 100%;
+
+        height: 100%;
+
+        overflow: hidden;
+    }
+
+
+    .stackly-login-page {
+
+        width: 100%;
+
+        height: 100vh;
+        height: 100svh;
+
+        display: flex;
+
+        flex-direction: column;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       LEFT IMAGE
+    ===================================================== */
+
+    .stackly-login-left {
+
+        width: 100%;
+
+        height: 36vh;
+
+        min-height: 260px;
+
+        max-height: 330px;
+
+        flex-shrink: 0;
+
+        background-position:
+            center center;
+    }
+
+
+    /* =====================================================
+       LEFT CONTENT
+    ===================================================== */
+
+    .stackly-login-left-content {
+
+        left: 22px;
+
+        right: 22px;
+
+        top: auto;
+
+        bottom: 25px;
+
+        transform: none;
+
+        width: auto;
+
+        max-width: none;
+    }
+
+
+    .stackly-login-left-content:hover {
+
+        transform: none;
+    }
+
+
+    .stackly-login-left-title {
+
+        font-size: 40px;
+
+        line-height: 1.05;
+
+        letter-spacing: -1.2px;
+
+        margin-bottom: 12px;
+    }
+
+
+    .stackly-login-left-description {
+
+        max-width: 360px;
+
+        font-size: 13px;
+
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+       RIGHT
+    ===================================================== */
+
+    .stackly-login-right {
+
+        width: 100%;
+
+        height: 64vh;
+
+        min-height: 0;
+
+        flex: 1;
+
+        overflow: hidden;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .stackly-login-header {
+
+        width: 100%;
+
+        height: 62px;
+
+        flex-shrink: 0;
+
+        padding: 0 20px;
+    }
+
+
+    .stackly-login-logo img {
+
+        width: 100px;
+    }
+
+
+    .stackly-login-header-actions {
+
+        gap: 15px;
+    }
+
+
+    .stackly-login-header-actions a {
+
+        font-size: 11px;
+    }
+
+
+    .stackly-login-signup {
+
+        min-width: 76px;
+
+        height: 34px;
+
+        padding: 0 14px;
+
+        font-size: 11px !important;
+    }
+
+
+    /* =====================================================
+       LOGIN CONTENT
+    ===================================================== */
+
+    .stackly-login-content {
+
+        width: calc(100% - 40px);
+
+        max-width: 420px;
+
+        margin: auto;
+
+        padding: 8px 0 15px;
+
+        overflow: visible;
+    }
+
+
+    .stackly-login-title {
+
+        font-size: 30px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .stackly-login-subtitle {
+
+        font-size: 12px;
+
+        line-height: 1.4;
+
+        margin-bottom: 14px;
+    }
+
+
+    /* =====================================================
+       GOOGLE
+    ===================================================== */
+
+    .stackly-google-btn {
+
+        height: 42px;
+
+        font-size: 12px;
+
+        border-radius: 7px;
+    }
+
+
+    .stackly-google-btn i {
+
+        font-size: 16px;
+    }
+
+
+    /* =====================================================
+       DIVIDER
+    ===================================================== */
+
+    .stackly-divider {
+
+        margin: 13px 0;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       INPUTS
+    ===================================================== */
+
+    .stackly-input-group {
+
+        margin-bottom: 10px;
+    }
+
+
+    .stackly-input-group input {
+
+        height: 42px;
+
+        font-size: 12px;
+
+        padding-left: 39px;
+    }
+
+
+    .stackly-input-group > i {
+
+        left: 13px;
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       ROLE DROPDOWN
+    ===================================================== */
+
+    .stackly-role-group {
+
+        margin-bottom: 10px;
+
+        z-index: 100;
+    }
+
+
+    .stackly-select-button {
+
+        height: 42px;
+
+        font-size: 12px;
+
+        padding-left: 39px;
+    }
+
+
+    .stackly-role-option {
+
+        min-height: 40px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       OPTIONS
+    ===================================================== */
+
+    .stackly-login-options {
+
+        margin-bottom: 12px;
+    }
+
+
+    .stackly-remember,
+    .stackly-forgot {
+
+        font-size: 10px;
+    }
+
+
+    .stackly-remember input {
+
+        width: 12px;
+
+        height: 12px;
+    }
+
+
+    /* =====================================================
+       LOGIN BUTTON
+    ===================================================== */
+
+    .stackly-login-btn {
+
+        height: 42px;
+
+        font-size: 12px;
+    }
+
+
+    /* =====================================================
+       ACCOUNT
+    ===================================================== */
+
+    .stackly-account-text {
+
+        margin-top: 11px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       MOBILE LEAVES
+    ===================================================== */
+
+    .stackly-leaf-1 {
+
+        top: -3px;
+
+        left: 16px;
+
+        width: 55px;
+    }
+
+
+    .stackly-leaf-2 {
+
+        top: 70px;
+
+        left: 4px;
+
+        width: 25px;
+    }
+
+
+    .stackly-leaf-3 {
+
+        left: 8px;
+
+        bottom: 55px;
+
+        width: 38px;
+    }
+
+
+    .stackly-leaf-4 {
+
+        left: 25px;
+
+        bottom: 15px;
+
+        width: 23px;
+    }
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stackly-login-left {
+
+        height: 34vh;
+
+        min-height: 235px;
+
+        max-height: 285px;
+    }
+
+
+    .stackly-login-left-content {
+
+        left: 18px;
+
+        right: 18px;
+
+        bottom: 22px;
+    }
+
+
+    .stackly-login-left-title {
+
+        font-size: 34px;
+
+        line-height: 1.06;
+
+        letter-spacing: -0.8px;
+
+        margin-bottom: 9px;
+    }
+
+
+    .stackly-login-left-description {
+
+        max-width: 310px;
+
+        font-size: 11px;
+
+        line-height: 1.45;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .stackly-login-header {
+
+        height: 57px;
+
+        padding: 0 16px;
+    }
+
+
+    .stackly-login-logo img {
+
+        width: 92px;
+    }
+
+
+    .stackly-login-header-actions {
+
+        gap: 10px;
+    }
+
+
+    .stackly-login-header-actions a {
+
+        font-size: 10px;
+    }
+
+
+    .stackly-login-signup {
+
+        min-width: 67px;
+
+        height: 32px;
+
+        padding: 0 11px;
+
+        font-size: 10px !important;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .stackly-login-content {
+
+        width: calc(100% - 34px);
+
+        padding-top: 5px;
+
+        padding-bottom: 10px;
+    }
+
+
+    .stackly-login-title {
+
+        font-size: 27px;
+
+        margin-bottom: 6px;
+    }
+
+
+    .stackly-login-subtitle {
+
+        font-size: 10px;
+
+        margin-bottom: 11px;
+    }
+
+
+    /* =====================================================
+       GOOGLE
+    ===================================================== */
+
+    .stackly-google-btn {
+
+        height: 39px;
+
+        font-size: 10px;
+    }
+
+
+    .stackly-google-btn i {
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       DIVIDER
+    ===================================================== */
+
+    .stackly-divider {
+
+        margin: 11px 0;
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       INPUT
+    ===================================================== */
+
+    .stackly-input-group {
+
+        margin-bottom: 8px;
+    }
+
+
+    .stackly-input-group input {
+
+        height: 39px;
+
+        font-size: 10px;
+
+        padding-left: 37px;
+    }
+
+
+    .stackly-input-group > i {
+
+        left: 11px;
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
+
+    .stackly-select-button {
+
+        height: 39px;
+
+        font-size: 10px;
+
+        padding-left: 37px;
+    }
+
+
+    .stackly-role-option {
+
+        min-height: 38px;
+
+        font-size: 10px;
+    }
+
+
+    .stackly-role-option i {
+
+        font-size: 11px;
+    }
+
+
+    /* =====================================================
+       OPTIONS
+    ===================================================== */
+
+    .stackly-login-options {
+
+        margin-bottom: 10px;
+    }
+
+
+    .stackly-remember,
+    .stackly-forgot {
+
+        font-size: 9px;
+    }
+
+
+    .stackly-remember input {
+
+        width: 11px;
+
+        height: 11px;
+    }
+
+
+    /* =====================================================
+       LOGIN BUTTON
+    ===================================================== */
+
+    .stackly-login-btn {
+
+        height: 39px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       ACCOUNT
+    ===================================================== */
+
+    .stackly-account-text {
+
+        margin-top: 9px;
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       LEAVES
+    ===================================================== */
+
+    .stackly-leaf-1 {
+
+        width: 50px;
+
+        left: 12px;
+    }
+
+
+    .stackly-leaf-2 {
+
+        width: 22px;
+
+        top: 64px;
+    }
+
+
+    .stackly-leaf-3 {
+
+        width: 34px;
+
+        bottom: 50px;
+    }
+
+
+    .stackly-leaf-4 {
+
+        width: 20px;
+
+        bottom: 12px;
+    }
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .stackly-login-left {
+
+        height: 31vh;
+
+        min-height: 215px;
+
+        max-height: 250px;
+    }
+
+
+    .stackly-login-left-content {
+
+        bottom: 18px;
+    }
+
+
+    .stackly-login-left-title {
+
+        font-size: 29px;
+
+        letter-spacing: -0.5px;
+
+        margin-bottom: 7px;
+    }
+
+
+    .stackly-login-left-description {
+
+        font-size: 9px;
+
+        max-width: 265px;
+    }
+
+
+    /* =====================================================
+       HEADER
+    ===================================================== */
+
+    .stackly-login-header {
+
+        height: 52px;
+
+        padding: 0 13px;
+    }
+
+
+    .stackly-login-logo img {
+
+        width: 84px;
+    }
+
+
+    .stackly-login-header-actions {
+
+        gap: 7px;
+    }
+
+
+    .stackly-login-header-actions a {
+
+        font-size: 8px;
+    }
+
+
+    .stackly-login-signup {
+
+        min-width: 58px;
+
+        height: 29px;
+
+        padding: 0 8px;
+
+        font-size: 8px !important;
+    }
+
+
+    /* =====================================================
+       CONTENT
+    ===================================================== */
+
+    .stackly-login-content {
+
+        width: calc(100% - 26px);
+
+        padding-top: 3px;
+    }
+
+
+    .stackly-login-title {
+
+        font-size: 24px;
+
+        margin-bottom: 4px;
+    }
+
+
+    .stackly-login-subtitle {
+
+        font-size: 9px;
+
+        margin-bottom: 8px;
+    }
+
+
+    /* =====================================================
+       GOOGLE
+    ===================================================== */
+
+    .stackly-google-btn {
+
+        height: 36px;
+
+        font-size: 9px;
+    }
+
+
+    .stackly-google-btn i {
+
+        font-size: 13px;
+    }
+
+
+    /* =====================================================
+       DIVIDER
+    ===================================================== */
+
+    .stackly-divider {
+
+        margin: 8px 0;
+
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       INPUT
+    ===================================================== */
+
+    .stackly-input-group {
+
+        margin-bottom: 6px;
+    }
+
+
+    .stackly-input-group input {
+
+        height: 36px;
+
+        font-size: 9px;
+
+        padding-left: 34px;
+    }
+
+
+    .stackly-input-group > i {
+
+        left: 10px;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       ROLE
+    ===================================================== */
+
+    .stackly-select-button {
+
+        height: 36px;
+
+        font-size: 9px;
+
+        padding-left: 34px;
+    }
+
+
+    .stackly-role-option {
+
+        min-height: 35px;
+
+        font-size: 9px;
+    }
+
+
+    .stackly-role-option i {
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       OPTIONS
+    ===================================================== */
+
+    .stackly-login-options {
+
+        margin-bottom: 7px;
+    }
+
+
+    .stackly-remember,
+    .stackly-forgot {
+
+        font-size: 8px;
+    }
+
+
+    /* =====================================================
+       LOGIN
+    ===================================================== */
+
+    .stackly-login-btn {
+
+        height: 36px;
+
+        font-size: 9px;
+    }
+
+
+    /* =====================================================
+       ACCOUNT
+    ===================================================== */
+
+    .stackly-account-text {
+
+        font-size: 8px;
+
+        margin-top: 7px;
+    }
+}
+
+
+/* =========================================================
+   TOUCH DEVICES
+========================================================= */
+
+@media (hover: none) and (pointer: coarse) {
+
+    .stackly-login-signup:hover,
+    .stackly-login-btn:hover,
+    .stackly-google-btn:hover {
+
+        transform: none;
+    }
+
+
+    .stackly-login-logo:hover {
+
+        transform: none;
+
+        opacity: 1;
+
+        filter: none;
+    }
+
+
+    .stackly-login-header-actions a:hover {
+
+        transform: none;
+    }
+
+
+    .stackly-login-title:hover {
+
+        transform: none;
+
+        text-shadow: none;
+    }
+
+
+    .stackly-login-left-content:hover {
+
+        transform: none;
+    }
+
+
+    .stackly-login-left-content:hover
+    .stackly-login-left-title span {
+
+        transform: none;
+
+        text-shadow: none;
+    }
+
+
+    .stackly-login-left-content:hover
+    .stackly-login-left-description {
+
+        transform: none;
+    }
+
+
+    .stackly-input-group input:hover {
+
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    .stackly-select-button:hover {
+
+        transform: none;
+
+        box-shadow: none;
+    }
+
+
+    .stackly-role-option:hover {
+
+        transform: none;
+    }
+}
+
+
+/* =========================================================
+   ACCESSIBILITY
+========================================================= */
+
+.stackly-google-btn:focus-visible,
+.stackly-login-btn:focus-visible,
+.stackly-login-signup:focus-visible,
+.stackly-login-header-actions a:focus-visible,
+.stackly-forgot:focus-visible,
+.stackly-account-text a:focus-visible {
+
+    outline:
+        3px solid var(--green);
+
+    outline-offset: 3px;
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+
+        animation-duration:
+            0.01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:
+            auto !important;
+
+        transition-duration:
+            0.01ms !important;
+    }
+}
+
+/* =========================================================
+   FORM VALIDATION ERROR
+========================================================= */
+
+.stackly-field-error {
+
+    display: block;
+
+    width: 100%;
+
+    margin-top: 5px;
+
+    padding-left: 4px;
+
+    color: #d62828;
+
+    font-size: 12px;
+
+    font-weight: 600;
+
+    line-height: 1.3;
+
+}
+
+
+/* =========================================================
+   INPUT ERROR
+========================================================= */
+
+.stackly-input-error {
+
+    border-color: #d62828 !important;
+
+}
+
+
+/* =========================================================
+   ERROR SHAKE
+========================================================= */
+
+.stackly-error-shake {
+
+    animation: stacklyErrorShake 0.4s ease;
+
+}
+
+
+@keyframes stacklyErrorShake {
+
+    0% {
+        transform: translateX(0);
+    }
+
+    25% {
+        transform: translateX(-5px);
+    }
+
+    50% {
+        transform: translateX(5px);
+    }
+
+    75% {
+        transform: translateX(-4px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   ROLE ERROR
+========================================================= */
+
+.stackly-role-error {
+
+    margin-left: 0;
+
+}
+
+
+/* =========================================================
+   SELECTED ROLE
+========================================================= */
+
+.stackly-role-option.selected {
+
+    background: #c8f72f;
+
+    color: #071630;
+
+}
+
+
+/* =========================================================
+   MOBILE ERROR
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .stackly-field-error {
+
+        font-size: 11px;
+
+        margin-top: 3px;
+
+    }
+
+}
+
+/* =========================================================
+PASSWORD EYE ICON
+========================================================= */
+
+.stackly-password-toggle {
+position: absolute;
+
+
+right: 14px;
+top: 50%;
+
+transform: translateY(-50%);
+
+width: 32px;
+height: 32px;
+
+display: flex;
+align-items: center;
+justify-content: center;
+
+padding: 0;
+
+border: none;
+outline: none;
+
+background: transparent;
+
+color: #8b9098;
+
+cursor: pointer;
+
+font-size: 15px;
+
+transition:
+    color 0.3s ease,
+    transform 0.3s ease;
+
+
+}
+
+/* Hover */
+
+.stackly-password-toggle:hover {
+color: #587c00;
+
+
+transform:
+    translateY(-50%)
+    scale(1.1);
+
+
+}
+
+/* Active */
+
+.stackly-password-toggle:active {
+transform:
+translateY(-50%)
+scale(0.95);
+}
+
+/* Password input spacing */
+
+#stacklyPassword {
+padding-right: 48px;
+}
+
+/* Mobile */
+
+@media (max-width: 700px) {
+
+
+.stackly-password-toggle {
+    right: 10px;
+    width: 30px;
+    height: 30px;
+    font-size: 14px;
+}
+
+#stacklyPassword {
+    padding-right: 44px;
+}
+
+
+}
+

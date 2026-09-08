@@ -1,0 +1,1052 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     CERTIFICATION PAGE - ADDITIONAL UNIQUE SECTIONS
+========================================================= -->
+
+<section class="stackly-client-certification-extra-page">
+
+
+    <!-- =====================================================
+         CERTIFICATION PROGRESS
+    ====================================================== -->
+
+    <section class="stackly-client-certification-progress-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                CERTIFICATION JOURNEY
+            </span>
+
+            <h2>
+                Your farm is moving closer to full certification.
+            </h2>
+
+            <p>
+                Track every certification stage, review completed requirements,
+                and stay prepared for the next verification step.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-certification-progress-grid">
+
+
+            <article class="stackly-client-certification-progress-card">
+
+                <div class="stackly-client-certification-progress-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <span>
+                    APPLICATION
+                </span>
+
+                <h3>
+                    Completed
+                </h3>
+
+                <strong>
+                    100%
+                </strong>
+
+            </article>
+
+
+            <article class="stackly-client-certification-progress-card">
+
+                <div class="stackly-client-certification-progress-icon">
+                    <i class="fa-solid fa-list-check"></i>
+                </div>
+
+                <span>
+                    COMPLIANCE CHECK
+                </span>
+
+                <h3>
+                    In Progress
+                </h3>
+
+                <strong>
+                    82%
+                </strong>
+
+            </article>
+
+
+            <article class="stackly-client-certification-progress-card">
+
+                <div class="stackly-client-certification-progress-icon">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </div>
+
+                <span>
+                    FARM INSPECTION
+                </span>
+
+                <h3>
+                    Upcoming
+                </h3>
+
+                <strong>
+                    65%
+                </strong>
+
+            </article>
+
+
+            <article class="stackly-client-certification-progress-card">
+
+                <div class="stackly-client-certification-progress-icon">
+                    <i class="fa-solid fa-award"></i>
+                </div>
+
+                <span>
+                    FINAL APPROVAL
+                </span>
+
+                <h3>
+                    Pending
+                </h3>
+
+                <strong>
+                    42%
+                </strong>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         ORGANIC COMPLIANCE CHECKLIST
+    ====================================================== -->
+
+    <section class="stackly-client-certification-checklist-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                COMPLIANCE CHECKLIST
+            </span>
+
+            <h2>
+                Keep every certification requirement ready.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-certification-checklist-grid">
+
+
+            <article class="stackly-client-certification-check-item completed">
+
+                <div class="stackly-client-certification-check-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Organic Seed Usage
+                    </h3>
+
+                    <p>
+                        Approved seed sources are recorded and verified.
+                    </p>
+
+                </div>
+
+                <span>
+                    Complete
+                </span>
+
+            </article>
+
+
+            <article class="stackly-client-certification-check-item completed">
+
+                <div class="stackly-client-certification-check-icon">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Soil Management
+                    </h3>
+
+                    <p>
+                        Soil improvement and cultivation practices are documented.
+                    </p>
+
+                </div>
+
+                <span>
+                    Complete
+                </span>
+
+            </article>
+
+
+            <article class="stackly-client-certification-check-item progress">
+
+                <div class="stackly-client-certification-check-icon">
+                    <i class="fa-solid fa-rotate"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Input Records
+                    </h3>
+
+                    <p>
+                        Farm input records are being reviewed for compliance.
+                    </p>
+
+                </div>
+
+                <span>
+                    Reviewing
+                </span>
+
+            </article>
+
+
+            <article class="stackly-client-certification-check-item pending">
+
+                <div class="stackly-client-certification-check-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <div>
+
+                    <h3>
+                        Water Source Verification
+                    </h3>
+
+                    <p>
+                        Water source documentation is waiting for verification.
+                    </p>
+
+                </div>
+
+                <span>
+                    Pending
+                </span>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATION DOCUMENTS
+    ====================================================== -->
+
+    <section class="stackly-client-certification-documents-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                DOCUMENT CENTER
+            </span>
+
+            <h2>
+                Keep your farm records organized and accessible.
+            </h2>
+
+            <p>
+                Important certification documents can be reviewed before
+                inspections and renewal activities.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-certification-document-grid">
+
+
+            <article class="stackly-client-certification-document-card">
+
+                <div class="stackly-client-certification-document-icon">
+                    <i class="fa-solid fa-file-lines"></i>
+                </div>
+
+                <div class="stackly-client-certification-document-info">
+
+                    <span>
+                        FARM RECORD
+                    </span>
+
+                    <h3>
+                        Organic Farm Plan
+                    </h3>
+
+                    <small>
+                        Updated Sep 02, 2026
+                    </small>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-certification-document-link"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </article>
+
+
+            <article class="stackly-client-certification-document-card">
+
+                <div class="stackly-client-certification-document-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div class="stackly-client-certification-document-info">
+
+                    <span>
+                        CROP RECORD
+                    </span>
+
+                    <h3>
+                        Organic Crop Register
+                    </h3>
+
+                    <small>
+                        Updated Aug 28, 2026
+                    </small>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-certification-document-link"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </article>
+
+
+            <article class="stackly-client-certification-document-card">
+
+                <div class="stackly-client-certification-document-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <div class="stackly-client-certification-document-info">
+
+                    <span>
+                        INPUT RECORD
+                    </span>
+
+                    <h3>
+                        Approved Input Register
+                    </h3>
+
+                    <small>
+                        Updated Aug 24, 2026
+                    </small>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-certification-document-link"
+                >
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INSPECTION READINESS
+    ====================================================== -->
+
+    <section class="stackly-client-certification-inspection-section">
+
+        <div class="stackly-client-certification-inspection-content">
+
+            <span>
+                INSPECTION READINESS
+            </span>
+
+            <h2>
+                Your next farm inspection is approaching.
+            </h2>
+
+            <p>
+                Prepare your field records, input logs, soil reports,
+                and supporting documents before the inspection date.
+            </p>
+
+            <a
+                href="404-client.html"
+                class="stackly-client-certification-inspection-btn"
+            >
+                Prepare Inspection
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-client-certification-inspection-date">
+
+            <div class="stackly-client-certification-inspection-calendar">
+
+                <span>
+                    SEP
+                </span>
+
+                <strong>
+                    24
+                </strong>
+
+                <small>
+                    2026
+                </small>
+
+            </div>
+
+            <p>
+                Scheduled Farm Inspection
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CERTIFICATION VALIDITY
+    ====================================================== -->
+
+    <section class="stackly-client-certification-validity-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                CERTIFICATION STATUS
+            </span>
+
+            <h2>
+                Stay ahead of renewal and validity dates.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-certification-validity-grid">
+
+
+            <article class="stackly-client-certification-validity-card">
+
+                <span>
+                    CURRENT STATUS
+                </span>
+
+                <strong>
+                    Under Review
+                </strong>
+
+                <p>
+                    Certification documents are currently being evaluated.
+                </p>
+
+            </article>
+
+
+            <article class="stackly-client-certification-validity-card">
+
+                <span>
+                    CERTIFICATION SCORE
+                </span>
+
+                <strong>
+                    91%
+                </strong>
+
+                <p>
+                    Your current compliance readiness score is strong.
+                </p>
+
+            </article>
+
+
+            <article class="stackly-client-certification-validity-card">
+
+                <span>
+                    NEXT REVIEW
+                </span>
+
+                <strong>
+                    30 Days
+                </strong>
+
+                <p>
+                    Recommended review period before final submission.
+                </p>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

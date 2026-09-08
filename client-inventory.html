@@ -1,0 +1,1325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     INVENTORY PAGE - ADDITIONAL UNIQUE SECTIONS
+========================================================= -->
+
+<section class="stackly-client-inventory-extra-page">
+
+
+    <!-- =====================================================
+         INVENTORY VALUE SNAPSHOT
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-value-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                FINANCIAL SNAPSHOT
+            </span>
+
+            <h2>
+                Know where your stock value is going.
+            </h2>
+
+            <p>
+                Track the value of stored materials, harvested produce,
+                and essential farm supplies from one clear view.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-value-grid">
+
+
+            <!-- TOTAL STOCK VALUE -->
+
+            <article class="stackly-client-inventory-value-card">
+
+                <div class="stackly-client-inventory-value-icon">
+                    <i class="fa-solid fa-indian-rupee-sign"></i>
+                </div>
+
+                <div class="stackly-client-inventory-value-content">
+
+                    <span>
+                        TOTAL STOCK VALUE
+                    </span>
+
+                    <strong>
+                        ₹1.84L
+                    </strong>
+
+                    <small>
+                        +8.4% from last month
+                    </small>
+
+                </div>
+
+                <div class="stackly-client-inventory-value-chart">
+
+                    <span style="height:35%;"></span>
+                    <span style="height:48%;"></span>
+                    <span style="height:42%;"></span>
+                    <span style="height:59%;"></span>
+                    <span style="height:53%;"></span>
+                    <span style="height:70%;"></span>
+                    <span style="height:82%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- CROPS VALUE -->
+
+            <article class="stackly-client-inventory-value-card">
+
+                <div class="stackly-client-inventory-value-icon">
+                    <i class="fa-solid fa-wheat-awn"></i>
+                </div>
+
+                <div class="stackly-client-inventory-value-content">
+
+                    <span>
+                        HARVEST STOCK VALUE
+                    </span>
+
+                    <strong>
+                        ₹92.6K
+                    </strong>
+
+                    <small>
+                        51% of total inventory
+                    </small>
+
+                </div>
+
+                <div class="stackly-client-inventory-value-progress">
+
+                    <div>
+                        <span></span>
+                    </div>
+
+                    <strong>
+                        51%
+                    </strong>
+
+                </div>
+
+            </article>
+
+
+            <!-- INPUT VALUE -->
+
+            <article class="stackly-client-inventory-value-card">
+
+                <div class="stackly-client-inventory-value-icon">
+                    <i class="fa-solid fa-flask"></i>
+                </div>
+
+                <div class="stackly-client-inventory-value-content">
+
+                    <span>
+                        FARM INPUT VALUE
+                    </span>
+
+                    <strong>
+                        ₹37.8K
+                    </strong>
+
+                    <small>
+                        Seeds and organic inputs
+                    </small>
+
+                </div>
+
+                <div class="stackly-client-inventory-value-tag">
+                    Stable
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVENTORY ACTIVITY FLOW
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-flow-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                STOCK ACTIVITY FLOW
+            </span>
+
+            <h2>
+                Follow every item from arrival to use.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-flow">
+
+            <div class="stackly-client-inventory-flow-line"></div>
+
+
+            <!-- STEP 1 -->
+
+            <article class="stackly-client-inventory-flow-item">
+
+                <div class="stackly-client-inventory-flow-number">
+                    01
+                </div>
+
+                <div class="stackly-client-inventory-flow-icon">
+                    <i class="fa-solid fa-truck-ramp-box"></i>
+                </div>
+
+                <h3>
+                    Received
+                </h3>
+
+                <p>
+                    New materials arrive and are recorded in the inventory.
+                </p>
+
+                <strong>
+                    12 Items
+                </strong>
+
+            </article>
+
+
+            <!-- STEP 2 -->
+
+            <article class="stackly-client-inventory-flow-item">
+
+                <div class="stackly-client-inventory-flow-number">
+                    02
+                </div>
+
+                <div class="stackly-client-inventory-flow-icon">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <h3>
+                    Stored
+                </h3>
+
+                <p>
+                    Products are carefully assigned to the correct storage zone.
+                </p>
+
+                <strong>
+                    24 Items
+                </strong>
+
+            </article>
+
+
+            <!-- STEP 3 -->
+
+            <article class="stackly-client-inventory-flow-item">
+
+                <div class="stackly-client-inventory-flow-number">
+                    03
+                </div>
+
+                <div class="stackly-client-inventory-flow-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h3>
+                    In Use
+                </h3>
+
+                <p>
+                    Farm inputs are released for daily cultivation activities.
+                </p>
+
+                <strong>
+                    7 Items
+                </strong>
+
+            </article>
+
+
+            <!-- STEP 4 -->
+
+            <article class="stackly-client-inventory-flow-item">
+
+                <div class="stackly-client-inventory-flow-number">
+                    04
+                </div>
+
+                <div class="stackly-client-inventory-flow-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <h3>
+                    Completed
+                </h3>
+
+                <p>
+                    Harvest materials are prepared for packing and dispatch.
+                </p>
+
+                <strong>
+                    9 Batches
+                </strong>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVENTORY EXPIRY WATCH
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-expiry-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                EXPIRY WATCH
+            </span>
+
+            <h2>
+                Protect stock before it loses value.
+            </h2>
+
+            <p>
+                Monitor items that require earlier usage, inspection,
+                or controlled storage conditions.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-expiry-layout">
+
+
+            <!-- EXPIRY LIST -->
+
+            <div class="stackly-client-inventory-expiry-list">
+
+
+                <article class="stackly-client-inventory-expiry-item">
+
+                    <div class="stackly-client-inventory-expiry-icon">
+                        <i class="fa-solid fa-wheat-awn"></i>
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-info">
+
+                        <strong>
+                            Organic Rice Seeds
+                        </strong>
+
+                        <span>
+                            Batch RS-204
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-date">
+
+                        <small>
+                            Review Date
+                        </small>
+
+                        <strong>
+                            Sep 18
+                        </strong>
+
+                    </div>
+
+                    <span class="stackly-client-inventory-expiry-badge">
+                        10 Days
+                    </span>
+
+                </article>
+
+
+                <article class="stackly-client-inventory-expiry-item">
+
+                    <div class="stackly-client-inventory-expiry-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-info">
+
+                        <strong>
+                            Neem Organic Mix
+                        </strong>
+
+                        <span>
+                            Batch NM-118
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-date">
+
+                        <small>
+                            Review Date
+                        </small>
+
+                        <strong>
+                            Sep 23
+                        </strong>
+
+                    </div>
+
+                    <span class="stackly-client-inventory-expiry-badge">
+                        15 Days
+                    </span>
+
+                </article>
+
+
+                <article class="stackly-client-inventory-expiry-item">
+
+                    <div class="stackly-client-inventory-expiry-icon">
+                        <i class="fa-solid fa-box"></i>
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-info">
+
+                        <strong>
+                            Storage Covers
+                        </strong>
+
+                        <span>
+                            Batch SC-091
+                        </span>
+
+                    </div>
+
+                    <div class="stackly-client-inventory-expiry-date">
+
+                        <small>
+                            Inspection
+                        </small>
+
+                        <strong>
+                            Oct 02
+                        </strong>
+
+                    </div>
+
+                    <span class="stackly-client-inventory-expiry-badge safe">
+                        24 Days
+                    </span>
+
+                </article>
+
+
+            </div>
+
+
+            <!-- EXPIRY SUMMARY -->
+
+            <div class="stackly-client-inventory-expiry-summary">
+
+                <div class="stackly-client-inventory-expiry-summary-icon">
+
+                    <i class="fa-solid fa-hourglass-half"></i>
+
+                </div>
+
+                <span>
+                    INVENTORY PROTECTION
+                </span>
+
+                <strong>
+                    94%
+                </strong>
+
+                <p>
+                    Most stored materials are within their recommended
+                    usage and inspection period.
+                </p>
+
+                <div class="stackly-client-inventory-expiry-summary-bar">
+
+                    <span></span>
+
+                </div>
+
+                <small>
+                    3 items need attention
+                </small>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         STOCK FORECAST
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-forecast-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                STOCK FORECAST
+            </span>
+
+            <h2>
+                See what your farm will need next.
+            </h2>
+
+            <p>
+                Forecast upcoming requirements using current stock,
+                seasonal demand, and recent farm activity.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-forecast-grid">
+
+
+            <!-- FORECAST CARD 1 -->
+
+            <article class="stackly-client-inventory-forecast-card">
+
+                <div class="stackly-client-inventory-forecast-top">
+
+                    <span>
+                        NEXT 7 DAYS
+                    </span>
+
+                    <i class="fa-solid fa-calendar-week"></i>
+
+                </div>
+
+                <h3>
+                    Seed Requirement
+                </h3>
+
+                <strong>
+                    18 kg
+                </strong>
+
+                <p>
+                    Expected requirement for upcoming sowing activity.
+                </p>
+
+                <div class="stackly-client-inventory-forecast-bar">
+
+                    <span style="width:72%;"></span>
+
+                </div>
+
+                <small>
+                    72% already available
+                </small>
+
+            </article>
+
+
+            <!-- FORECAST CARD 2 -->
+
+            <article class="stackly-client-inventory-forecast-card">
+
+                <div class="stackly-client-inventory-forecast-top">
+
+                    <span>
+                        NEXT 14 DAYS
+                    </span>
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                </div>
+
+                <h3>
+                    Organic  Supplies
+                </h3>
+
+                <strong>
+                    42 kg
+                </strong>
+
+                <p>
+                    Estimated requirement based on field activity.
+                </p>
+
+                <div class="stackly-client-inventory-forecast-bar">
+
+                    <span style="width:58%;"></span>
+
+                </div>
+
+                <small>
+                    58% currently available
+                </small>
+
+            </article>
+
+
+            <!-- FORECAST CARD 3 -->
+
+            <article class="stackly-client-inventory-forecast-card">
+
+                <div class="stackly-client-inventory-forecast-top">
+
+                    <span>
+                        NEXT 30 DAYS
+                    </span>
+
+                    <i class="fa-solid fa-calendar"></i>
+
+                </div>
+
+                <h3>
+                    Packing Materials
+                </h3>
+
+                <strong>
+                    620 Units
+                </strong>
+
+                <p>
+                    Estimated requirement for harvesting and dispatch.
+                </p>
+
+                <div class="stackly-client-inventory-forecast-bar">
+
+                    <span style="width:41%;"></span>
+
+                </div>
+
+                <small>
+                    41% currently available
+                </small>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SUPPLIER PERFORMANCE
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-supplier-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                SUPPLIER PERFORMANCE
+            </span>
+
+            <h2>
+                Keep your sourcing reliable.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-supplier-grid">
+
+
+            <article class="stackly-client-inventory-supplier-card">
+
+                <div class="stackly-client-inventory-supplier-rank">
+                    01
+                </div>
+
+                <div class="stackly-client-inventory-supplier-info">
+
+                    <h3>
+                        Green <br> Earth
+                    </h3>
+
+                    <span>
+                        Seeds & Organic Inputs
+                    </span>
+
+                </div>
+
+                <div class="stackly-client-inventory-supplier-score">
+                    <strong>
+                        96%
+                    </strong>
+
+                    <small>
+                        Reliability
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="stackly-client-inventory-supplier-card">
+
+                <div class="stackly-client-inventory-supplier-rank">
+                    02
+                </div>
+
+                <div class="stackly-client-inventory-supplier-info">
+
+                    <h3>
+                        FarmCare Supplies
+                    </h3>
+
+                    <span>
+                        Containers & Tools
+                    </span>
+
+                </div>
+
+                <div class="stackly-client-inventory-supplier-score">
+                    <strong>
+                        91%
+                    </strong>
+
+                    <small>
+                        Reliability
+                    </small>
+                </div>
+
+            </article>
+
+
+            <article class="stackly-client-inventory-supplier-card">
+
+                <div class="stackly-client-inventory-supplier-rank">
+                    03
+                </div>
+
+                <div class="stackly-client-inventory-supplier-info">
+
+                    <h3>
+                        Natural Harvest
+                    </h3>
+
+                    <span>
+                        Packing Materials
+                    </span>
+
+                </div>
+
+                <div class="stackly-client-inventory-supplier-score">
+                    <strong>
+                        87%
+                    </strong>
+
+                    <small>
+                        Reliability
+                    </small>
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         INVENTORY ACTION CENTER
+    ====================================================== -->
+
+    <section class="stackly-client-inventory-action-section">
+
+        <div class="stackly-client-inventory-action-content">
+
+            <span>
+                INVENTORY ACTION CENTER
+            </span>
+
+            <h2>
+                Keep every farm resource ready.
+            </h2>
+
+            <p>
+                Review stock forecasts, inspect sensitive materials,
+                and prepare upcoming requirements before they become urgent.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-inventory-action-actions">
+
+            <a
+                href="404-client.html"
+                class="stackly-client-inventory-action-btn primary"
+            >
+                <i class="fa-solid fa-plus"></i>
+                Add Stock
+            </a>
+
+            <a
+                href="404-client.html"
+                class="stackly-client-inventory-action-btn secondary"
+            >
+                <i class="fa-solid fa-file-export"></i>
+                Export Inventory
+            </a>
+
+        </div>
+
+    </section>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

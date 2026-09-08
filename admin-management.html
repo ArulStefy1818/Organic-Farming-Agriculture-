@@ -1,0 +1,2199 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+ 
+    <!-- =====================================================
+         CROP MANAGEMENT CONTENT
+    ====================================================== -->
+
+    <section class="stackly-dashboard-content">
+
+
+        <!-- =================================================
+             PAGE INTRO
+        ================================================== -->
+
+        <section class="crop-management-hero">
+
+            <div class="crop-hero-content">
+
+                <span class="crop-hero-label">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                    CROP MANAGEMENT
+
+                </span>
+
+
+                <h2>
+
+                    Grow smarter.
+                    <span>
+                        Harvest better.
+                    </span>
+
+                </h2>
+
+
+                <p>
+
+                    Monitor every crop, track field health,
+                    manage growth stages and prepare your
+                    upcoming organic harvest from one place.
+
+                </p>
+
+
+                <div class="crop-hero-actions">
+
+                    <a
+                        href="404-admin.html"
+                        class="crop-primary-btn"
+                    >
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add New Crop
+
+                    </a>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="crop-secondary-btn"
+                    >
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                        View Reports
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="crop-hero-visual">
+
+                <div class="crop-orbit orbit-one"></div>
+
+                <div class="crop-orbit orbit-two"></div>
+
+
+                <div class="crop-main-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+
+                <div class="crop-floating-card card-top">
+
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+
+                    <div>
+
+                        <strong>
+                            +12.6%
+                        </strong>
+
+                        <span>
+                            Growth
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="crop-floating-card card-bottom">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                    <div>
+
+                        <strong>
+                            94%
+                        </strong>
+
+                        <span>
+                            Crop Health
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+        <!-- =================================================
+             CROP PERFORMANCE + GROWTH STAGE
+        ================================================== -->
+
+        <section class="crop-main-grid">
+
+
+            <!-- CROP PERFORMANCE -->
+
+            <article class="crop-dashboard-card crop-performance-card">
+
+                <div class="crop-card-header">
+
+                    <div>
+
+                        <span>
+                            PERFORMANCE
+                        </span>
+
+                        <h3>
+                            Crop Performance
+                        </h3>
+
+                    </div>
+
+
+                    <select class="crop-filter">
+
+                        <option>
+                            This Season
+                        </option>
+
+                        <option>
+                            This Year
+                        </option>
+
+                        <option>
+                            Last Year
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="crop-performance-content">
+
+
+                    <div class="crop-performance-score">
+
+                        <div class="crop-score-circle">
+
+                            <div>
+
+                                <strong>
+                                    91%
+                                </strong>
+
+                                <span>
+                                    Excellent
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <p>
+                            Overall crop performance
+                            across all active fields.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="crop-performance-bars">
+
+
+                        <div class="crop-bar-item">
+
+                            <div>
+
+                                <span>
+                                    Rice
+                                </span>
+
+                                <strong>
+                                    96%
+                                </strong>
+
+                            </div>
+
+                            <div class="crop-bar">
+
+                                <span style="width:96%;"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="crop-bar-item">
+
+                            <div>
+
+                                <span>
+                                    Carrot
+                                </span>
+
+                                <strong>
+                                    88%
+                                </strong>
+
+                            </div>
+
+                            <div class="crop-bar">
+
+                                <span style="width:88%;"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="crop-bar-item">
+
+                            <div>
+
+                                <span>
+                                    Tomato
+                                </span>
+
+                                <strong>
+                                    92%
+                                </strong>
+
+                            </div>
+
+                            <div class="crop-bar">
+
+                                <span style="width:92%;"></span>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <div class="crop-bar-item">
+
+                            <div>
+
+                                <span>
+                                    Chilli
+                                </span>
+
+                                <strong>
+                                    84%
+                                </strong>
+
+                            </div>
+
+                            <div class="crop-bar">
+
+                                <span style="width:84%;"></span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- GROWTH STAGES -->
+
+            <article class="crop-dashboard-card growth-stage-card">
+
+                <div class="crop-card-header">
+
+                    <div>
+
+                        <span>
+                            FIELD STATUS
+                        </span>
+
+                        <h3>
+                            Growth Stages
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="growth-stage-list">
+
+
+                    <div class="growth-stage">
+
+                        <div class="growth-stage-icon seed">
+
+                            <i class="fa-solid fa-seedling"></i>
+
+                        </div>
+
+                        <div class="growth-stage-info">
+
+                            <strong>
+                                Seedling
+                            </strong>
+
+                            <span>
+                                28 crops
+                            </span>
+
+                        </div>
+
+                        <strong class="growth-number">
+                            15%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="growth-stage">
+
+                        <div class="growth-stage-icon growing">
+
+                            <i class="fa-solid fa-leaf"></i>
+
+                        </div>
+
+                        <div class="growth-stage-info">
+
+                            <strong>
+                                Growing
+                            </strong>
+
+                            <span>
+                                84 crops
+                            </span>
+
+                        </div>
+
+                        <strong class="growth-number">
+                            45%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="growth-stage">
+
+                        <div class="growth-stage-icon flowering">
+
+                            <i class="fa-solid fa-spa"></i>
+
+                        </div>
+
+                        <div class="growth-stage-info">
+
+                            <strong>
+                                Flowering
+                            </strong>
+
+                            <span>
+                                42 crops
+                            </span>
+
+                        </div>
+
+                        <strong class="growth-number">
+                            23%
+                        </strong>
+
+                    </div>
+
+
+
+                    <div class="growth-stage">
+
+                        <div class="growth-stage-icon harvest">
+
+                            <i class="fa-solid fa-basket-shopping"></i>
+
+                        </div>
+
+                        <div class="growth-stage-info">
+
+                            <strong>
+                                Harvest Ready
+                            </strong>
+
+                            <span>
+                                32 crops
+                            </span>
+
+                        </div>
+
+                        <strong class="growth-number">
+                            17%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             FIELD HEALTH OVERVIEW
+        ================================================== -->
+
+        <section class="crop-dashboard-card field-health-section">
+
+
+            <div class="crop-card-header">
+
+                <div>
+
+                    <span>
+                        FIELD MONITORING
+                    </span>
+
+                    <h3>
+                        Field Health Overview
+                    </h3>
+
+                </div>
+
+
+                <a
+                    href="404-admin.html"
+                    class="crop-view-link"
+                >
+
+                    View All Fields
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </div>
+
+
+
+            <div class="field-health-grid">
+
+
+                <!-- FIELD 1 -->
+
+                <div class="field-health-card">
+
+                    <div class="field-card-top">
+
+                        <div class="field-icon">
+
+                            <i class="fa-solid fa-wheat-awn"></i>
+
+                        </div>
+
+                        <span class="field-status healthy">
+                            Healthy
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Field A-12
+                    </h4>
+
+                    <span class="field-crop">
+                        Organic Rice
+                    </span>
+
+
+                    <div class="field-progress">
+
+                        <div>
+
+                            <span>
+                                Crop Health
+                            </span>
+
+                            <strong>
+                                94%
+                            </strong>
+
+                        </div>
+
+                        <div class="field-progress-bar">
+
+                            <span style="width:94%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field-meta">
+
+                        <span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            12.4 Acres
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-droplet"></i>
+                            91%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FIELD 2 -->
+
+                <div class="field-health-card">
+
+                    <div class="field-card-top">
+
+                        <div class="field-icon carrot">
+
+                            <i class="fa-solid fa-carrot"></i>
+
+                        </div>
+
+                        <span class="field-status healthy">
+                            Healthy
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Field B-07
+                    </h4>
+
+                    <span class="field-crop">
+                        Organic Carrot
+                    </span>
+
+
+                    <div class="field-progress">
+
+                        <div>
+
+                            <span>
+                                Crop Health
+                            </span>
+
+                            <strong>
+                                88%
+                            </strong>
+
+                        </div>
+
+                        <div class="field-progress-bar">
+
+                            <span style="width:88%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field-meta">
+
+                        <span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            8.7 Acres
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-droplet"></i>
+                            86%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FIELD 3 -->
+
+                <div class="field-health-card">
+
+                    <div class="field-card-top">
+
+                        <div class="field-icon tomato">
+
+                            <i class="fa-solid fa-apple-whole"></i>
+
+                        </div>
+
+                        <span class="field-status attention">
+                            Attention
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Field C-03
+                    </h4>
+
+                    <span class="field-crop">
+                        Organic Tomato
+                    </span>
+
+
+                    <div class="field-progress">
+
+                        <div>
+
+                            <span>
+                                Crop Health
+                            </span>
+
+                            <strong>
+                                72%
+                            </strong>
+
+                        </div>
+
+                        <div class="field-progress-bar">
+
+                            <span style="width:72%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field-meta">
+
+                        <span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            6.2 Acres
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-droplet"></i>
+                            78%
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FIELD 4 -->
+
+                <div class="field-health-card">
+
+                    <div class="field-card-top">
+
+                        <div class="field-icon chilli">
+
+                            <i class="fa-solid fa-pepper-hot"></i>
+
+                        </div>
+
+                        <span class="field-status healthy">
+                            Healthy
+                        </span>
+
+                    </div>
+
+
+                    <h4>
+                        Field D-09
+                    </h4>
+
+                    <span class="field-crop">
+                        Organic Chilli
+                    </span>
+
+
+                    <div class="field-progress">
+
+                        <div>
+
+                            <span>
+                                Crop Health
+                            </span>
+
+                            <strong>
+                                89%
+                            </strong>
+
+                        </div>
+
+                        <div class="field-progress-bar">
+
+                            <span style="width:89%;"></span>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="field-meta">
+
+                        <span>
+                            <i class="fa-solid fa-ruler-combined"></i>
+                            9.8 Acres
+                        </span>
+
+                        <span>
+                            <i class="fa-solid fa-droplet"></i>
+                            93%
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             UPCOMING HARVEST + FARM INSIGHTS
+        ================================================== -->
+
+        <section class="crop-bottom-grid">
+
+
+            <!-- UPCOMING HARVEST -->
+
+            <article class="crop-dashboard-card harvest-planner">
+
+                <div class="crop-card-header">
+
+                    <div>
+
+                        <span>
+                            UPCOMING
+                        </span>
+
+                        <h3>
+                            Harvest Planner
+                        </h3>
+
+                    </div>
+
+
+                    <a
+                        href="404-admin.html"
+                        class="crop-view-link"
+                    >
+
+                        View Plan
+
+                    </a>
+
+                </div>
+
+
+                <div class="harvest-timeline">
+
+
+                    <div class="harvest-day active">
+
+                        <div class="harvest-date">
+
+                            <strong>
+                                09
+                            </strong>
+
+                            <span>
+                                SEP
+                            </span>
+
+                        </div>
+
+
+                        <div class="harvest-line"></div>
+
+
+                        <div class="harvest-info">
+
+                            <strong>
+                                Organic Rice
+                            </strong>
+
+                            <span>
+                                Field A-12 · 820 kg
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="harvest-day">
+
+                        <div class="harvest-date">
+
+                            <strong>
+                                11
+                            </strong>
+
+                            <span>
+                                SEP
+                            </span>
+
+                        </div>
+
+
+                        <div class="harvest-line"></div>
+
+
+                        <div class="harvest-info">
+
+                            <strong>
+                                Organic Carrot
+                            </strong>
+
+                            <span>
+                                Field B-07 · 420 kg
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="harvest-day">
+
+                        <div class="harvest-date">
+
+                            <strong>
+                                14
+                            </strong>
+
+                            <span>
+                                SEP
+                            </span>
+
+                        </div>
+
+
+                        <div class="harvest-line"></div>
+
+
+                        <div class="harvest-info">
+
+                            <strong>
+                                Organic Chilli
+                            </strong>
+
+                            <span>
+                                Field D-09 · 310 kg
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+
+            <!-- FARM INSIGHTS -->
+
+            <article class="crop-dashboard-card farm-insights">
+
+                <div class="crop-card-header">
+
+                    <div>
+
+                        <span>
+                            SMART INSIGHTS
+                        </span>
+
+                        <h3>
+                            Farm Recommendations
+                        </h3>
+
+                    </div>
+
+                </div>
+
+
+                <div class="insight-list">
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon green">
+
+                            <i class="fa-solid fa-droplet"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Optimize irrigation
+                            </strong>
+
+                            <span>
+                                Field C-03 may need
+                                additional watering.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon orange">
+
+                            <i class="fa-solid fa-bug"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Inspect tomato crops
+                            </strong>
+
+                            <span>
+                                Crop health has dropped
+                                by 4% this week.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon blue">
+
+                            <i class="fa-solid fa-sun"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Ideal weather
+                            </strong>
+
+                            <span>
+                                Conditions are favorable
+                                for the next 5 days.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <div class="insight-item">
+
+                        <div class="insight-icon purple">
+
+                            <i class="fa-solid fa-certificate"></i>
+
+                        </div>
+
+                        <div>
+
+                            <strong>
+                                Certification ready
+                            </strong>
+
+                            <span>
+                                6 fields are ready for
+                                organic inspection.
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </section>
+
+
+
+        <!-- =================================================
+             CROP MANAGEMENT TABLE
+        ================================================== -->
+
+        <section class="crop-dashboard-card crop-table-section">
+
+
+            <div class="crop-card-header">
+
+                <div>
+
+                    <span>
+                        ALL CROPS
+                    </span>
+
+                    <h3>
+                        Crop Management
+                    </h3>
+
+                </div>
+
+
+                <div class="crop-table-actions">
+
+                     
+
+
+                    <a href="404-admin.html">
+
+                        <i class="fa-solid fa-plus"></i>
+
+                        Add Crop
+
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="crop-table-wrapper">
+
+                <table class="crop-management-table">
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Crop
+                            </th>
+
+                            <th>
+                                Field
+                            </th>
+
+                            <th>
+                                Area
+                            </th>
+
+                            <th>
+                                Growth
+                            </th>
+
+                            <th>
+                                Health
+                            </th>
+
+                            <th>
+                                Harvest
+                            </th>
+
+                            <th>
+                                Status
+                            </th>
+
+                            <th>
+                                Action
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody>
+
+
+                        <!-- ROW 1 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-crop">
+
+                                    <div class="table-crop-icon rice">
+
+                                        <i class="fa-solid fa-wheat-awn"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Organic Rice
+                                        </strong>
+
+                                        <span>
+                                            Oryza sativa
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Field A-12
+                            </td>
+
+
+                            <td>
+                                12.4 Acres
+                            </td>
+
+
+                            <td>
+
+                                <div class="table-growth">
+
+                                    <div>
+
+                                        <span>
+                                            94%
+                                        </span>
+
+                                    </div>
+
+                                    <div class="mini-progress">
+
+                                        <span style="width:94%;"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="health-badge excellent">
+                                    Excellent
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                09 Sep
+                            </td>
+
+
+                            <td>
+
+                                <span class="table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="table-action"
+                                >
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 2 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-crop">
+
+                                    <div class="table-crop-icon carrot">
+
+                                        <i class="fa-solid fa-carrot"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Organic Carrot
+                                        </strong>
+
+                                        <span>
+                                            Daucus carota
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Field B-07
+                            </td>
+
+
+                            <td>
+                                8.7 Acres
+                            </td>
+
+
+                            <td>
+
+                                <div class="table-growth">
+
+                                    <div>
+
+                                        <span>
+                                            88%
+                                        </span>
+
+                                    </div>
+
+                                    <div class="mini-progress">
+
+                                        <span style="width:88%;"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="health-badge good">
+                                    Good
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                11 Sep
+                            </td>
+
+
+                            <td>
+
+                                <span class="table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="table-action"
+                                >
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 3 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-crop">
+
+                                    <div class="table-crop-icon tomato">
+
+                                        <i class="fa-solid fa-apple-whole"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Organic Tomato
+                                        </strong>
+
+                                        <span>
+                                            Solanum lycopersicum
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Field C-03
+                            </td>
+
+
+                            <td>
+                                6.2 Acres
+                            </td>
+
+
+                            <td>
+
+                                <div class="table-growth">
+
+                                    <div>
+
+                                        <span>
+                                            72%
+                                        </span>
+
+                                    </div>
+
+                                    <div class="mini-progress">
+
+                                        <span style="width:72%;"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="health-badge attention">
+                                    Attention
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                18 Sep
+                            </td>
+
+
+                            <td>
+
+                                <span class="table-status monitoring">
+                                    Monitoring
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="table-action"
+                                >
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <!-- ROW 4 -->
+
+                        <tr>
+
+                            <td>
+
+                                <div class="table-crop">
+
+                                    <div class="table-crop-icon chilli">
+
+                                        <i class="fa-solid fa-pepper-hot"></i>
+
+                                    </div>
+
+                                    <div>
+
+                                        <strong>
+                                            Organic Chilli
+                                        </strong>
+
+                                        <span>
+                                            Capsicum annuum
+                                        </span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+                                Field D-09
+                            </td>
+
+
+                            <td>
+                                9.8 Acres
+                            </td>
+
+
+                            <td>
+
+                                <div class="table-growth">
+
+                                    <div>
+
+                                        <span>
+                                            89%
+                                        </span>
+
+                                    </div>
+
+                                    <div class="mini-progress">
+
+                                        <span style="width:89%;"></span>
+
+                                    </div>
+
+                                </div>
+
+                            </td>
+
+
+                            <td>
+
+                                <span class="health-badge good">
+                                    Good
+                                </span>
+
+                            </td>
+
+
+                            <td>
+                                14 Sep
+                            </td>
+
+
+                            <td>
+
+                                <span class="table-status active">
+                                    Active
+                                </span>
+
+                            </td>
+
+
+                            <td>
+
+                                <a
+                                    href="404-admin.html"
+                                    class="table-action"
+                                >
+
+                                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                </a>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BOTTOM FEATURE CARDS
+        ================================================== -->
+
+        <section class="crop-feature-grid">
+
+
+            <article class="crop-feature-card">
+
+                <div class="crop-feature-icon">
+
+                    <i class="fa-solid fa-cloud-sun"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        WEATHER
+                    </span>
+
+                    <h3>
+                        Growing Conditions
+                    </h3>
+
+                    <p>
+                        Current conditions are favorable
+                        for most organic crops.
+                    </p>
+
+                </div>
+
+                <a href="404-admin.html">
+
+                    Check Forecast
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <article class="crop-feature-card">
+
+                <div class="crop-feature-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        IRRIGATION
+                    </span>
+
+                    <h3>
+                        91% Water Efficiency
+                    </h3>
+
+                    <p>
+                        Smart irrigation is reducing water
+                        consumption across active fields.
+                    </p>
+
+                </div>
+
+                <a href="404-admin.html">
+
+                    Manage Irrigation
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+
+            <article class="crop-feature-card">
+
+                <div class="crop-feature-icon">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        ORGANIC STANDARD
+                    </span>
+
+                    <h3>
+                        164 Certified Crops
+                    </h3>
+
+                    <p>
+                        Most active crops currently meet
+                        organic production standards.
+                    </p>
+
+                </div>
+
+                <a href="404-admin.html">
+
+                    View Certifications
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </section>
+
+
+    </section>
+
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

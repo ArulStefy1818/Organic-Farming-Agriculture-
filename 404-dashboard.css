@@ -1,0 +1,1603 @@
+/* =========================================================
+   STACKLY 404 DASHBOARD PAGE
+   LARGE TYPOGRAPHY
+   RESPONSIVE DESIGN
+   ANIMATIONS
+   HOVER EFFECTS
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --stackly-green: #7ed321;
+    --stackly-green-dark: #65b914;
+
+    --stackly-dark: #172015;
+    --stackly-dark-soft: #273324;
+
+    --stackly-text: #20251f;
+    --stackly-muted: #73796f;
+
+    --stackly-white: #ffffff;
+    --stackly-light: #f7f9f4;
+
+    --stackly-border:
+        rgba(23, 32, 21, 0.08);
+
+    --stackly-shadow:
+        0 18px 45px rgba(23, 32, 21, 0.10);
+
+    --stackly-shadow-hover:
+        0 25px 60px rgba(23, 32, 21, 0.16);
+
+    --stackly-transition:
+        all 0.4s
+        cubic-bezier(.22, .61, .36, 1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   HTML
+========================================================= */
+
+html {
+
+    width: 100%;
+
+    min-height: 100%;
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    margin: 0;
+
+    font-family:
+        "DM Sans",
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color:
+        var(--stackly-text);
+
+    background:
+        var(--stackly-light);
+
+    overflow-x: hidden;
+
+}
+
+
+/* =========================================================
+   MAIN 404 SECTION
+========================================================= */
+
+.stackly-404-section {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    min-height: 100svh;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    position: relative;
+
+    overflow: hidden;
+
+    padding:
+        clamp(25px, 4vh, 50px)
+        25px
+        0;
+
+    isolation: isolate;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 14%,
+            rgba(126, 211, 33, 0.16),
+            transparent 32%
+        ),
+
+        radial-gradient(
+            circle at 12% 78%,
+            rgba(126, 211, 33, 0.07),
+            transparent 28%
+        ),
+
+        radial-gradient(
+            circle at 88% 82%,
+            rgba(126, 211, 33, 0.05),
+            transparent 25%
+        ),
+
+        var(--stackly-light);
+
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION - LEFT
+========================================================= */
+
+.stackly-404-section::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(126, 211, 33, 0.10);
+
+    top: -285px;
+    left: -220px;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        stackly404CircleLeft
+        10s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   BACKGROUND DECORATION - RIGHT
+========================================================= */
+
+.stackly-404-section::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 360px;
+    height: 360px;
+
+    border-radius: 50%;
+
+    border:
+        1px solid
+        rgba(126, 211, 33, 0.08);
+
+    right: -210px;
+    bottom: 80px;
+
+    pointer-events: none;
+
+    z-index: -1;
+
+    animation:
+        stackly404CircleRight
+        12s ease-in-out infinite;
+
+}
+
+
+/* =========================================================
+   TOP 404 IMAGE CONTAINER
+========================================================= */
+
+.stackly-404-image {
+
+    width:
+        min(520px, 44vw);
+
+    flex:
+        0 0 auto;
+
+    display:
+        flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    cursor:
+        pointer;
+
+    animation:
+        stackly404Float
+        5s
+        ease-in-out
+        infinite;
+
+}
+
+
+/* =========================================================
+   TOP 404 IMAGE
+========================================================= */
+
+.stackly-404-image img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    max-width:
+        100%;
+
+    max-height:
+        245px;
+
+    object-fit:
+        contain;
+
+    filter:
+        drop-shadow(
+            0 20px 30px
+            rgba(0, 0, 0, 0.10)
+        );
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+
+}
+
+
+/* =========================================================
+   TOP IMAGE HOVER
+========================================================= */
+
+.stackly-404-image:hover img {
+
+    transform:
+        scale(1.05)
+        translateY(-7px);
+
+    filter:
+        drop-shadow(
+            0 28px 42px
+            rgba(0, 0, 0, 0.15)
+        );
+
+}
+
+
+/* =========================================================
+   CONTENT
+========================================================= */
+
+.stackly-404-content {
+
+    width:
+        100%;
+
+    max-width:
+        850px;
+
+    flex:
+        0 0 auto;
+
+    display:
+        flex;
+
+    flex-direction:
+        column;
+
+    align-items:
+        center;
+
+    justify-content:
+        flex-start;
+
+    text-align:
+        center;
+
+    position:
+        relative;
+
+    z-index:
+        5;
+
+    margin-top:
+        clamp(8px, 1.5vh, 18px);
+
+    padding:
+        0 10px;
+
+}
+
+
+/* =========================================================
+   MAIN HEADING
+========================================================= */
+
+.stackly-404-content h1 {
+
+    margin:
+        0 0 16px;
+
+    font-family:
+        "Playfair Display",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(36px, 4vw, 58px);
+
+    line-height:
+        1.12;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        -1.2px;
+
+    color:
+        var(--stackly-dark);
+
+    text-wrap:
+        balance;
+
+    transition:
+        color 0.35s ease,
+        transform 0.35s ease;
+
+}
+
+
+/* =========================================================
+   HEADING HOVER
+========================================================= */
+
+.stackly-404-content h1:hover {
+
+    color:
+        #34422f;
+
+    transform:
+        translateY(-4px);
+
+}
+
+
+/* =========================================================
+   DESCRIPTION
+========================================================= */
+
+.stackly-404-content p {
+
+    width:
+        100%;
+
+    max-width:
+        690px;
+
+    margin:
+        0 auto 23px;
+
+    font-size:
+        clamp(15px, 1.2vw, 18px);
+
+    line-height:
+        1.65;
+
+    font-weight:
+        400;
+
+    color:
+        var(--stackly-muted);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.stackly-404-button {
+
+    min-width:
+        205px;
+
+    min-height:
+        52px;
+
+    display:
+        inline-flex;
+
+    align-items:
+        center;
+
+    justify-content:
+        center;
+
+    gap:
+        10px;
+
+    position:
+        relative;
+
+    padding:
+        13px 25px;
+
+    border-radius:
+        10px;
+
+    background:
+        var(--stackly-dark);
+
+    color:
+        var(--stackly-white);
+
+    text-decoration:
+        none;
+
+    font-size:
+        14px;
+
+    font-weight:
+        700;
+
+    letter-spacing:
+        0.1px;
+
+    overflow:
+        hidden;
+
+    box-shadow:
+        var(--stackly-shadow);
+
+    transition:
+        var(--stackly-transition);
+
+}
+
+
+/* =========================================================
+   BUTTON SHINE
+========================================================= */
+
+.stackly-404-button::before {
+
+    content:
+        "";
+
+    position:
+        absolute;
+
+    top:
+        0;
+
+    left:
+        -140%;
+
+    width:
+        65%;
+
+    height:
+        100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255,255,255,0.30),
+            transparent
+        );
+
+    transform:
+        skewX(-20deg);
+
+    transition:
+        left 0.7s ease;
+
+}
+
+
+/* =========================================================
+   BUTTON ARROW
+========================================================= */
+
+.stackly-404-button i {
+
+    position:
+        relative;
+
+    font-size:
+        13px;
+
+    transition:
+        transform 0.3s ease;
+
+}
+
+
+/* =========================================================
+   BUTTON HOVER
+========================================================= */
+
+.stackly-404-button:hover {
+
+    background:
+        var(--stackly-green);
+
+    color:
+        #10170d;
+
+    transform:
+        translateY(-5px);
+
+    box-shadow:
+        0 18px 38px
+        rgba(126, 211, 33, 0.28);
+
+}
+
+
+/* =========================================================
+   BUTTON HOVER SHINE
+========================================================= */
+
+.stackly-404-button:hover::before {
+
+    left:
+        140%;
+
+}
+
+
+/* =========================================================
+   BUTTON ARROW HOVER
+========================================================= */
+
+.stackly-404-button:hover i {
+
+    transform:
+        translateX(5px);
+
+}
+
+
+/* =========================================================
+   BUTTON ACTIVE
+========================================================= */
+
+.stackly-404-button:active {
+
+    transform:
+        translateY(-1px)
+        scale(0.98);
+
+}
+
+
+/* =========================================================
+   BOTTOM FARM AREA
+========================================================= */
+
+.stackly-404-farm {
+
+    width:
+        min(1100px, 92vw);
+
+    flex:
+        1 1 auto;
+
+    min-height:
+        0;
+
+    display:
+        flex;
+
+    align-items:
+        flex-end;
+
+    justify-content:
+        center;
+
+    position:
+        relative;
+
+    z-index:
+        2;
+
+    margin-top:
+        clamp(12px, 2vh, 25px);
+
+    animation:
+        stacklyFarmReveal
+        1.2s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+
+/* =========================================================
+   FARM IMAGE
+========================================================= */
+
+.stackly-404-farm img {
+
+    display:
+        block;
+
+    width:
+        100%;
+
+    height:
+        auto;
+
+    max-width:
+        100%;
+
+    max-height:
+        235px;
+
+    object-fit:
+        contain;
+
+    object-position:
+        bottom center;
+
+    transform-origin:
+        center bottom;
+
+    transition:
+        transform 0.6s ease,
+        filter 0.6s ease;
+
+}
+
+
+/* =========================================================
+   FARM HOVER
+========================================================= */
+
+.stackly-404-farm:hover img {
+
+    transform:
+        scale(1.025)
+        translateY(-4px);
+
+    filter:
+        drop-shadow(
+            0 -12px 26px
+            rgba(0, 0, 0, 0.10)
+        );
+
+}
+
+
+/* =========================================================
+   FLOATING TOP IMAGE
+========================================================= */
+
+@keyframes stackly404Float {
+
+    0% {
+
+        transform:
+            translateY(0);
+
+    }
+
+    50% {
+
+        transform:
+            translateY(-10px);
+
+    }
+
+    100% {
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   FARM REVEAL
+========================================================= */
+
+@keyframes stacklyFarmReveal {
+
+    0% {
+
+        opacity:
+            0;
+
+        transform:
+            translateY(55px);
+
+    }
+
+    100% {
+
+        opacity:
+            1;
+
+        transform:
+            translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   LEFT CIRCLE
+========================================================= */
+
+@keyframes stackly404CircleLeft {
+
+    0% {
+
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+
+    }
+
+    50% {
+
+        transform:
+            translate(18px, 22px)
+            rotate(8deg);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0)
+            rotate(0deg);
+
+    }
+
+}
+
+
+/* =========================================================
+   RIGHT CIRCLE
+========================================================= */
+
+@keyframes stackly404CircleRight {
+
+    0% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+    50% {
+
+        transform:
+            translate(-16px, -18px);
+
+    }
+
+    100% {
+
+        transform:
+            translate(0, 0);
+
+    }
+
+}
+
+/* =========================================================
+   STACKLY 404 - FINAL MOBILE VIEW FIX
+   FULL CONTENT + NO HEADER OVERLAP + NO CLIPPING
+========================================================= */
+
+@media (max-width: 600px) {
+
+    html,
+    body {
+        width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+        overflow-y: auto;
+    }
+
+    /* -----------------------------------------------------
+       MAIN 404 SECTION
+    ----------------------------------------------------- */
+
+    .stackly-404-section {
+
+        width: 100%;
+
+        /*
+         * Do NOT lock the section to 100svh.
+         * Content needs room to display completely.
+         */
+        height: auto !important;
+
+        min-height: 100svh !important;
+
+        max-height: none !important;
+
+        box-sizing: border-box;
+
+        /*
+         * Mobile header clearance
+         */
+        padding-top: 90px !important;
+
+        padding-right: 12px !important;
+
+        padding-bottom: 20px !important;
+
+        padding-left: 12px !important;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: flex-start;
+
+        position: relative;
+
+        overflow: visible !important;
+
+        text-align: center;
+
+    }
+
+
+    /* -----------------------------------------------------
+       TOP IMAGE
+    ----------------------------------------------------- */
+
+    .stackly-404-image {
+
+        width: min(260px, 72vw) !important;
+
+        max-width: 260px !important;
+
+        height: auto;
+
+        flex: 0 0 auto;
+
+        margin: 0 auto !important;
+
+        position: relative;
+
+        z-index: 2;
+
+    }
+
+
+    .stackly-404-image img {
+
+        display: block;
+
+        width: 100%;
+
+        max-width: 100%;
+
+        height: auto;
+
+        max-height: 115px !important;
+
+        object-fit: contain;
+
+        margin: 0 auto;
+
+    }
+
+
+    /* -----------------------------------------------------
+       CONTENT
+    ----------------------------------------------------- */
+
+    .stackly-404-content {
+
+        width: 100% !important;
+
+        max-width: 360px !important;
+
+        height: auto !important;
+
+        flex: 0 0 auto;
+
+        margin: 28px auto 0 !important;
+
+        padding: 0 8px !important;
+
+        box-sizing: border-box;
+
+        display: flex;
+
+        flex-direction: column;
+
+        align-items: center;
+
+        justify-content: center;
+
+        text-align: center;
+
+        position: relative;
+
+        left: auto !important;
+
+        right: auto !important;
+
+        top: auto !important;
+
+        transform: none !important;
+
+        z-index: 5;
+
+    }
+
+
+    /* -----------------------------------------------------
+       HEADING
+    ----------------------------------------------------- */
+
+    .stackly-404-content h1 {
+
+        width: 100%;
+
+        max-width: 345px;
+
+        margin: 0 auto 12px !important;
+
+        padding: 0;
+
+        font-size: clamp(26px, 7.5vw, 34px) !important;
+
+        line-height: 1.15;
+
+        text-align: center;
+
+        text-wrap: balance;
+
+    }
+
+
+    /* -----------------------------------------------------
+       DESCRIPTION
+    ----------------------------------------------------- */
+
+    .stackly-404-content p {
+
+        width: 100%;
+
+        max-width: 335px;
+
+        margin: 0 auto 17px !important;
+
+        padding: 0;
+
+        font-size: 12px !important;
+
+        line-height: 1.5;
+
+        text-align: center;
+
+    }
+
+
+    /* Remove desktop line breaks */
+
+    .stackly-404-content h1 br,
+    .stackly-404-content p br {
+
+        display: none !important;
+
+    }
+
+
+    /* -----------------------------------------------------
+       BUTTON
+    ----------------------------------------------------- */
+
+    .stackly-404-button {
+
+        display: inline-flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        width: auto !important;
+
+        min-width: 170px !important;
+
+        min-height: 44px !important;
+
+        margin: 0 auto !important;
+
+        padding: 11px 18px !important;
+
+        box-sizing: border-box;
+
+        border-radius: 8px;
+
+        font-size: 12px !important;
+
+        line-height: 1;
+
+        gap: 8px;
+
+        white-space: nowrap;
+
+        position: relative;
+
+        z-index: 6;
+
+    }
+
+
+    /* -----------------------------------------------------
+       FARM / BOTTOM ILLUSTRATION
+    ----------------------------------------------------- */
+
+    .stackly-404-farm {
+
+        width: 100% !important;
+
+        max-width: 100% !important;
+
+        height: auto !important;
+
+        min-height: 0 !important;
+
+        flex: 0 0 auto !important;
+
+        display: flex;
+
+        align-items: flex-end;
+
+        justify-content: center;
+
+        margin: 18px auto 0 !important;
+
+        padding: 0 !important;
+
+        position: relative;
+
+        z-index: 2;
+
+    }
+
+
+    .stackly-404-farm img {
+
+        display: block;
+
+        width: 110% !important;
+
+        max-width: none !important;
+
+        height: auto;
+
+        max-height: 135px !important;
+
+        margin: 0 auto !important;
+
+        object-fit: contain;
+
+        object-position: center bottom;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE - 480px
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stackly-404-section {
+
+        min-height: 100svh !important;
+
+        height: auto !important;
+
+        max-height: none !important;
+
+        padding-top: 88px !important;
+
+        padding-left: 10px !important;
+
+        padding-right: 10px !important;
+
+        padding-bottom: 18px !important;
+
+        overflow: visible !important;
+
+    }
+
+
+    .stackly-404-image {
+
+        width: min(240px, 70vw) !important;
+
+        max-width: 240px !important;
+
+    }
+
+
+    .stackly-404-image img {
+
+        max-height: 105px !important;
+
+    }
+
+
+    .stackly-404-content {
+
+        max-width: 350px !important;
+
+        margin-top: 24px !important;
+
+        padding-left: 5px !important;
+
+        padding-right: 5px !important;
+
+    }
+
+
+    .stackly-404-content h1 {
+
+        max-width: 330px;
+
+        font-size: 29px !important;
+
+        line-height: 1.14;
+
+        margin-bottom: 10px !important;
+
+    }
+
+
+    .stackly-404-content p {
+
+        max-width: 320px;
+
+        font-size: 11.5px !important;
+
+        line-height: 1.45;
+
+        margin-bottom: 14px !important;
+
+    }
+
+
+    .stackly-404-button {
+
+        min-width: 160px !important;
+
+        min-height: 42px !important;
+
+        padding: 10px 16px !important;
+
+        font-size: 11px !important;
+
+    }
+
+
+    .stackly-404-farm {
+
+        margin-top: 16px !important;
+
+    }
+
+
+    .stackly-404-farm img {
+
+        width: 112% !important;
+
+        max-height: 125px !important;
+
+        margin: 0 auto !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   EXTRA SMALL MOBILE - 380px
+========================================================= */
+
+@media (max-width: 380px) {
+
+    .stackly-404-section {
+
+        min-height: 100svh !important;
+
+        height: auto !important;
+
+        max-height: none !important;
+
+        /*
+         * Replace the old 150px top padding.
+         */
+        padding-top: 82px !important;
+
+        padding-left: 8px !important;
+
+        padding-right: 8px !important;
+
+        padding-bottom: 15px !important;
+
+        overflow: visible !important;
+
+    }
+
+
+    .stackly-404-image {
+
+        width: min(220px, 68vw) !important;
+
+        max-width: 220px !important;
+
+    }
+
+
+    .stackly-404-image img {
+
+        max-height: 90px !important;
+
+    }
+
+
+    .stackly-404-content {
+
+        max-width: 320px !important;
+
+        margin: 20px auto 0 !important;
+
+        padding: 0 5px !important;
+
+    }
+
+
+    .stackly-404-content h1 {
+
+        max-width: 305px;
+
+        font-size: 23px !important;
+
+        line-height: 1.14;
+
+        margin-bottom: 8px !important;
+
+    }
+
+
+    .stackly-404-content p {
+
+        max-width: 295px;
+
+        font-size: 10.5px !important;
+
+        line-height: 1.4;
+
+        margin-bottom: 11px !important;
+
+    }
+
+
+    .stackly-404-button {
+
+        min-width: 150px !important;
+
+        min-height: 39px !important;
+
+        padding: 9px 14px !important;
+
+        font-size: 10.5px !important;
+
+    }
+
+
+    .stackly-404-farm {
+
+        width: 100% !important;
+
+        margin: 12px auto 0 !important;
+
+        padding: 0 !important;
+
+    }
+
+
+    .stackly-404-farm img {
+
+        width: 114% !important;
+
+        max-height: 115px !important;
+
+        margin: 0 auto !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   VERY SMALL SCREEN - 360px
+========================================================= */
+
+@media (max-width: 360px) {
+
+    .stackly-404-section {
+
+        padding-top: 78px !important;
+
+        padding-left: 7px !important;
+
+        padding-right: 7px !important;
+
+        padding-bottom: 12px !important;
+
+    }
+
+
+    .stackly-404-image {
+
+        width: min(205px, 65vw) !important;
+
+        max-width: 205px !important;
+
+    }
+
+
+    .stackly-404-image img {
+
+        max-height: 82px !important;
+
+    }
+
+
+    .stackly-404-content {
+
+        max-width: 305px !important;
+
+        margin-top: 17px !important;
+
+    }
+
+
+    .stackly-404-content h1 {
+
+        max-width: 290px;
+
+        font-size: 21px !important;
+
+        line-height: 1.12;
+
+    }
+
+
+    .stackly-404-content p {
+
+        max-width: 280px;
+
+        font-size: 10px !important;
+
+        line-height: 1.35;
+
+    }
+
+
+    .stackly-404-button {
+
+        min-width: 145px !important;
+
+        min-height: 37px !important;
+
+        font-size: 10px !important;
+
+    }
+
+
+    .stackly-404-farm img {
+
+        width: 112% !important;
+
+        max-height: 105px !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   SHORT MOBILE HEIGHT - SAFE VERSION
+   Prevents content from being cut off
+========================================================= */
+
+@media (max-height: 650px) and (max-width: 600px) {
+
+    .stackly-404-section {
+
+        height: auto !important;
+
+        min-height: 100svh !important;
+
+        max-height: none !important;
+
+        padding-top: 78px !important;
+
+        padding-bottom: 12px !important;
+
+        overflow: visible !important;
+
+    }
+
+
+    .stackly-404-image {
+
+        width: min(180px, 55vw) !important;
+
+        max-width: 180px !important;
+
+    }
+
+
+    .stackly-404-image img {
+
+        max-height: 68px !important;
+
+    }
+
+
+    .stackly-404-content {
+
+        margin-top: 10px !important;
+
+    }
+
+
+    .stackly-404-content h1 {
+
+        font-size: 19px !important;
+
+        line-height: 1.08;
+
+        margin-bottom: 5px !important;
+
+    }
+
+
+    .stackly-404-content p {
+
+        max-width: 275px;
+
+        font-size: 9.5px !important;
+
+        line-height: 1.3;
+
+        margin-bottom: 7px !important;
+
+    }
+
+
+    .stackly-404-button {
+
+        min-width: 135px !important;
+
+        min-height: 34px !important;
+
+        padding: 8px 12px !important;
+
+        font-size: 9.5px !important;
+
+    }
+
+
+    .stackly-404-farm {
+
+        margin-top: 8px !important;
+
+    }
+
+
+    .stackly-404-farm img {
+
+        max-height: 78px !important;
+
+        margin: 0 auto !important;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE HEADER - STAY ABOVE 404 CONTENT
+========================================================= */
+
+@media (max-width: 600px) {
+
+    header,
+    .stackly-header,
+    .stackly-navbar,
+    .navbar {
+
+        position: fixed;
+
+        top: 0;
+
+        left: 0;
+
+        right: 0;
+
+        width: 100%;
+
+        z-index: 99999;
+
+    }
+
+}

@@ -1,0 +1,1005 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+ 
+
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     SETTINGS PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-settings-page">
+
+
+    <!-- =====================================================
+         SETTINGS HERO
+    ====================================================== -->
+
+    <div class="stackly-settings-hero">
+
+        <div class="stackly-settings-hero-content">
+
+            <span class="stackly-settings-eyebrow">
+                FARM CONTROL
+            </span>
+
+            <h2>
+                Settings
+            </h2>
+
+            <p>
+                Manage your farm profile, notifications, preferences,
+                and account security from one place.
+            </p>
+
+        </div>
+
+        <div class="stackly-settings-hero-icon">
+
+            <i class="fa-solid fa-sliders"></i>
+
+        </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         SETTINGS GRID
+    ====================================================== -->
+
+    <div class="stackly-settings-grid">
+
+
+        <!-- =================================================
+             PROFILE SETTINGS
+        ================================================== -->
+
+        <div class="stackly-settings-card">
+
+            <div class="stackly-settings-card-heading">
+
+                <div class="stackly-settings-icon">
+
+                    <i class="fa-solid fa-user"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Profile Settings
+                    </h3>
+
+                    <p>
+                        Update your administrator information.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-settings-form">
+
+                <div class="stackly-settings-field">
+
+    <label for="stacklyAdminName">
+        Full Name
+    </label>
+
+    <input
+        type="text"
+        id="stacklyAdminName"
+        placeholder="Farm Admin"
+    >
+
+</div>
+
+
+                <div class="stackly-settings-field">
+
+    <label for="stacklyAdminEmail">
+        Email Address
+    </label>
+
+    <input
+        type="email"
+        id="stacklyAdminEmail"
+        placeholder="admin@stacklyfarm.com"
+        readonly
+    >
+
+</div>
+
+
+                <div class="stackly-settings-field">
+
+                    <label for="stacklyAdminRole">
+                        Role
+                    </label>
+
+                    <input
+                        type="text"
+                        id="stacklyAdminRole"
+                        value="Farm Administrator"
+                        readonly
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             NOTIFICATION SETTINGS
+        ================================================== -->
+
+        <div class="stackly-settings-card">
+
+            <div class="stackly-settings-card-heading">
+
+                <div class="stackly-settings-icon">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Notifications
+                    </h3>
+
+                    <p>
+                        Choose which farm alerts you receive.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-settings-options">
+
+                <label class="stackly-settings-option">
+
+                    <span>
+
+                        <strong>
+                            Harvest Alerts
+                        </strong>
+
+                        <small>
+                            Receive upcoming harvest notifications.
+                        </small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked
+                    >
+
+                </label>
+
+
+                <label class="stackly-settings-option">
+
+                    <span>
+
+                        <strong>
+                            Inventory Alerts
+                        </strong>
+
+                        <small>
+                            Get notified about low stock items.
+                        </small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked
+                    >
+
+                </label>
+
+
+                <label class="stackly-settings-option">
+
+                    <span>
+
+                        <strong>
+                            Irrigation Alerts
+                        </strong>
+
+                        <small>
+                            Receive irrigation and water alerts.
+                        </small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                        checked
+                    >
+
+                </label>
+
+
+                <label class="stackly-settings-option">
+
+                    <span>
+
+                        <strong>
+                            Weekly Reports
+                        </strong>
+
+                        <small>
+                            Receive weekly farm performance reports.
+                        </small>
+
+                    </span>
+
+                    <input
+                        type="checkbox"
+                    >
+
+                </label>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             FARM PREFERENCES
+        ================================================== -->
+
+        <div class="stackly-settings-card">
+
+            <div class="stackly-settings-card-heading">
+
+                <div class="stackly-settings-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Farm Preferences
+                    </h3>
+
+                    <p>
+                        Set your default farm management preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-settings-form">
+
+                <div class="stackly-settings-field">
+
+                    <label for="stacklyFarmType">
+                        Farming Type
+                    </label>
+
+                    <select id="stacklyFarmType">
+
+                        <option>
+                            Organic Farming
+                        </option>
+
+                        <option>
+                            Sustainable Farming
+                        </option>
+
+                        <option>
+                            Mixed Farming
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="stackly-settings-field">
+
+                    <label for="stacklyFarmUnit">
+                        Measurement Unit
+                    </label>
+
+                    <select id="stacklyFarmUnit">
+
+                        <option>
+                            Metric (kg / hectare)
+                        </option>
+
+                        <option>
+                            Metric (ton / hectare)
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="stackly-settings-field">
+
+                    <label for="stacklyFarmLocation">
+                        Farm Location
+                    </label>
+
+                    <input
+                        type="text"
+                        id="stacklyFarmLocation"
+                        value="Tamil Nadu, India"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================================
+             SECURITY SETTINGS
+        ================================================== -->
+
+        <div class="stackly-settings-card">
+
+            <div class="stackly-settings-card-heading">
+
+                <div class="stackly-settings-icon">
+
+                    <i class="fa-solid fa-shield-halved"></i>
+
+                </div>
+
+                <div>
+
+                    <h3>
+                        Security
+                    </h3>
+
+                    <p>
+                        Manage your account security preferences.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-settings-security">
+
+                <div class="stackly-security-row">
+
+                    <div>
+
+                        <strong>
+                            Password
+                        </strong>
+
+                        <span>
+                            Last changed 30 days ago
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="stackly-settings-outline-btn"
+                    >
+                        Change
+                    </button>
+
+                </div>
+
+
+                <div class="stackly-security-row">
+
+                    <div>
+
+                        <strong>
+                            Two-Factor Authentication
+                        </strong>
+
+                        <span>
+                            Add extra protection to your account.
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="stackly-settings-outline-btn"
+                    >
+                        Enable
+                    </button>
+
+                </div>
+
+
+                <div class="stackly-security-row">
+
+                    <div>
+
+                        <strong>
+                            Login Sessions
+                        </strong>
+
+                        <span>
+                            Manage active administrator sessions.
+                        </span>
+
+                    </div>
+
+                    <button
+                        type="button"
+                        class="stackly-settings-outline-btn"
+                    >
+                        Manage
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================================
+         SAVE SETTINGS
+    ====================================================== -->
+
+    <div class="stackly-settings-actions">
+
+        <button
+            type="button"
+            class="stackly-settings-reset-btn"
+        >
+            Reset
+        </button>
+
+        <button
+            type="button"
+            class="stackly-settings-save-btn"
+        >
+
+            <i class="fa-solid fa-check"></i>
+
+            Save Changes
+
+        </button>
+
+    </div>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>

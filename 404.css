@@ -1,0 +1,1029 @@
+/* =========================================================
+   STACKLY FARMING
+   HERO + HEADER COMPLETE RESPONSIVE CSS
+========================================================= */
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+
+:root {
+
+    --primary: #D0F24C;
+    --primary-dark: #b7ed20;
+
+    --dark-green: #07190b;
+    --deep-green: #031108;
+
+    --nav-bg: #000B22;
+
+    --white: #ffffff;
+    --black: #071007;
+
+    --text-light: rgba(255, 255, 255, .92);
+    --text-muted: rgba(255, 255, 255, .70);
+
+    --border-light: rgba(255, 255, 255, .25);
+
+    --transition: .35s cubic-bezier(.22, 1, .36, 1);
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+body {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: "DM Sans", sans-serif;
+
+    overflow-x: hidden;
+
+    background: #f4f7ef;
+
+    color: var(--black);
+
+}
+
+
+body.menu-open {
+
+    overflow: hidden;
+
+}
+
+
+a {
+
+    text-decoration: none;
+
+    color: inherit;
+
+}
+
+
+button {
+
+    border: none;
+
+    outline: none;
+
+    font-family: inherit;
+
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.farm-hero {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    min-height: 100svh;
+
+    overflow: hidden;
+
+    background-image:
+
+        linear-gradient(
+            90deg,
+            rgba(18, 48, 12, .66),
+            rgba(22, 55, 15, .40)
+        ),
+
+        linear-gradient(
+            180deg,
+            rgba(0, 0, 0, .20),
+            rgba(0, 0, 0, .08) 50%,
+            rgba(0, 0, 0, .25)
+        );
+
+    background-size: cover;
+
+    background-position: center center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+/* =========================================================
+   HERO IMAGE MOVEMENT
+========================================================= */
+
+.farm-hero::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -3%;
+
+    background:
+
+        radial-gradient(
+            circle at 70% 20%,
+            rgba(202, 255, 50, .08),
+            transparent 30%
+        );
+
+    pointer-events: none;
+
+    animation: farmGlow 7s ease-in-out infinite alternate;
+
+}
+
+
+@keyframes farmGlow {
+
+    0% {
+
+        opacity: .45;
+
+        transform: scale(1);
+
+    }
+
+    100% {
+
+        opacity: 1;
+
+        transform: scale(1.05);
+
+    }
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.farm-header {
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    z-index: 100;
+
+    padding: 28px 30px;
+
+}
+
+
+.farm-header-container {
+
+    width: 100%;
+
+    max-width: 1500px;
+
+    margin: auto;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+}
+
+/* =========================================================
+   404 LOGO
+========================================================= */
+
+.stackly-404-logo {
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    width: fit-content;
+
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.4s ease;
+}
+
+
+/* =========================================================
+   LOGO IMAGE
+========================================================= */
+
+.stackly-404-logo-image {
+
+    display: block;
+
+    width: 150px;
+
+    max-width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.4s ease,
+        filter 0.4s ease;
+}
+
+
+/* =========================================================
+   HOVER EFFECT
+========================================================= */
+
+.stackly-404-logo:hover {
+
+    transform: translateY(-3px);
+
+    opacity: 1;
+}
+
+
+.stackly-404-logo:hover
+.stackly-404-logo-image {
+
+    transform: scale(1.05);
+
+    filter:
+        drop-shadow(0 8px 18px rgba(0, 114, 255, 0.25));
+}
+
+
+/* =========================================================
+   ACTIVE / CLICK
+========================================================= */
+
+.stackly-404-logo:active {
+
+    transform: scale(0.97);
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .stackly-404-logo-image {
+
+        width: 135px;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 768px) {
+
+    .stackly-404-logo-image {
+
+        width: 120px;
+
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .stackly-404-logo-image {
+
+        width: 105px;
+
+    }
+
+}
+
+.login-btn {
+
+    position: relative;
+
+    color: #000;
+
+    font-size: 14px;
+
+    font-weight: 500;
+
+    transition: var(--transition);
+
+}/* =========================================================
+   LOGO
+========================================================= */
+ 
+.farm-logo {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    flex-shrink: 0;
+
+    transition: var(--transition);
+
+}
+
+
+.farm-logo-image {
+
+    width: 125px;
+
+    height: auto;
+
+    max-height: 48px;
+
+    object-fit: contain;
+
+    display: block;
+
+     
+
+    transition: var(--transition);
+
+}
+
+
+.farm-logo:hover {
+
+    transform: translateY(-3px);
+
+}
+
+
+.farm-logo:hover .farm-logo-image {
+
+    transform: scale(1.06);
+
+     
+
+}
+
+
+
+.login-btn::after {
+
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: -5px;
+
+    width: 100%;
+
+    height: 1px;
+
+    background: var(--primary);
+
+    transform: scaleX(0);
+
+    transform-origin: right;
+
+    transition: var(--transition);
+
+}
+
+
+.login-btn:hover {
+
+    color: var(--primary);
+
+}
+
+
+.login-btn:hover::after {
+
+    transform: scaleX(1);
+
+    transform-origin: left;
+
+}
+
+/* =====================================================
+   STACKLY 404 ERROR SECTION
+====================================================== */
+
+.stackly-404-section {
+    width: 100%;
+    min-height: 100vh;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 50px 20px 30px;
+
+    background: #ffffff;
+
+    text-align: center;
+
+    font-family: "DM Sans", sans-serif;
+}
+
+
+/* =====================================================
+   404 IMAGE
+====================================================== */
+
+.stackly-404-image {
+    width: 100%;
+    max-width: 850px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+     
+
+    margin-top: 70px;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+/* 404 IMAGE */
+
+.stackly-404-image img {
+    width: 100%;
+    max-width: 850px;
+
+    height: auto;
+
+    display: block;
+
+    object-fit: contain;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+
+/* =====================================================
+   DECORATIVE LINE
+====================================================== */
+
+.stackly-404-decoration {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 12px;
+
+    margin-top: 5px;
+    margin-bottom: 28px;
+}
+
+
+/* Lines */
+
+.stackly-404-decoration span {
+    width: 48px;
+    height: 1px;
+
+    display: block;
+
+    background: #8aad62;
+
+    transition:
+        width 0.4s ease,
+        background 0.4s ease;
+}
+
+
+/* Leaf */
+
+.stackly-404-decoration i {
+    color: #6e9e3d;
+
+    font-size: 15px;
+
+    transition:
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+
+
+/* Decoration hover */
+
+.stackly-404-decoration:hover span {
+    width: 65px;
+
+    background: #b0d52e;
+}
+
+.stackly-404-decoration:hover i {
+    color: #9bcf1f;
+
+    transform:
+        rotate(20deg)
+        scale(1.2);
+}
+
+
+/* =====================================================
+   ERROR CONTENT
+====================================================== */
+
+.stackly-404-content {
+    width: 100%;
+    max-width: 700px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    z-index: 2;
+}
+
+
+/* =====================================================
+   HEADING
+====================================================== */
+
+.stackly-404-content h1 {
+    margin: 0 0 15px;
+
+    margin-top: 35px;
+    color: #172033;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+    font-weight: 800;
+
+    letter-spacing: -0.8px;
+
+    transition:
+        color 0.3s ease,
+        transform 0.3s ease;
+}
+
+
+/* Heading hover */
+
+.stackly-404-content h1:hover {
+    color: #527d32;
+
+    transform: translateY(-2px);
+}
+
+
+/* =====================================================
+   DESCRIPTION
+====================================================== */
+
+.stackly-404-content p {
+    margin: 0 0 28px;
+
+    color: #858b96;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+    font-weight: 400;
+
+    transition:
+        color 0.3s ease;
+}
+
+
+/* =====================================================
+   BUTTON
+====================================================== */
+
+.stackly-404-button {
+    min-width: 150px;
+
+    height: 48px;
+
+    padding: 0 30px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 30px;
+
+    background: #c4f329;
+
+    color: #18200d;
+
+    font-family: "DM Sans", sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    box-shadow:
+        0 7px 18px rgba(155, 202, 35, 0.15);
+
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        box-shadow 0.3s ease,
+        color 0.3s ease;
+}
+
+
+/* Button hover */
+
+.stackly-404-button:hover {
+    background: #aee71c;
+
+    color: #132006;
+
+    transform:
+        translateY(-5px)
+        scale(1.04);
+
+    box-shadow:
+        0 12px 28px rgba(130, 180, 20, 0.30);
+}
+
+
+/* Button click */
+
+.stackly-404-button:active {
+    transform: translateY(-1px) scale(.98);
+}
+
+
+/* =====================================================
+   BOTTOM FARM IMAGE
+====================================================== */
+
+.stackly-404-farm {
+    width: 100%;
+
+    max-width: 450px;
+
+    margin-top: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    transition:
+        transform 0.5s ease,
+        opacity 0.4s ease;
+}
+
+
+/* Farm image */
+
+.stackly-404-farm img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+
+    mix-blend-mode: multiply;
+
+    transition:
+        transform 0.5s ease,
+        filter 0.5s ease;
+}
+
+
+ 
+
+
+/* =====================================================
+   EXTRA FLOATING EFFECT
+====================================================== */
+
+.stackly-404-image,
+.stackly-404-farm {
+    will-change: transform;
+}
+
+
+/* =====================================================
+   TABLET
+====================================================== */
+
+@media (max-width: 991px) {
+
+    .stackly-404-section {
+        padding: 45px 25px 30px;
+    }
+
+
+    .stackly-404-image {
+        max-width: 720px;
+    }
+
+
+    .stackly-404-image img {
+        max-width: 720px;
+    }
+
+
+    .stackly-404-content h1 {
+        font-size: 29px;
+    }
+
+
+    .stackly-404-content p {
+        font-size: 13px;
+    }
+
+
+    .stackly-404-farm {
+        max-width: 390px;
+
+        margin-top: 40px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE
+====================================================== */
+
+@media (max-width: 767px) {
+
+    .stackly-404-section {
+        min-height: auto;
+
+        padding: 35px 18px 25px;
+    }
+
+
+    /* 404 */
+
+    .stackly-404-image {
+        width: 100%;
+
+        max-width: 600px;
+    }
+
+
+    .stackly-404-image img {
+        width: 100%;
+
+        max-width: 600px;
+    }
+
+
+    /* Decoration */
+
+    .stackly-404-decoration {
+        margin-top: 0;
+
+        margin-bottom: 22px;
+
+        gap: 9px;
+    }
+
+
+    .stackly-404-decoration span {
+        width: 38px;
+    }
+
+
+    .stackly-404-decoration i {
+        font-size: 13px;
+    }
+
+
+    /* Heading */
+
+    .stackly-404-content h1 {
+        font-size: 25px;
+
+        line-height: 1.25;
+
+        letter-spacing: -0.5px;
+
+        margin-bottom: 13px;
+    }
+
+
+    /* Description */
+
+    .stackly-404-content p {
+        font-size: 12px;
+
+        line-height: 1.6;
+
+        margin-bottom: 23px;
+    }
+
+
+    /* Button */
+
+    .stackly-404-button {
+        min-width: 140px;
+
+        height: 44px;
+
+        padding: 0 26px;
+
+        font-size: 13px;
+    }
+
+
+    /* Farm */
+
+    .stackly-404-farm {
+        width: 90%;
+
+        max-width: 360px;
+
+        margin-top: 35px;
+    }
+
+
+    .stackly-404-farm img {
+        width: 100%;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+====================================================== */
+
+@media (max-width: 480px) {
+
+    .stackly-404-section {
+        padding: 25px 14px 20px;
+    }
+
+
+    /* 404 image */
+
+    .stackly-404-image {
+        max-width: 430px;
+    }
+
+
+    /* Decoration */
+
+    .stackly-404-decoration {
+        margin-bottom: 20px;
+    }
+
+
+    .stackly-404-decoration span {
+        width: 30px;
+    }
+
+
+    /* Heading */
+
+    .stackly-404-content h1 {
+        font-size: 22px;
+
+        line-height: 1.25;
+    }
+
+
+    /* Paragraph */
+
+    .stackly-404-content p {
+        font-size: 10px;
+
+        line-height: 1.65;
+
+        max-width: 300px;
+
+        margin-bottom: 20px;
+    }
+
+
+    /* Button */
+
+    .stackly-404-button {
+        min-width: 125px;
+
+        height: 40px;
+
+        padding: 0 22px;
+
+        font-size: 12px;
+    }
+
+
+    /* Farm */
+
+    .stackly-404-farm {
+        width: 95%;
+
+        max-width: 320px;
+
+        margin-top: 30px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+====================================================== */
+
+@media (max-width: 360px) {
+
+    .stackly-404-section {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+
+    .stackly-404-content h1 {
+        font-size: 20px;
+    }
+
+
+    .stackly-404-content p {
+        font-size: 9px;
+    }
+
+
+    .stackly-404-button {
+        height: 38px;
+
+        min-width: 120px;
+
+        font-size: 11px;
+    }
+
+
+    .stackly-404-farm {
+        margin-top: 25px;
+    }
+
+}

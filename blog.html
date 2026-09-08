@@ -1,0 +1,1409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly - Innovative Farming Technology and Sustainable Agriculture"
+    >
+
+    <title>
+        Stackly | Sustainable Farming
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap"
+        rel="stylesheet"
+    >
+
+    <!-- AOS CSS -->
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/aos@2.3.4/dist/aos.css"
+/>
+
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         AOS ANIMATION CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://unpkg.com/aos@2.3.1/dist/aos.css"
+    >
+
+
+    <!-- =====================================================
+         MAIN CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="index.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =====================================================
+         HERO SECTION
+    ====================================================== -->
+
+    <section
+        class="farm-hero"
+        id="home"
+    >
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <header class="farm-header">
+
+            <div class="farm-header-container">
+
+
+                <!-- =================================================
+                     LOGO
+                ================================================== -->
+
+                <a
+                    href="index.html"
+                    class="farm-logo"
+                    aria-label="Stackly Home"
+
+                    data-aos="fade-down"
+                    data-aos-duration="900"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Logo"
+                        class="farm-logo-image"
+                    >
+
+                </a>
+
+
+                <!-- =================================================
+                     DESKTOP NAV
+                ================================================== -->
+
+                <nav
+                    class="farm-nav"
+
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-delay="100"
+                >
+
+                    <a
+                        href="index.html"
+                        class="active"
+                    >
+                        Home
+                    </a>
+
+                    <a href="about.html">
+                        About Us
+                    </a>
+
+                    <a href="services.html">
+                        Services
+                    </a>
+
+                    <a href="blog.html">
+                        Blogs
+                    </a>
+
+                    <a href="contact.html">
+                        Contact Us
+                    </a>
+
+                </nav>
+
+
+                <!-- =================================================
+                     DESKTOP ACTIONS
+                ================================================== -->
+
+                <div
+                    class="farm-header-actions"
+
+                    data-aos="fade-down"
+                    data-aos-duration="1000"
+                    data-aos-delay="200"
+                >
+
+                    <a
+                        href="login.html"
+                        class="login-btn"
+                    >
+                        Login
+                    </a>
+
+                    <a
+                        href="signup.html"
+                        class="signup-btn"
+                    >
+                        Sign up
+                    </a>
+
+                </div>
+
+
+                <!-- =================================================
+                     MOBILE HAMBURGER
+                ================================================== -->
+
+                <button
+                    type="button"
+                    class="farm-menu-toggle"
+                    id="farmMenuOpen"
+                    aria-label="Open menu"
+
+                    data-aos="fade-down"
+                    data-aos-duration="900"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             MOBILE MENU OVERLAY
+        ================================================== -->
+
+        <div
+            class="farm-menu-overlay"
+            id="farmMenuOverlay"
+        ></div>
+
+
+
+        <!-- =================================================
+             MOBILE MENU
+        ================================================== -->
+
+        <aside
+            class="farm-mobile-menu"
+            id="farmMobileMenu"
+        >
+
+
+            <!-- =================================================
+                 MOBILE MENU TOP
+            ================================================== -->
+
+            <div class="farm-mobile-menu-top">
+
+
+                <!-- MOBILE LOGO -->
+
+                <a
+                    href="index.html"
+                    class="farm-mobile-logo"
+                    aria-label="Stackly Home"
+                >
+
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Logo"
+                        class="farm-mobile-logo-image"
+                    >
+
+                </a>
+
+
+                <!-- EXIT / CLOSE -->
+
+                <button
+                    type="button"
+                    class="farm-menu-close"
+                    id="farmMenuClose"
+                    aria-label="Close menu"
+                >
+
+                    <i class="fa-solid fa-xmark"></i>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 MOBILE LINKS
+            ================================================== -->
+
+            <nav class="farm-mobile-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="about.html">
+                    About Us
+                </a>
+
+                <a href="services.html">
+                    Services
+                </a>
+
+                <a href="blog.html">
+                    Blogs
+                </a>
+
+                <a href="contact.html">
+                    Contact Us
+                </a>
+
+            </nav>
+
+
+
+            <!-- =================================================
+                 MOBILE ACTIONS
+            ================================================== -->
+
+            <div class="farm-mobile-actions">
+
+                <a
+                    href="login.html"
+                    class="farm-mobile-login"
+                >
+                    Login
+                </a>
+
+                <a
+                    href="signup.html"
+                    class="farm-mobile-signup"
+                >
+                    Sign Up
+                </a>
+
+            </div>
+
+        </aside>
+
+        <!-- =========================================================
+     BLOG HERO SECTION
+========================================================= -->
+
+<section class="blog-hero">
+
+    <div class="blog-hero-overlay"></div>
+
+    <div class="blog-hero-content">
+
+        <!-- Small Badge -->
+        <span class="blog-badge">Blogs</span>
+
+        <!-- Main Heading -->
+        <h1>
+            Our Blog<br>
+            InSite's for <span>Smarter Farming</span>
+        </h1>
+
+        <!-- Description -->
+        <p>
+            Stay updated with the latest trends, expert tips, and real-world stories
+            <br class="desktop-break">
+            from the world of agriculture and agri-tech.
+        </p>
+
+    </div>
+
+    <!-- =========================================================
+     BLOG CATEGORY NAVIGATION
+========================================================= -->
+
+<nav class="blog-category-bar">
+
+    <a href="#" class="active" data-category="all">
+        All Articles
+    </a>
+
+    <a href="#" data-category="smart-farming">
+        Smart Farming
+    </a>
+
+    <a href="#" data-category="technology">
+        Technology
+    </a>
+
+    <a href="#" data-category="sustainability">
+        Sustainability
+    </a>
+
+    <a href="#" data-category="crop-management">
+        Crop Management
+    </a>
+
+    <a href="#" data-category="industry-news">
+        Industry News
+    </a>
+
+    <a href="#" data-category="tips-guides">
+        Tips &amp; Guides
+    </a>
+
+</nav>
+
+</section>
+
+    
+
+    <!-- =========================================================
+     BLOG SECTION
+========================================================= -->
+
+<section class="farm-blog-section">
+
+    <div class="farm-blog-wrapper">
+
+        <!-- ================= SIDEBAR ================= -->
+        <aside class="farm-blog-sidebar">
+
+            <!-- Search -->
+            <div class="farm-sidebar-box farm-search-box">
+                <div class="farm-search">
+                    <input type="text" placeholder="Search articles...">
+                    <button type="button">⌕</button>
+                </div>
+            </div>
+
+            <!-- Categories -->
+            <div class="farm-sidebar-box">
+
+    <h3>Categories</h3>
+
+    <ul class="farm-category-list">
+
+        <li class="active" data-category="all">
+            <span>▦ &nbsp; All Articles</span>
+            <small>124</small>
+        </li>
+
+        <li data-category="smart-farming">
+            <span>☘ &nbsp; Smart Farming</span>
+            <small>48</small>
+        </li>
+
+        <li data-category="technology">
+            <span>⚙ &nbsp; Technology</span>
+            <small>32</small>
+        </li>
+
+        <li data-category="sustainability">
+            <span>♻ &nbsp; Sustainability</span>
+            <small>21</small>
+        </li>
+
+        <li data-category="crop-management">
+            <span>▣ &nbsp; Crop Management</span>
+            <small>18</small>
+        </li>
+
+        <li data-category="industry-news">
+            <span>▥ &nbsp; Industry News</span>
+            <small>11</small>
+        </li>
+
+        <li data-category="tips-guides">
+            <span>✦ &nbsp; Tips &amp; Guides</span>
+            <small>09</small>
+        </li>
+
+    </ul>
+
+</div>
+
+            <!-- Popular Posts -->
+            <div class="farm-sidebar-box">
+                <h3>Popular Posts</h3>
+
+                <div class="farm-popular-post">
+                    <img src="sidebar1.webp" alt="Smart Farming">
+                    <div>
+                        <h4>How Smart Farming Technology is Transforming Agriculture</h4>
+                        <span>May 24, 2024</span>
+                    </div>
+                </div>
+
+                <div class="farm-popular-post">
+                    <img src="sidebar2.webp" alt="Farm Technology">
+                    <div>
+                        <h4>5 Ways Data Analytics Helps Farmers Make Better Decisions</h4>
+                        <span>May 18, 2024</span>
+                    </div>
+                </div>
+
+                <div class="farm-popular-post">
+                    <img src="sidebar3.webp" alt="Precision Irrigation">
+                    <div>
+                        <h4>Precision Irrigation: Save Water, Increase Yield</h4>
+                        <span>May 12, 2024</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Newsletter -->
+            <div class="farm-newsletter-box">
+                <h3>Stay Updated</h3>
+                <p>Subscribe to our newsletter and get the latest insights and tips.</p>
+
+                <input type="email" placeholder="Enter your email">
+
+                <button type="button">Subscribe →</button>
+
+                <label>
+                    <input type="checkbox">
+                    I agree to receive updates.
+                </label>
+            </div>
+
+        </aside>
+
+
+        <!-- ================= MAIN BLOG CONTENT ================= -->
+        <main class="farm-blog-main">
+
+            <!-- Featured Article -->
+            <article class="farm-featured-post">
+
+                <div class="farm-featured-image">
+                    <img src="blog-img.webp"
+                         alt="Smart Farming Technology">
+                    <span class="farm-post-badge">FEATURED</span>
+                </div>
+
+                <div class="farm-featured-content">
+
+                    <div class="farm-post-meta">
+                        <span>SMART FARMING</span>
+                        <span>May 24, 2024</span>
+                    </div>
+
+                    <h1>
+                        How Smart Farming Technology is Transforming Agriculture
+                    </h1>
+
+                    <p>
+                        Discover how modern farmers are using IoT, AI and
+                        connected tools to increase productivity, reduce costs,
+                        and build a more sustainable future.
+                    </p>
+
+                    <div class="farm-post-author">
+                        <div class="farm-author-info">
+                            <img src="Author-1.webp" alt="Author">
+                            <span>By Rajesh Kumar</span>
+                        </div>
+
+                        <a href="404.html">Read More →</a>
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <!-- Blog Grid -->
+            <div class="farm-blog-grid">
+
+                <!-- Card 1 -->
+                <article class="farm-blog-card">
+
+                    <div class="farm-card-image">
+                        <img src="blog-1.webp" alt="Data Analytics">
+                    </div>
+
+                    <div class="farm-card-content">
+
+                        <div class="farm-card-meta">
+                            <span>TECHNOLOGY</span>
+                            <span>May 18, 2024</span>
+                        </div>
+
+                        <h2>
+                            5 Ways Data Analytics Helps Farmers Make Better Decisions
+                        </h2>
+
+                        <p>
+                            From predicting weather trends to optimizing crop
+                            yields, data is changing modern agriculture.
+                        </p>
+
+                        <a href="404.html">Read More →</a>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 2 -->
+                <article class="farm-blog-card">
+
+                    <div class="farm-card-image">
+                        <img src="blog-2.webp" alt="Precision Irrigation">
+                    </div>
+
+                    <div class="farm-card-content">
+
+                        <div class="farm-card-meta">
+                            <span>SMART FARMING</span>
+                            <span>May 16, 2024</span>
+                        </div>
+
+                        <h2>
+                            Precision Irrigation: Save Water, Increase Yield
+                        </h2>
+
+                        <p>
+                            Learn how smart irrigation systems help farmers
+                            conserve water while improving crop production.
+                        </p>
+
+                        <a href="404.html">Read More →</a>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 3 -->
+                <article class="farm-blog-card">
+
+                    <div class="farm-card-image">
+                        <img src="blog-3.webp" alt="Drones in Agriculture">
+                    </div>
+
+                    <div class="farm-card-content">
+
+                        <div class="farm-card-meta">
+                            <span>SMART FARMING</span>
+                            <span>May 14, 2024</span>
+                        </div>
+
+                        <h2>
+                            Drones in Agriculture: A New Era of Farm Monitoring
+                        </h2>
+
+                        <p>
+                            Explore how drones are helping farmers monitor
+                            crops and improve field management.
+                        </p>
+
+                        <a href="404.html">Read More →</a>
+
+                    </div>
+                </article>
+
+
+                <!-- Card 4 -->
+                <article class="farm-blog-card">
+
+                    <div class="farm-card-image">
+                        <img src="blog-4.webp" alt="Sustainable Farming">
+                    </div>
+
+                    <div class="farm-card-content">
+
+                        <div class="farm-card-meta">
+                            <span>SUSTAINABILITY</span>
+                            <span>May 12, 2024</span>
+                        </div>
+
+                        <h2>
+                            Sustainable Farming Practices for a Greener Tomorrow
+                        </h2>
+
+                        <p>
+                            Discover sustainable techniques that improve soil
+                            health and protect natural resources.
+                        </p>
+
+                        <a href="404.html">Read More →</a>
+
+                    </div>
+                </article>
+
+                <article class="farm-blog-card" data-category="crop-management">
+    <div class="farm-card-image">
+        <img src="blog-5.webp" alt="Crop Management">
+    </div>
+
+    <div class="farm-card-content">
+
+        <div class="farm-card-meta">
+            <span>CROP MANAGEMENT</span>
+            <span>May 10, 2024</span>
+        </div>
+
+        <h2>
+            Modern Crop Management Techniques
+            Every Farmer Should Know
+        </h2>
+
+        <p>
+            Learn how soil testing, crop monitoring and
+            precision farming techniques can improve
+            crop quality and productivity.
+        </p>
+
+        <a href="404.html">
+            Read More →
+        </a>
+
+    </div>
+</article>
+
+<article class="farm-blog-card" data-category="crop-management">
+
+
+<div class="farm-card-image">
+    <img
+        src="blog-6.webp"
+        alt="Crop Rotation and Planning"
+        loading="lazy"
+    >
+</div>
+
+<div class="farm-card-content">
+
+    <div class="farm-card-meta">
+        <span>CROP MANAGEMENT</span>
+        <span>Apr 16, 2024</span>
+    </div>
+
+    <h2>
+        Smart Crop Rotation Strategies for
+        Better Soil and Higher Yields
+    </h2>
+
+    <p>
+        Discover how proper crop rotation can improve soil
+        fertility, reduce crop diseases and pests, and help
+        farmers achieve healthier crops and better yields.
+    </p>
+
+    <a href="404.html">
+        Read More →
+    </a>
+
+</div>
+
+
+</article>
+
+
+<article class="farm-blog-card" data-category="industry-news">
+    <div class="farm-card-image">
+        <img src="blog-7.webp" alt="Agriculture Industry News">
+    </div>
+
+    <div class="farm-card-content">
+
+        <div class="farm-card-meta">
+            <span>INDUSTRY NEWS</span>
+            <span>May 08, 2024</span>
+        </div>
+
+        <h2>
+            Latest Trends Shaping the Modern Agriculture Industry
+        </h2>
+
+        <p>
+            Explore the latest developments, innovations and
+            opportunities influencing the agricultural industry.
+        </p>
+
+        <a href="404.html">
+            Read More →
+        </a>
+
+    </div>
+</article>
+
+<article class="farm-blog-card" data-category="tips-guides">
+
+<div class="farm-card-image">
+    <img
+        src="blog-8.webp"
+        alt="Practical Farming Tips"
+        loading="lazy"
+    >
+</div>
+
+<div class="farm-card-content">
+
+    <div class="farm-card-meta">
+        <span>TIPS &amp; GUIDES</span>
+        <span>May 06, 2024</span>
+    </div>
+
+    <h2>
+        10 Practical Farming Tips Every Grower Should Know
+    </h2>
+
+    <p>
+        Simple and practical tips for better crop planning,
+        resource management, soil care and improved farm
+        productivity throughout the growing season.
+    </p>
+
+    <a href="404.html">
+        Read More →
+    </a>
+
+</div>
+
+
+</article>
+
+
+            </div>
+
+
+            <!-- Pagination -->
+            <div class="farm-pagination">
+                <button class="active">1</button>
+                <button>2</button>
+                <button>3</button>
+                <span>...</span>
+                <button>8</button>
+                <button class="next">Next →</button>
+            </div>
+
+        </main>
+
+    </div>
+
+</section>
+
+</section>
+    <!-- =========================================================
+     MESSAGE / CONTACT SECTION
+========================================================= -->
+
+<section class="message-section">
+
+    <div class="message-container">
+
+        <!-- =================================================
+             CONTACT FORM CARD
+        ================================================== -->
+
+        <div class="message-card" data-aos="fade-left">
+
+            <div class="message-card-content">
+
+                <h2>Let’s grow something better</h2>
+
+                <p class="message-description">
+                    Tell us your needs, and we'll find the best farm solution.
+                </p>
+
+
+                <!-- =================================================
+                     FORM
+                ================================================== -->
+
+                <form class="message-form">
+
+                    <!-- Row 1 -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="name">
+                                Your Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                placeholder="Your Name"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="phone">
+                                Phone Number
+                            </label>
+
+                            <input
+                                type="tel"
+                                id="phone"
+                                name="phone"
+                                placeholder="Phone Number"
+                                required
+                            >
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Row 2 -->
+                    <div class="form-row">
+
+                        <div class="form-group">
+
+                            <label for="email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="email"
+                                name="email"
+                                placeholder="Email Address"
+                                required
+                            >
+
+                        </div>
+
+
+                        <div class="form-group">
+
+    <label for="service">
+        Service Type
+    </label>
+
+    <div class="custom-select" id="serviceSelect">
+
+        <button
+            type="button"
+            class="custom-select-button"
+        >
+            <span>Select...</span>
+            <span class="select-arrow">⌄</span>
+        </button>
+
+        <div class="custom-select-options">
+
+            <div
+                class="custom-option"
+                data-value="farm-management"
+            >
+                Farm Management
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="crop-consulting"
+            >
+                Crop Consulting
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="irrigation"
+            >
+                Irrigation Solutions
+            </div>
+
+            <div
+                class="custom-option"
+                data-value="harvesting"
+            >
+                Harvesting
+            </div>
+
+        </div>
+
+    </div>
+
+    <input
+        type="hidden"
+        name="service"
+        id="serviceValue"
+    >
+
+</div>
+
+                    </div>
+
+
+                    <!-- Message -->
+                    <div class="form-group message-group">
+
+                        <label for="message">
+                            Write Message
+                        </label>
+
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write Message"
+                        ></textarea>
+
+                    </div>
+
+
+                    <!-- Submit -->
+                    <button
+                        type="submit"
+                        class="message-submit"
+                    >
+
+                        <span>Send Message</span>
+
+                        <span class="submit-arrow">
+                            →
+                        </span>
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <!-- =================================================
+                 BOTTOM CONTACT BAR
+            ================================================== -->
+
+            <div class="message-contact-bar">
+
+                If you have any questions, contact us at
+                <a href="tel:2085550112">
+                    (208) 555-0112
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================
+     FAQ SECTION
+========================= -->
+
+<section class="faq-section" id="faq">
+
+    <div class="faq-container">
+
+        <!-- FAQ Header -->
+        <div class="faq-header" data-aos="fade-up" data-aos-duration="800">
+
+            <span class="faq-badge">FAQ</span>
+
+            <h2>Frequently Asked Questions</h2>
+
+            <p>
+                Showcasing the results of our commitment to quality, innovation,<br>
+                and sustainable growth.
+            </p>
+
+        </div>
+
+
+        <!-- FAQ Items -->
+        <div class="faq-list">
+
+            <!-- FAQ 01 -->
+            <div
+                class="faq-item active"
+                data-aos="fade-up"
+                data-aos-delay="100"
+                data-aos-duration="700"
+            >
+
+                <button class="faq-question" type="button">
+
+                    <span class="faq-question-text">
+                        1. How can your services improve my farm?
+                    </span>
+
+                    <span class="faq-toggle" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Our solutions are designed to increase productivity,
+                        reduce waste, and ensure sustainable long-term growth.
+                        We provide a range of agricultural solutions including
+                        crop management.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 02 -->
+            <div
+                class="faq-item"
+                data-aos="fade-up"
+                data-aos-delay="200"
+                data-aos-duration="700"
+            >
+
+                <button class="faq-question" type="button">
+
+                    <span class="faq-question-text">
+                        2. Do you support small-scale farmers?
+                    </span>
+
+                    <span class="faq-toggle" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Yes, we support small-scale farmers with practical,
+                        flexible, and sustainable agricultural solutions
+                        tailored to their individual needs.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 03 -->
+            <div
+                class="faq-item"
+                data-aos="fade-up"
+                data-aos-delay="300"
+                data-aos-duration="700"
+            >
+
+                <button class="faq-question" type="button">
+
+                    <span class="faq-question-text">
+                        3. Are your methods environmentally friendly?
+                    </span>
+
+                    <span class="faq-toggle" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Absolutely. Our methods focus on sustainable farming,
+                        responsible resource usage, and environmentally
+                        conscious agricultural practices.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 04 -->
+            <div
+                class="faq-item"
+                data-aos="fade-up"
+                data-aos-delay="400"
+                data-aos-duration="700"
+            >
+
+                <button class="faq-question" type="button">
+
+                    <span class="faq-question-text">
+                        4. How do I get started?
+                    </span>
+
+                    <span class="faq-toggle" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Simply get in touch with our team. We will understand
+                        your requirements and recommend the right solution
+                        for your farm.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- FAQ 05 -->
+            <div
+                class="faq-item"
+                data-aos="fade-up"
+                data-aos-delay="500"
+                data-aos-duration="700"
+            >
+
+                <button class="faq-question" type="button">
+
+                    <span class="faq-question-text">
+                        5. Do you offer ongoing support?
+                    </span>
+
+                    <span class="faq-toggle" aria-hidden="true">
+                        <span></span>
+                        <span></span>
+                    </span>
+
+                </button>
+
+                <div class="faq-answer">
+                    <p>
+                        Yes, we provide ongoing support and guidance to help
+                        you achieve consistent results and long-term growth.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+<!-- =====================================================
+     FOOTER SECTION
+===================================================== -->
+
+<footer class="stackly-footer">
+
+    <div class="stackly-footer-container">
+
+        <!-- =================================================
+             TOP FOOTER
+        ================================================== -->
+
+        <div class="stackly-footer-top">
+
+            <!-- LOGO + SOCIAL -->
+            <div class="stackly-footer-brand">
+
+                <a href="index.html" class="stackly-footer-logo">
+                    <img
+                        src="Stackly-logo-Blue.webp"
+                        alt="Stackly Logo"
+                    >
+                </a>
+
+                <!-- SOCIAL ICONS -->
+                <div class="stackly-social-links">
+
+                    <a href="404.html" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="X">
+                        <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- MENUS -->
+            <div class="stackly-footer-menu">
+
+                <div class="stackly-footer-column">
+
+                    <h4>Menus</h4>
+
+                    <a href="about.html">About Us</a>
+                    <a href="404.html">Pricing</a>
+                    <a href="contact.html">Contact Us</a>
+
+                </div>
+
+
+                <div class="stackly-footer-column">
+
+                    <h4>CMS Pages</h4>
+
+                    <a href="blog.html">Blogs</a>
+                    <a href="services.html">Services</a>
+
+                </div>
+
+            </div>
+
+
+            <!-- NEWSLETTER -->
+            <div class="stackly-footer-newsletter">
+
+                <h4>Stay Up To Date</h4>
+
+                <p>
+                    Get the latest farming tips, insights, and updates
+                    delivered straight to your inbox.
+                </p>
+
+                <div class="stackly-newsletter-form">
+
+                    <input
+                        type="email"
+                        placeholder="Stackly@gmail.com"
+                        aria-label="Email Address"
+                    >
+
+                    <button type="submit">
+                        Subscribe
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             BOTTOM FOOTER
+        ================================================== -->
+
+        <div class="stackly-footer-bottom">
+
+            <!-- LARGE LOGO -->
+            <div class="stackly-footer-large-logo">
+
+    <a href="index.html" aria-label="Stackly Home">
+
+        <img 
+            src="Stackly-logo-Blue.webp" 
+            alt="Stackly"
+        >
+
+    </a>
+
+</div>
+
+
+            <!-- CONTACT INFORMATION -->
+            <div class="stackly-footer-contact">
+
+                <p>
+                    (208) 555-0112
+                </p>
+
+                <p>
+                    2464 Royal Ln. Mesa, New Jersey 45463
+                </p>
+
+                <a href="mailto:contact@Stackly.com">
+                    contact@Stackly.com
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             COPYRIGHT LINE
+        ================================================== -->
+
+        <div class="stackly-footer-copyright">
+
+            <p>
+                © 2026 Stackly. All Rights Reserved.
+            </p>
+
+        </div>
+
+    </div>
+
+</footer>
+
+ 
+ 
+
+    <!-- =====================================================
+         AOS JAVASCRIPT
+    ====================================================== -->
+
+    <script
+        src="https://unpkg.com/aos@2.3.1/dist/aos.js"
+    ></script>
+
+
+    <!-- =====================================================
+         MAIN JAVASCRIPT
+    ====================================================== -->
+
+    <script src="index.js"></script>
+
+
+</body>
+
+</html>

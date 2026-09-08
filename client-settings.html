@@ -1,0 +1,1026 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     SETTINGS PAGE - SIMPLE UNIQUE SECTIONS
+========================================================= -->
+
+<section class="stackly-client-settings-extra-page">
+
+
+    <!-- =====================================================
+         ACCOUNT PREFERENCES
+    ====================================================== -->
+
+    <section class="stackly-client-settings-preferences-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                ACCOUNT PREFERENCES
+            </span>
+
+            <h2>
+                Manage your dashboard preferences.
+            </h2>
+
+            <p>
+                Adjust your basic account details and personalize
+                how your Stackly farming dashboard works for you.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-settings-preferences-grid">
+
+
+            <!-- PROFILE -->
+
+            <article class="stackly-client-settings-preference-card">
+
+                <div class="stackly-client-settings-preference-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div class="stackly-client-settings-preference-content">
+
+                    <span>
+                        PROFILE
+                    </span>
+
+                    <h3>
+                        Farmer Profile
+                    </h3>
+
+                    <p>
+                        Manage your name, contact details, 
+                        and complete farming profile information.
+                    </p>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-settings-preference-link"
+                >
+                    Edit
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- FARM DETAILS -->
+
+            <article class="stackly-client-settings-preference-card">
+
+                <div class="stackly-client-settings-preference-icon">
+                    <i class="fa-solid fa-house-chimney"></i>
+                </div>
+
+                <div class="stackly-client-settings-preference-content">
+
+                    <span>
+                        FARM DETAILS
+                    </span>
+
+                    <h3>
+                        Information
+                    </h3>
+
+                    <p>
+                        Update your farm size, location, crop type, 
+                        seasonal cultivation details, and cultivation practices.
+                    </p>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-settings-preference-link"
+                >
+                    Manage
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- LANGUAGE -->
+
+            <article class="stackly-client-settings-preference-card">
+
+                <div class="stackly-client-settings-preference-icon">
+                    <i class="fa-solid fa-language"></i>
+                </div>
+
+                <div class="stackly-client-settings-preference-content">
+
+                    <span>
+                        LANGUAGE
+                    </span>
+
+                    <h3>
+                        English
+                    </h3>
+
+                    <p>
+                        Choose the language you prefer for 
+                        your personalized dashboard experience.
+                    </p>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-settings-preference-link"
+                >
+                    Change
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         NOTIFICATION SETTINGS
+    ====================================================== -->
+
+    <section class="stackly-client-settings-notification-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                NOTIFICATIONS
+            </span>
+
+            <h2>
+                Choose what you would like to receive.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-settings-notification-list">
+
+
+            <!-- IRRIGATION -->
+
+            <div class="stackly-client-settings-notification-item">
+
+                <div class="stackly-client-settings-notification-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <div class="stackly-client-settings-notification-info">
+
+                    <h3>
+                        Irrigation Alerts
+                    </h3>
+
+                    <p>
+                        Get reminders when irrigation activity
+                        needs your attention.
+                    </p>
+
+                </div>
+
+                <label class="stackly-client-settings-toggle">
+
+                    <input
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- CROP -->
+
+            <div class="stackly-client-settings-notification-item">
+
+                <div class="stackly-client-settings-notification-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <div class="stackly-client-settings-notification-info">
+
+                    <h3>
+                        Crop Updates
+                    </h3>
+
+                    <p>
+                        Receive important updates about crop growth
+                        and field activities.
+                    </p>
+
+                </div>
+
+                <label class="stackly-client-settings-toggle">
+
+                    <input
+                        type="checkbox"
+                        checked
+                    >
+
+                    <span></span>
+
+                </label>
+
+            </div>
+
+
+            <!-- HARVEST -->
+
+            <div class="stackly-client-settings-notification-item">
+
+                <div class="stackly-client-settings-notification-icon">
+                    <i class="fa-solid fa-basket-shopping"></i>
+                </div>
+
+                <div class="stackly-client-settings-notification-info">
+
+                    <h3>
+                        Harvest Reminders
+                    </h3>
+
+                    <p>
+                        Stay informed about upcoming harvest
+                        activities and collection dates.
+                    </p>
+
+                </div>
+
+                <label class="stackly-client-settings-toggle">
+
+                    <input
+                        type="checkbox"
+                    >
+
+                    <span></span>
+
+                </label>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SECURITY
+    ====================================================== -->
+
+    <section class="stackly-client-settings-security-section">
+
+        <div class="stackly-client-section-heading">
+
+            <span>
+                ACCOUNT SECURITY
+            </span>
+
+            <h2>
+                Keep your farm account protected.
+            </h2>
+
+        </div>
+
+
+        <div class="stackly-client-settings-security-grid">
+
+
+            <article class="stackly-client-settings-security-card">
+
+                <div class="stackly-client-settings-security-icon">
+                    <i class="fa-solid fa-lock"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        PASSWORD
+                    </span>
+
+                    <h3>
+                        Password Protection
+                    </h3>
+
+                    <p>
+                        Your password was last updated recently.
+                    </p>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-settings-security-btn"
+                >
+                    Update Password
+                </a>
+
+            </article>
+
+
+            <article class="stackly-client-settings-security-card">
+
+                <div class="stackly-client-settings-security-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+
+                    <span>
+                        ACCOUNT STATUS
+                    </span>
+
+                    <h3>
+                        Account Protected
+                    </h3>
+
+                    <p>
+                        Your current account security settings
+                        are active and protected.
+                    </p>
+
+                </div>
+
+                <strong class="stackly-client-settings-security-status">
+                    Secure
+                </strong>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DISPLAY SETTINGS
+    ====================================================== -->
+
+    <section class="stackly-client-settings-display-section">
+
+        <div class="stackly-client-settings-display-content">
+
+            <span>
+                DASHBOARD EXPERIENCE
+            </span>
+
+            <h2>
+                Keep your workspace comfortable and simple.
+            </h2>
+
+            <p>
+                Select the dashboard experience that best matches
+                how you monitor your farm activities.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-settings-display-options">
+
+
+            <a
+                href="404-client.html"
+                class="stackly-client-settings-display-option active"
+            >
+
+                <i class="fa-solid fa-desktop"></i>
+
+                <div>
+
+                    <strong>
+                        Standard View
+                    </strong>
+
+                    <span>
+                        Complete dashboard experience
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-check"></i>
+
+            </a>
+
+
+            <a
+                href="404-client.html"
+                class="stackly-client-settings-display-option"
+            >
+
+                <i class="fa-solid fa-chart-simple"></i>
+
+                <div>
+
+                    <strong>
+                        Compact View
+                    </strong>
+
+                    <span>
+                        Focus on key farm information
+                    </span>
+
+                </div>
+
+                <i class="fa-solid fa-chevron-right"></i>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         DATA & PRIVACY
+    ====================================================== -->
+
+    <section class="stackly-client-settings-data-section">
+
+        <div class="stackly-client-settings-data-card">
+
+            <div class="stackly-client-settings-data-icon">
+                <i class="fa-solid fa-database"></i>
+            </div>
+
+            <div class="stackly-client-settings-data-content">
+
+                <span>
+                    DATA & PRIVACY
+                </span>
+
+                <h2>
+                    Your farm data stays organized.
+                </h2>
+
+                <p>
+                    Review your account information and manage
+                    available data options from one place.
+                </p>
+
+            </div>
+
+            <a
+                href="404-client.html"
+                class="stackly-client-settings-data-btn"
+            >
+                Manage Data
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </section>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

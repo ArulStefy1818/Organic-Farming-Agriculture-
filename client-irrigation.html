@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     STACKLY IRRIGATION PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-client-irrigation-page">
+
+
+    <!-- =====================================================
+         IRRIGATION HERO / CONTROL CENTER
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-hero">
+
+        <div class="stackly-client-irrigation-hero-content">
+
+            <span class="stackly-client-irrigation-label">
+                <i class="fa-solid fa-droplet"></i>
+                SMART IRRIGATION CONTROL
+            </span>
+
+            <h2>
+                Every drop
+                <span>works smarter.</span>
+            </h2>
+
+            <p>
+                Monitor field moisture, control irrigation schedules,
+                track water consumption and keep every crop hydrated
+                with precision.
+            </p>
+
+
+            <div class="stackly-client-irrigation-live-status">
+
+                <div class="stackly-client-irrigation-live-dot"></div>
+
+                <span>
+                    Irrigation system online
+                </span>
+
+                <strong>
+                    LIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO WATER VISUAL
+        ================================================== -->
+
+        <div class="stackly-client-irrigation-hero-visual">
+
+            <div class="stackly-client-irrigation-water-circle">
+
+                <div class="stackly-client-irrigation-water-inner">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                    <strong>
+                        87%
+                    </strong>
+
+                    <span>
+                        Soil Moisture
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-client-irrigation-floating-card top">
+
+                <i class="fa-solid fa-faucet-drip"></i>
+
+                <div>
+
+                    <strong>
+                        4 Active
+                    </strong>
+
+                    <span>
+                        Irrigation Zones
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-client-irrigation-floating-card bottom">
+
+                <i class="fa-solid fa-clock"></i>
+
+                <div>
+
+                    <strong>
+                        Next · 06:30 AM
+                    </strong>
+
+                    <span>
+                        Scheduled Watering
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         QUICK IRRIGATION STATS
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-stats">
+
+        <div class="stackly-client-irrigation-section-heading">
+
+            <div>
+
+                <span>
+                    TODAY'S WATER OVERVIEW
+                </span>
+
+                <h3>
+                    Irrigation at a glance
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-client-irrigation-stats-grid">
+
+
+            <!-- WATER USED -->
+
+            <article class="stackly-client-irrigation-stat-card">
+
+                <div class="stackly-client-irrigation-stat-icon blue">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+                <span>
+                    Water Used Today
+                </span>
+
+                <strong>
+                    3,840 L
+                </strong>
+
+                <small>
+                    12% lower than yesterday
+                </small>
+
+                <div class="stackly-client-irrigation-stat-line">
+
+                    <span style="width:68%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- WATER SAVED -->
+
+            <article class="stackly-client-irrigation-stat-card">
+
+                <div class="stackly-client-irrigation-stat-icon lime">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <span>
+                    Water Saved
+                </span>
+
+                <strong>
+                    1,260 L
+                </strong>
+
+                <small>
+                    Through smart scheduling
+                </small>
+
+                <div class="stackly-client-irrigation-stat-line lime">
+
+                    <span style="width:54%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- ACTIVE ZONES -->
+
+            <article class="stackly-client-irrigation-stat-card">
+
+                <div class="stackly-client-irrigation-stat-icon green">
+
+                    <i class="fa-solid fa-faucet"></i>
+
+                </div>
+
+                <span>
+                    Active Zones
+                </span>
+
+                <strong>
+                    4 / 6
+                </strong>
+
+                <small>
+                    Two zones on standby
+                </small>
+
+                <div class="stackly-client-irrigation-stat-line green">
+
+                    <span style="width:67%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- SYSTEM HEALTH -->
+
+            <article class="stackly-client-irrigation-stat-card">
+
+                <div class="stackly-client-irrigation-stat-icon orange">
+
+                    <i class="fa-solid fa-gauge-high"></i>
+
+                </div>
+
+                <span>
+                    System Health
+                </span>
+
+                <strong>
+                    96%
+                </strong>
+
+                <small>
+                    All irrigation systems normal
+                </small>
+
+                <div class="stackly-client-irrigation-stat-line orange">
+
+                    <span style="width:96%;"></span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         FIELD IRRIGATION CONTROL
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-fields">
+
+        <div class="stackly-client-irrigation-section-heading">
+
+            <div>
+
+                <span>
+                    FIELD CONTROL
+                </span>
+
+                <h3>
+                    Irrigation by field
+                </h3>
+
+            </div>
+
+
+            <a
+                href="404-client.html"
+                class="stackly-client-irrigation-view-link"
+            >
+
+                Manage Fields
+
+                 
+            </a>
+
+        </div>
+
+
+        <div class="stackly-client-irrigation-field-grid">
+
+
+            <!-- =================================================
+                 FIELD A
+            ================================================== -->
+
+            <article class="stackly-client-irrigation-field-card">
+
+                <div class="stackly-client-irrigation-field-top">
+
+                    <div class="stackly-client-irrigation-field-icon">
+
+                        <i class="fa-solid fa-wheat-awn"></i>
+
+                    </div>
+
+                    <span class="stackly-client-irrigation-status active">
+                        RUNNING
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-irrigation-field-label">
+                    FIELD A
+                </span>
+
+                <h4>
+                    Organic Rice
+                </h4>
+
+
+                <div class="stackly-client-irrigation-field-moisture">
+
+                    <div>
+
+                        <span>
+                            Soil Moisture
+                        </span>
+
+                        <strong>
+                            91%
+                        </strong>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-mini-meter">
+
+                        <span style="width:91%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-info">
+
+                    <div>
+
+                        <span>
+                            Water Flow
+                        </span>
+
+                        <strong>
+                            24 L/min
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong>
+                            28 min
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-footer">
+
+                    <span>
+                        Ends in 12 min
+                    </span>
+
+                     
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 FIELD B
+            ================================================== -->
+
+            <article class="stackly-client-irrigation-field-card">
+
+                <div class="stackly-client-irrigation-field-top">
+
+                    <div class="stackly-client-irrigation-field-icon carrot">
+
+                        <i class="fa-solid fa-carrot"></i>
+
+                    </div>
+
+                    <span class="stackly-client-irrigation-status scheduled">
+                        SCHEDULED
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-irrigation-field-label">
+                    FIELD B
+                </span>
+
+                <h4>
+                    Organic Carrot
+                </h4>
+
+
+                <div class="stackly-client-irrigation-field-moisture">
+
+                    <div>
+
+                        <span>
+                            Soil Moisture
+                        </span>
+
+                        <strong>
+                            84%
+                        </strong>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-mini-meter">
+
+                        <span style="width:84%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-info">
+
+                    <div>
+
+                        <span>
+                            Water Flow
+                        </span>
+
+                        <strong>
+                            18 L/min
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Start Time
+                        </span>
+
+                        <strong>
+                            06:30 AM
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-footer">
+
+                    <span>
+                        Starts tomorrow
+                    </span>
+
+                     
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 FIELD C
+            ================================================== -->
+
+            <article class="stackly-client-irrigation-field-card warning">
+
+                <div class="stackly-client-irrigation-field-top">
+
+                    <div class="stackly-client-irrigation-field-icon vegetable">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+                    <span class="stackly-client-irrigation-status attention">
+                        LOW MOISTURE
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-irrigation-field-label">
+                    FIELD C
+                </span>
+
+                <h4>
+                    Green Vegetables
+                </h4>
+
+
+                <div class="stackly-client-irrigation-field-moisture">
+
+                    <div>
+
+                        <span>
+                            Soil Moisture
+                        </span>
+
+                        <strong>
+                            62%
+                        </strong>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-mini-meter warning">
+
+                        <span style="width:62%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-info">
+
+                    <div>
+
+                        <span>
+                            Water Flow
+                        </span>
+
+                        <strong>
+                            20 L/min
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Recommendation
+                        </span>
+
+                        <strong>
+                            Irrigate Now
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-footer">
+
+                    <span>
+                        Moisture below target
+                    </span>
+
+                     
+
+                </div>
+
+            </article>
+
+
+
+            <!-- =================================================
+                 FIELD D
+            ================================================== -->
+
+            <article class="stackly-client-irrigation-field-card">
+
+                <div class="stackly-client-irrigation-field-top">
+
+                    <div class="stackly-client-irrigation-field-icon chilli">
+
+                        <i class="fa-solid fa-pepper-hot"></i>
+
+                    </div>
+
+                    <span class="stackly-client-irrigation-status active">
+                        RUNNING
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-irrigation-field-label">
+                    FIELD D
+                </span>
+
+                <h4>
+                    Organic Chilli
+                </h4>
+
+
+                <div class="stackly-client-irrigation-field-moisture">
+
+                    <div>
+
+                        <span>
+                            Soil Moisture
+                        </span>
+
+                        <strong>
+                            89%
+                        </strong>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-mini-meter">
+
+                        <span style="width:89%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-info">
+
+                    <div>
+
+                        <span>
+                            Water Flow
+                        </span>
+
+                        <strong>
+                            16 L/min
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Duration
+                        </span>
+
+                        <strong>
+                            15 min
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-field-footer">
+
+                    <span>
+                        Ends in 7 min
+                    </span>
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         WATER FLOW TIMELINE + USAGE
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-dashboard-grid">
+
+
+        <!-- =================================================
+             TODAY'S IRRIGATION TIMELINE
+        ================================================== -->
+
+        <article class="stackly-client-dashboard-card">
+
+            <div class="stackly-client-card-header">
+
+                <div>
+
+                    <span>
+                        TODAY'S SCHEDULE
+                    </span>
+
+                    <h3>
+                        Irrigation Timeline
+                    </h3>
+
+                </div>
+
+                <span class="stackly-client-irrigation-day-badge">
+                    MON 07 SEP
+                </span>
+
+            </div>
+
+
+            <div class="stackly-client-irrigation-timeline">
+
+
+                <div class="stackly-client-irrigation-timeline-item completed">
+
+                    <div class="stackly-client-irrigation-time">
+                        05:30 AM
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-line">
+
+                        <span></span>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-content">
+
+                        <strong>
+                            Field A
+                        </strong>
+
+                        <span>
+                            Rice irrigation · 620 L
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-timeline-item active">
+
+                    <div class="stackly-client-irrigation-time">
+                        06:00 AM
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-line">
+
+                        <span></span>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-content">
+
+                        <strong>
+                            Field D
+                        </strong>
+
+                        <span>
+                            Chilli irrigation · 410 L
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-timeline-item upcoming">
+
+                    <div class="stackly-client-irrigation-time">
+                        06:30 AM
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-line">
+
+                        <span></span>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-content">
+
+                        <strong>
+                            Field B
+                        </strong>
+
+                        <span>
+                            Carrot irrigation · 520 L
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-timeline-item upcoming">
+
+                    <div class="stackly-client-irrigation-time">
+                        07:15 AM
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-line">
+
+                        <span></span>
+
+                    </div>
+
+                    <div class="stackly-client-irrigation-timeline-content">
+
+                        <strong>
+                            Field C
+                        </strong>
+
+                        <span>
+                            Vegetable irrigation · 700 L
+                        </span>
+
+                    </div>
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             WATER USAGE
+        ================================================== -->
+
+        <article class="stackly-client-dashboard-card">
+
+            <div class="stackly-client-card-header">
+
+                <div>
+
+                    <span>
+                        WATER MANAGEMENT
+                    </span>
+
+                    <h3>
+                        Weekly Water Usage
+                    </h3>
+
+                </div>
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-irrigation-card-link"
+                >
+                    Details
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <div class="stackly-client-irrigation-usage-summary">
+
+                <div>
+
+                    <strong>
+                        24.8K L
+                    </strong>
+
+                    <span>
+                        This week
+                    </span>
+
+                </div>
+
+                <div class="positive">
+
+                    <strong>
+                        -14%
+                    </strong>
+
+                    <span>
+                        Water usage
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-client-irrigation-chart">
+
+                <div class="stackly-client-irrigation-chart-y">
+
+                    <span>5K</span>
+                    <span>4K</span>
+                    <span>3K</span>
+                    <span>2K</span>
+                    <span>1K</span>
+                    <span>0</span>
+
+                </div>
+
+
+                <div class="stackly-client-irrigation-chart-area">
+
+
+                    <div class="stackly-client-irrigation-chart-grid"></div>
+
+
+                    <div class="stackly-client-irrigation-bars">
+
+                        <div>
+                            <span style="height:64%;"></span>
+                            <small>Mon</small>
+                        </div>
+
+                        <div>
+                            <span style="height:78%;"></span>
+                            <small>Tue</small>
+                        </div>
+
+                        <div>
+                            <span style="height:57%;"></span>
+                            <small>Wed</small>
+                        </div>
+
+                        <div>
+                            <span style="height:71%;"></span>
+                            <small>Thu</small>
+                        </div>
+
+                        <div>
+                            <span style="height:48%;"></span>
+                            <small>Fri</small>
+                        </div>
+
+                        <div>
+                            <span style="height:63%;"></span>
+                            <small>Sat</small>
+                        </div>
+
+                        <div class="today">
+                            <span style="height:42%;"></span>
+                            <small>Sun</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         SMART IRRIGATION RECOMMENDATIONS
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-recommendations">
+
+        <div class="stackly-client-irrigation-section-heading">
+
+            <div>
+
+                <span>
+                    SMART FARM INSIGHTS
+                </span>
+
+                <h3>
+                    Irrigation recommendations
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-client-irrigation-recommendation-grid">
+
+
+            <!-- RECOMMENDATION 1 -->
+
+            <article class="stackly-client-irrigation-recommendation-card">
+
+                <div class="stackly-client-irrigation-recommendation-icon water">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        FIELD C
+                    </span>
+
+                    <h4>
+                        Increase irrigation efficiency
+                    </h4>
+
+                    <p>
+                        Soil moisture is below the preferred level.
+                        Moderate watering is recommended today.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- RECOMMENDATION 2 -->
+
+            <article class="stackly-client-irrigation-recommendation-card">
+
+                <div class="stackly-client-irrigation-recommendation-icon rain">
+
+                    <i class="fa-solid fa-cloud-rain"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        WEATHER ADVISORY
+                    </span>
+
+                    <h4>
+                        Reduce tomorrow's watering
+                    </h4>
+
+                    <p>
+                        Expected rainfall may reduce irrigation
+                        requirements for the morning cycle.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+            <!-- RECOMMENDATION 3 -->
+
+            <article class="stackly-client-irrigation-recommendation-card">
+
+                <div class="stackly-client-irrigation-recommendation-icon eco">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        WATER SAVING
+                    </span>
+
+                    <h4>
+                        Smart scheduling is working
+                    </h4>
+
+                    <p>
+                        Current irrigation timing has reduced water
+                        consumption by approximately 14%.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         IRRIGATION SYSTEM HEALTH
+    ====================================================== -->
+
+    <section class="stackly-client-irrigation-system-banner">
+
+        <div class="stackly-client-irrigation-system-icon">
+
+            <i class="fa-solid fa-satellite-dish"></i>
+
+        </div>
+
+
+        <div class="stackly-client-irrigation-system-content">
+
+            <span>
+                IRRIGATION SYSTEM STATUS
+            </span>
+
+            <h3>
+                Your irrigation network is performing efficiently.
+            </h3>
+
+            <p>
+                Pumps, valves, sensors and active watering zones
+                are operating normally. No maintenance alerts
+                require immediate attention.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-irrigation-system-score">
+
+            <strong>
+                96%
+            </strong>
+
+            <span>
+                System Health
+            </span>
+
+        </div>
+
+    </section>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

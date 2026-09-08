@@ -1,0 +1,1900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Client Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Client Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="client.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD
+========================================================= -->
+
+<div class="stackly-client-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-client-sidebar-overlay"
+        id="stacklyClientSidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         CLIENT SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-client-sidebar"
+        id="stacklyClientSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="client.html"
+                class="stackly-client-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-client-sidebar-close"
+                id="stacklyClientSidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT PROFILE
+        ================================================== -->
+
+        <div class="stackly-client-profile">
+
+            <div class="stackly-client-profile-avatar">
+
+                <i class="fa-solid fa-user"></i>
+
+            </div>
+
+            <div class="stackly-client-profile-info">
+
+                <strong id="stacklyClientUserName">
+                    Farm Client
+                </strong>
+
+                <span>
+                    Organic Farmer
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             CLIENT NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-client-nav">
+
+
+            <!-- MAIN MENU -->
+
+            <p class="stackly-client-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <!-- DASHBOARD -->
+
+            <a
+                href="client.html"
+                class="stackly-client-nav-link active"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <!-- MY FARM -->
+
+            <a
+                href="client-farm.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-house-chimney"></i>
+
+                </span>
+
+                <span>
+                    My Farm
+                </span>
+
+            </a>
+
+
+            <!-- CROPS -->
+
+            <a
+                href="client-crops.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    My Crops
+                </span>
+
+            </a>
+
+
+            <!-- SOIL -->
+
+            <a
+                href="client-soil.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <!-- IRRIGATION -->
+
+            <a
+                href="client-irrigation.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- FARM MANAGEMENT -->
+
+            <p class="stackly-client-nav-heading">
+                FARM MANAGEMENT
+            </p>
+
+
+            <!-- HARVEST -->
+
+            <a
+                href="client-harvest.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <!-- INVENTORY -->
+
+            <a
+                href="client-inventory.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <!-- CERTIFICATION -->
+
+            <a
+                href="client-certification.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certification
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <a
+                href="client-reports.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <!-- SETTINGS -->
+
+            <a
+                href="client-settings.html"
+                class="stackly-client-nav-link"
+            >
+
+                <span class="stackly-client-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-client-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-client-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-client-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-client-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-client-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-client-menu-toggle"
+                    id="stacklyClientMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-client-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Client Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-client-header-right">
+
+
+                <!-- NOTIFICATION -->
+
+                <a
+                    href="404-client.html"
+                    class="stackly-client-notification-link"
+                >
+
+                    <button
+                        type="button"
+                        class="stackly-client-header-icon stackly-client-notification"
+                        aria-label="Notifications"
+                    >
+
+                        <i class="fa-regular fa-bell"></i>
+
+                        <span class="stackly-client-notification-dot">
+                            3
+                        </span>
+
+                    </button>
+
+                </a>
+
+
+                <!-- CLIENT EMAIL -->
+
+                <div class="stackly-client-account">
+
+
+                    <div class="stackly-client-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-client-account-details">
+
+                        <strong id="stacklyClientEmail">
+                            client@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Client
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     STACKLY HARVEST PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-client-harvest-page">
+
+
+    <!-- =====================================================
+         HARVEST HERO
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-hero">
+
+        <div class="stackly-client-harvest-hero-content">
+
+            <span class="stackly-client-harvest-label">
+
+                <i class="fa-solid fa-basket-shopping"></i>
+
+                HARVEST MANAGEMENT
+
+            </span>
+
+
+            <h2>
+
+                From field
+                <span>to fresh harvest.</span>
+
+            </h2>
+
+
+            <p>
+
+                Track crop maturity, estimate upcoming yield,
+                monitor harvest progress and keep every harvest
+                batch organized from collection to storage.
+
+            </p>
+
+
+            <div class="stackly-client-harvest-hero-status">
+
+                <div class="stackly-client-harvest-status-dot"></div>
+
+                <span>
+                    Harvest season is active
+                </span>
+
+                <strong>
+                    ACTIVE
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             HERO VISUAL
+        ================================================== -->
+
+        <div class="stackly-client-harvest-hero-visual">
+
+
+            <div class="stackly-client-harvest-yield-circle">
+
+                <div class="stackly-client-harvest-yield-inner">
+
+                    <i class="fa-solid fa-wheat-awn"></i>
+
+                    <strong>
+                        78%
+                    </strong>
+
+                    <span>
+                        Harvest Ready
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-client-harvest-floating-card top">
+
+                <i class="fa-solid fa-calendar-check"></i>
+
+                <div>
+
+                    <strong>
+                        3 Fields
+                    </strong>
+
+                    <span>
+                        Ready This Week
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-client-harvest-floating-card bottom">
+
+                <i class="fa-solid fa-weight-hanging"></i>
+
+                <div>
+
+                    <strong>
+                        8.6 Tons
+                    </strong>
+
+                    <span>
+                        Expected Yield
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST OVERVIEW
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-overview">
+
+        <div class="stackly-client-harvest-section-heading">
+
+            <div>
+
+                <span>
+                    HARVEST OVERVIEW
+                </span>
+
+                <h3>
+                    Today's harvest snapshot
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-overview-grid">
+
+
+            <!-- READY -->
+
+            <article class="stackly-client-harvest-stat-card">
+
+                <div class="stackly-client-harvest-stat-icon green">
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+                <span>
+                    Ready for Harvest
+                </span>
+
+                <strong>
+                    3 Fields
+                </strong>
+
+                <small>
+                    Crops have reached target maturity
+                </small>
+
+                <div class="stackly-client-harvest-stat-meter">
+
+                    <span style="width:75%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- UPCOMING -->
+
+            <article class="stackly-client-harvest-stat-card">
+
+                <div class="stackly-client-harvest-stat-icon lime">
+
+                    <i class="fa-solid fa-calendar-days"></i>
+
+                </div>
+
+                <span>
+                    Upcoming Harvest
+                </span>
+
+                <strong>
+                    5 Fields
+                </strong>
+
+                <small>
+                    Expected within the next 10 days
+                </small>
+
+                <div class="stackly-client-harvest-stat-meter lime">
+
+                    <span style="width:58%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- YIELD -->
+
+            <article class="stackly-client-harvest-stat-card">
+
+                <div class="stackly-client-harvest-stat-icon orange">
+
+                    <i class="fa-solid fa-weight-scale"></i>
+
+                </div>
+
+                <span>
+                    Expected Yield
+                </span>
+
+                <strong>
+                    8.6 Tons
+                </strong>
+
+                <small>
+                    Estimated based on crop performance
+                </small>
+
+                <div class="stackly-client-harvest-stat-meter orange">
+
+                    <span style="width:86%;"></span>
+
+                </div>
+
+            </article>
+
+
+            <!-- COMPLETED -->
+
+            <article class="stackly-client-harvest-stat-card">
+
+                <div class="stackly-client-harvest-stat-icon blue">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </div>
+
+                <span>
+                    Harvest Completed
+                </span>
+
+                <strong>
+                    42%
+                </strong>
+
+                <small>
+                    Current seasonal completion
+                </small>
+
+                <div class="stackly-client-harvest-stat-meter blue">
+
+                    <span style="width:42%;"></span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST READINESS
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-readiness">
+
+        <div class="stackly-client-harvest-section-heading">
+
+            <div>
+
+                <span>
+                    CROP MATURITY
+                </span>
+
+                <h3>
+                    Harvest readiness by crop
+                </h3>
+
+            </div>
+
+
+            <a
+                href="404-client.html"
+                class="stackly-client-harvest-view-link"
+            >
+
+                Full Crop Status
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-crop-grid">
+
+
+            <!-- RICE -->
+
+            <article class="stackly-client-harvest-crop-card">
+
+                <div class="stackly-client-harvest-crop-top">
+
+                    <div class="stackly-client-harvest-crop-icon rice">
+
+                        <i class="fa-solid fa-wheat-awn"></i>
+
+                    </div>
+
+                    <span class="stackly-client-harvest-ready-badge ready">
+                        READY
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-harvest-crop-field">
+                    FIELD A
+                </span>
+
+
+                <h4>
+                    Organic Rice
+                </h4>
+
+
+                <div class="stackly-client-harvest-maturity">
+
+                    <div>
+
+                        <span>
+                            Crop Maturity
+                        </span>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-maturity-meter">
+
+                        <span style="width:96%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-details">
+
+                    <div>
+
+                        <span>
+                            Est. Yield
+                        </span>
+
+                        <strong>
+                            3.2 T
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Harvest Date
+                        </span>
+
+                        <strong>
+                            08 Sep
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-footer">
+
+                    <span>
+                        Harvest recommended
+                    </span>
+
+                     
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CARROT -->
+
+            <article class="stackly-client-harvest-crop-card">
+
+                <div class="stackly-client-harvest-crop-top">
+
+                    <div class="stackly-client-harvest-crop-icon carrot">
+
+                        <i class="fa-solid fa-carrot"></i>
+
+                    </div>
+
+                    <span class="stackly-client-harvest-ready-badge soon">
+                        NEAR READY
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-harvest-crop-field">
+                    FIELD B
+                </span>
+
+
+                <h4>
+                    Organic Carrot
+                </h4>
+
+
+                <div class="stackly-client-harvest-maturity">
+
+                    <div>
+
+                        <span>
+                            Crop Maturity
+                        </span>
+
+                        <strong>
+                            88%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-maturity-meter">
+
+                        <span style="width:88%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-details">
+
+                    <div>
+
+                        <span>
+                            Est. Yield
+                        </span>
+
+                        <strong>
+                            1.8 T
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Harvest Date
+                        </span>
+
+                        <strong>
+                            11 Sep
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-footer">
+
+                    <span>
+                        Monitor for 3 days
+                    </span>
+
+                     
+                </div>
+
+            </article>
+
+
+
+            <!-- VEGETABLE -->
+
+            <article class="stackly-client-harvest-crop-card warning">
+
+                <div class="stackly-client-harvest-crop-top">
+
+                    <div class="stackly-client-harvest-crop-icon vegetable">
+
+                        <i class="fa-solid fa-leaf"></i>
+
+                    </div>
+
+                    <span class="stackly-client-harvest-ready-badge monitor">
+                        MONITOR
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-harvest-crop-field">
+                    FIELD C
+                </span>
+
+
+                <h4>
+                    Green Vegetables
+                </h4>
+
+
+                <div class="stackly-client-harvest-maturity">
+
+                    <div>
+
+                        <span>
+                            Crop Maturity
+                        </span>
+
+                        <strong>
+                            69%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-maturity-meter warning">
+
+                        <span style="width:69%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-details">
+
+                    <div>
+
+                        <span>
+                            Est. Yield
+                        </span>
+
+                        <strong>
+                            1.6 T
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Harvest Date
+                        </span>
+
+                        <strong>
+                            16 Sep
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-footer">
+
+                    <span>
+                        Continue crop development
+                    </span>
+
+                     
+
+                </div>
+
+            </article>
+
+
+
+            <!-- CHILLI -->
+
+            <article class="stackly-client-harvest-crop-card">
+
+                <div class="stackly-client-harvest-crop-top">
+
+                    <div class="stackly-client-harvest-crop-icon chilli">
+
+                        <i class="fa-solid fa-pepper-hot"></i>
+
+                    </div>
+
+                    <span class="stackly-client-harvest-ready-badge ready">
+                        READY
+                    </span>
+
+                </div>
+
+
+                <span class="stackly-client-harvest-crop-field">
+                    FIELD D
+                </span>
+
+
+                <h4>
+                    Organic Chilli
+                </h4>
+
+
+                <div class="stackly-client-harvest-maturity">
+
+                    <div>
+
+                        <span>
+                            Crop Maturity
+                        </span>
+
+                        <strong>
+                            93%
+                        </strong>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-maturity-meter">
+
+                        <span style="width:93%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-details">
+
+                    <div>
+
+                        <span>
+                            Est. Yield
+                        </span>
+
+                        <strong>
+                            2.0 T
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Harvest Date
+                        </span>
+
+                        <strong>
+                            09 Sep
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-crop-footer">
+
+                    <span>
+                        Harvest recommended
+                    </span>
+
+                    
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST TIMELINE + QUALITY
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-dashboard-grid">
+
+
+        <!-- =================================================
+             HARVEST SCHEDULE
+        ================================================== -->
+
+        <article class="stackly-client-dashboard-card">
+
+            <div class="stackly-client-card-header">
+
+                <div>
+
+                    <span>
+                        HARVEST PLAN
+                    </span>
+
+                    <h3>
+                        Upcoming Harvest Schedule
+                    </h3>
+
+                </div>
+
+                <span class="stackly-client-harvest-date-badge">
+                    SEPTEMBER
+                </span>
+
+            </div>
+
+
+            <div class="stackly-client-harvest-timeline">
+
+
+                <div class="stackly-client-harvest-timeline-item completed">
+
+                    <div class="stackly-client-harvest-timeline-date">
+
+                        <strong>
+                            07
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-marker">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-content">
+
+                        <strong>
+                            Rice Harvest
+                        </strong>
+
+                        <span>
+                            Field A · Expected 3.2 tons
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-check"></i>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-timeline-item active">
+
+                    <div class="stackly-client-harvest-timeline-date">
+
+                        <strong>
+                            09
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-marker">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-content">
+
+                        <strong>
+                            Chilli Harvest
+                        </strong>
+
+                        <span>
+                            Field D · Expected 2.0 tons
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-timeline-item upcoming">
+
+                    <div class="stackly-client-harvest-timeline-date">
+
+                        <strong>
+                            11
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-marker">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-content">
+
+                        <strong>
+                            Carrot Harvest
+                        </strong>
+
+                        <span>
+                            Field B · Expected 1.8 tons
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-timeline-item upcoming">
+
+                    <div class="stackly-client-harvest-timeline-date">
+
+                        <strong>
+                            16
+                        </strong>
+
+                        <span>
+                            SEP
+                        </span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-marker">
+
+                        <span></span>
+
+                    </div>
+
+
+                    <div class="stackly-client-harvest-timeline-content">
+
+                        <strong>
+                            Vegetable Harvest
+                        </strong>
+
+                        <span>
+                            Field C · Expected 1.6 tons
+                        </span>
+
+                    </div>
+
+
+                    <i class="fa-solid fa-clock"></i>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+
+        <!-- =================================================
+             HARVEST QUALITY
+        ================================================== -->
+
+        <article class="stackly-client-dashboard-card">
+
+            <div class="stackly-client-card-header">
+
+                <div>
+
+                    <span>
+                        QUALITY CONTROL
+                    </span>
+
+                    <h3>
+                        Harvest Quality
+                    </h3>
+
+                </div>
+
+                <span class="stackly-client-harvest-quality-badge">
+                    EXCELLENT
+                </span>
+
+            </div>
+
+
+            <div class="stackly-client-harvest-quality-score">
+
+                <div class="stackly-client-harvest-quality-ring">
+
+                    <div>
+
+                        <strong>
+                            94%
+                        </strong>
+
+                        <span>
+                            Quality Score
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-client-harvest-quality-details">
+
+                    <div>
+
+                        <span>
+                            Freshness
+                        </span>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Size Grade
+                        </span>
+
+                        <strong>
+                            A
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Appearance
+                        </span>
+
+                        <strong>
+                            92%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Damage Rate
+                        </span>
+
+                        <strong>
+                            2%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <a
+                href="404-client.html"
+                class="stackly-client-harvest-quality-link"
+            >
+
+                View Quality Report
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST BATCHES
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-batches">
+
+        <div class="stackly-client-harvest-section-heading">
+
+            <div>
+
+                <span>
+                    HARVEST TRACKING
+                </span>
+
+                <h3>
+                    Recent Harvest Batches
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-batch-grid">
+
+
+            <!-- BATCH 1 -->
+
+            <article class="stackly-client-harvest-batch-card">
+
+                <div class="stackly-client-harvest-batch-icon green">
+
+                    <i class="fa-solid fa-wheat-awn"></i>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-content">
+
+                    <span>
+                        BATCH #HRV-026
+                    </span>
+
+                    <h4>
+                        Organic Rice
+                    </h4>
+
+                    <p>
+                        Field A · Harvested 07 Sep 2026
+                    </p>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-weight">
+
+                    <strong>
+                        3.1 T
+                    </strong>
+
+                    <span>
+                        Grade A
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- BATCH 2 -->
+
+            <article class="stackly-client-harvest-batch-card">
+
+                <div class="stackly-client-harvest-batch-icon orange">
+
+                    <i class="fa-solid fa-carrot"></i>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-content">
+
+                    <span>
+                        BATCH #HRV-025
+                    </span>
+
+                    <h4>
+                        Organic Carrot
+                    </h4>
+
+                    <p>
+                        Field B · Harvested 03 Sep 2026
+                    </p>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-weight">
+
+                    <strong>
+                        1.6 T
+                    </strong>
+
+                    <span>
+                        Grade A
+                    </span>
+
+                </div>
+
+            </article>
+
+
+            <!-- BATCH 3 -->
+
+            <article class="stackly-client-harvest-batch-card">
+
+                <div class="stackly-client-harvest-batch-icon lime">
+
+                    <i class="fa-solid fa-leaf"></i>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-content">
+
+                    <span>
+                        BATCH #HRV-024
+                    </span>
+
+                    <h4>
+                        Green Vegetables
+                    </h4>
+
+                    <p>
+                        Field C · Harvested 01 Sep 2026
+                    </p>
+
+                </div>
+
+                <div class="stackly-client-harvest-batch-weight">
+
+                    <strong>
+                        1.4 T
+                    </strong>
+
+                    <span>
+                        Grade B+
+                    </span>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         POST HARVEST INSIGHTS
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-insights">
+
+        <div class="stackly-client-harvest-section-heading">
+
+            <div>
+
+                <span>
+                    POST-HARVEST MANAGEMENT
+                </span>
+
+                <h3>
+                    What needs attention?
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-insight-grid">
+
+
+            <article class="stackly-client-harvest-insight-card">
+
+                <div class="stackly-client-harvest-insight-icon storage">
+
+                    <i class="fa-solid fa-warehouse"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        STORAGE
+                    </span>
+
+                    <h4>
+                        82% storage capacity
+                    </h4>
+
+                    <p>
+                        Available storage space is sufficient for
+                        the next planned harvest batches.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <article class="stackly-client-harvest-insight-card">
+
+                <div class="stackly-client-harvest-insight-icon quality">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        CERTIFICATION
+                    </span>
+
+                    <h4>
+                        Organic <br>quality
+                    </h4>
+
+                    <p>
+                        Current harvested batches are within your
+                        organic quality standards.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+
+            <article class="stackly-client-harvest-insight-card">
+
+                <div class="stackly-client-harvest-insight-icon transport">
+
+                    <i class="fa-solid fa-truck"></i>
+
+                </div>
+
+                <div>
+
+                    <span>
+                        TRANSPORT
+                    </span>
+
+                    <h4>
+                        Schedule <br>pickup
+                    </h4>
+
+                    <p>
+                        One completed batch is ready for immediate collection and transport.
+                    </p>
+
+                </div>
+
+                <a href="404-client.html">
+
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </a>
+
+            </article>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         HARVEST HEALTH BANNER
+    ====================================================== -->
+
+    <section class="stackly-client-harvest-health-banner">
+
+        <div class="stackly-client-harvest-health-icon">
+
+            <i class="fa-solid fa-basket-shopping"></i>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-health-content">
+
+            <span>
+                HARVEST SEASON STATUS
+            </span>
+
+            <h3>
+                Your farm is moving toward a strong harvest season.
+            </h3>
+
+            <p>
+                Three fields are approaching harvest readiness,
+                expected yield remains strong and current crop
+                quality is within the desired range.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-client-harvest-health-score">
+
+            <strong>
+                78%
+            </strong>
+
+            <span>
+                Harvest Progress
+            </span>
+
+        </div>
+
+    </section>
+
+
+</section>
+    
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     CLIENT DASHBOARD JAVASCRIPT
+========================================================= -->
+
+<script src="client.js"></script>
+
+
+ 
+
+</body>
+
+</html>

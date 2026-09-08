@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <meta
+        name="description"
+        content="Stackly Organic Farming Admin Dashboard"
+    >
+
+    <title>
+        Stackly | Organic Farming Admin Dashboard
+    </title>
+
+
+    <!-- =====================================================
+         GOOGLE FONT
+    ====================================================== -->
+
+    <link
+        rel="preconnect"
+        href="https://fonts.googleapis.com"
+    >
+
+    <link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin
+    >
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =====================================================
+         FONT AWESOME
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    >
+
+
+    <!-- =====================================================
+         DASHBOARD CSS
+    ====================================================== -->
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     ADMIN DASHBOARD
+========================================================= -->
+
+<div class="stackly-admin-dashboard">
+
+
+    <!-- =====================================================
+         SIDEBAR OVERLAY - MOBILE
+    ====================================================== -->
+
+    <div
+        class="stackly-sidebar-overlay"
+        id="stacklySidebarOverlay"
+    ></div>
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside
+        class="stackly-admin-sidebar"
+        id="stacklyAdminSidebar"
+    >
+
+
+        <!-- =================================================
+             SIDEBAR HEADER
+        ================================================== -->
+
+        <div class="stackly-sidebar-header">
+
+
+            <!-- LOGO -->
+
+            <a
+                href="admin.html"
+                class="stackly-admin-logo"
+            >
+
+                <img
+                    src="Stackly-logo-Blue.webp"
+                    alt="Stackly Organic Farming"
+                >
+
+            </a>
+
+
+            <!-- MOBILE CLOSE -->
+
+            <button
+                type="button"
+                class="stackly-sidebar-close"
+                id="stacklySidebarClose"
+                aria-label="Close Menu"
+            >
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             ADMIN PROFILE
+        ================================================== -->
+
+        <div class="stackly-sidebar-profile">
+
+            <div class="stackly-profile-avatar">
+
+                <i class="fa-solid fa-user-tie"></i>
+
+            </div>
+
+            <div class="stackly-profile-info">
+                
+                <strong id="stacklyAdminUserName">
+                    Farm Admin
+                </strong>
+                
+                <span>
+                    Administrator
+                </span>
+            </div>
+            
+            
+
+        </div>
+
+
+        <!-- =================================================
+             SIDEBAR NAVIGATION
+        ================================================== -->
+
+        <nav class="stackly-admin-nav">
+
+
+            <!-- MAIN -->
+
+            <p class="stackly-nav-heading">
+                MAIN MENU
+            </p>
+
+
+            <a
+                href="admin.html"
+                class="stackly-nav-link active"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-pie"></i>
+
+                </span>
+
+                <span>
+                    Dashboard
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-management.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-seedling"></i>
+
+                </span>
+
+                <span>
+                    Crop Management
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-soil.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-mountain-sun"></i>
+
+                </span>
+
+                <span>
+                    Soil Health
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-irrigation.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-droplet"></i>
+
+                </span>
+
+                <span>
+                    Irrigation
+                </span>
+
+            </a>
+
+
+            <!-- MANAGEMENT -->
+
+            <p class="stackly-nav-heading">
+                MANAGEMENT
+            </p>
+
+
+            <a
+                href="admin-farmers.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-people-group"></i>
+
+                </span>
+
+                <span>
+                    Farmers
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-harvest.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-basket-shopping"></i>
+
+                </span>
+
+                <span>
+                    Harvest
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-inventory.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </span>
+
+                <span>
+                    Inventory
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-certification.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-certificate"></i>
+
+                </span>
+
+                <span>
+                    Certifications
+                </span>
+
+            </a>
+
+
+            <!-- REPORTS -->
+
+            <p class="stackly-nav-heading">
+                REPORTS
+            </p>
+
+
+            <a
+                href="admin-reports.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-chart-line"></i>
+
+                </span>
+
+                <span>
+                    Reports
+                </span>
+
+            </a>
+
+
+            <a
+                href="admin-settings.html"
+                class="stackly-nav-link"
+            >
+
+                <span class="stackly-nav-icon">
+
+                    <i class="fa-solid fa-gear"></i>
+
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- =================================================
+             SIDEBAR BOTTOM
+        ================================================== -->
+
+        <div class="stackly-sidebar-bottom">
+
+            <a
+                href="index.html"
+                class="stackly-logout-link"
+            >
+
+                <span>
+
+                    <i class="fa-solid fa-right-from-bracket"></i>
+
+                </span>
+
+                Logout
+
+            </a>
+
+        </div>
+
+
+    </aside>
+
+
+    <!-- =====================================================
+         MAIN AREA
+    ====================================================== -->
+
+    <main class="stackly-admin-main">
+
+
+        <!-- =================================================
+             TOP HEADER
+        ================================================== -->
+
+        <header class="stackly-admin-header">
+
+
+            <!-- LEFT -->
+
+            <div class="stackly-header-left">
+
+
+                <!-- HAMBURGER -->
+
+                <button
+                    type="button"
+                    class="stackly-menu-toggle"
+                    id="stacklyMenuToggle"
+                    aria-label="Open Menu"
+                >
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-page-heading">
+
+                    <span>
+                        Organic Farming
+                    </span>
+
+                    <h1>
+                        Admin Dashboard
+                    </h1>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT -->
+
+            <div class="stackly-header-right">
+
+ 
+                <!-- NOTIFICATION -->
+
+                <a href="404-admin.html"><button
+                    type="button"
+                    class="stackly-header-icon stackly-notification"
+                    aria-label="Notifications"
+                >
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span class="stackly-notification-dot">
+                        4
+                    </span>
+
+                </button></a>
+
+
+                <!-- ADMIN EMAIL -->
+
+                <div class="stackly-admin-account">
+
+
+                    <div class="stackly-account-avatar">
+
+                        <i class="fa-solid fa-user"></i>
+
+                    </div>
+
+
+                    <div class="stackly-account-details">
+
+                        <strong>
+                            admin@stacklyfarm.com
+                        </strong>
+
+                        <span>
+                            Farm Administrator
+                        </span>
+
+                    </div>
+
+
+                     
+
+                </div>
+
+            </div>
+
+        </header>
+
+<!-- =========================================================
+     STACKLY CERTIFICATION PAGE CONTENT
+========================================================= -->
+
+<section class="stackly-certification-page">
+
+
+    <!-- =====================================================
+         CERTIFICATION HERO
+    ====================================================== -->
+
+    <section class="stackly-certification-hero">
+
+        <div class="stackly-certification-hero-content">
+
+            <span class="stackly-certification-eyebrow">
+                <i class="fa-solid fa-certificate"></i>
+                FARM CERTIFICATION
+            </span>
+
+            <h2>
+                Trusted Farming,
+                <span>Certified Quality</span>
+            </h2>
+
+            <p>
+                Monitor organic certifications, compliance standards,
+                inspection schedules and certificate validity across
+                every farm operation from one centralized dashboard.
+            </p>
+
+            <div class="stackly-certification-actions">
+
+                <a href="404-admin.html">
+                    <button
+                        type="button"
+                        class="stackly-certification-primary-btn"
+                    >
+                        <i class="fa-solid fa-plus"></i>
+                        Add Certificate
+                    </button>
+                </a>
+
+                <a href="404-admin.html">
+                    <button
+                        type="button"
+                        class="stackly-certification-secondary-btn"
+                    >
+                        <i class="fa-solid fa-file-lines"></i>
+                        View Documents
+                    </button>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-certification-hero-visual">
+
+            <div class="stackly-certification-badge">
+
+                <i class="fa-solid fa-award"></i>
+
+                <span>
+                    ORGANIC
+                </span>
+
+                <strong>
+                    CERTIFIED
+                </strong>
+
+            </div>
+
+            <div class="stackly-certification-floating-card">
+
+                <span>
+                    Compliance Score
+                </span>
+
+                <strong>
+                    96.8%
+                </strong>
+
+                <small>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    3.2% this quarter
+                </small>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATION STATISTICS
+    ====================================================== -->
+
+    <section class="stackly-certification-stats">
+
+
+        <article class="stackly-certification-stat-card">
+
+            <div class="stackly-certification-stat-icon">
+                <i class="fa-solid fa-certificate"></i>
+            </div>
+
+            <div>
+
+                <span>
+                    Active Certificates
+                </span>
+
+                <strong>
+                    18
+                </strong>
+
+                <small class="cert-positive">
+                    <i class="fa-solid fa-arrow-up"></i>
+                    12.5%
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <article class="stackly-certification-stat-card">
+
+            <div class="stackly-certification-stat-icon">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <div>
+
+                <span>
+                    Verified Farms
+                </span>
+
+                <strong>
+                    42
+                </strong>
+
+                <small class="cert-positive">
+                    Fully verified
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <article class="stackly-certification-stat-card">
+
+            <div class="stackly-certification-stat-icon">
+                <i class="fa-solid fa-calendar-check"></i>
+            </div>
+
+            <div>
+
+                <span>
+                    Upcoming Audits
+                </span>
+
+                <strong>
+                    07
+                </strong>
+
+                <small class="cert-warning">
+                    This month
+                </small>
+
+            </div>
+
+        </article>
+
+
+        <article class="stackly-certification-stat-card">
+
+            <div class="stackly-certification-stat-icon">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+            </div>
+
+            <div>
+
+                <span>
+                    Expiring Soon
+                </span>
+
+                <strong>
+                    04
+                </strong>
+
+                <small class="cert-danger">
+                    Within 30 days
+                </small>
+
+            </div>
+
+        </article>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATION OVERVIEW
+    ====================================================== -->
+
+    <section class="stackly-certification-overview">
+
+
+        <!-- COMPLIANCE SCORE -->
+
+        <div class="stackly-certification-panel">
+
+            <div class="stackly-certification-panel-heading">
+
+                <div>
+
+                    <span>
+                        FARM COMPLIANCE
+                    </span>
+
+                    <h3>
+                        Organic Compliance Score
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+            </div>
+
+
+            <div class="stackly-compliance-content">
+
+                <div class="stackly-compliance-circle">
+
+                    <div>
+
+                        <strong>
+                            96%
+                        </strong>
+
+                        <span>
+                            Compliant
+                        </span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-compliance-details">
+
+                    <div>
+
+                        <span>
+                            Soil Standards
+                        </span>
+
+                        <strong>
+                            98%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Organic Inputs
+                        </span>
+
+                        <strong>
+                            94%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Farm Records
+                        </span>
+
+                        <strong>
+                            97%
+                        </strong>
+
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Product Traceability
+                        </span>
+
+                        <strong>
+                            95%
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CERTIFICATION TYPES -->
+
+        <div class="stackly-certification-panel">
+
+            <div class="stackly-certification-panel-heading">
+
+                <div>
+
+                    <span>
+                        CERTIFICATION PROGRAMS
+                    </span>
+
+                    <h3>
+                        Certification Types
+                    </h3>
+
+                </div>
+
+                <i class="fa-solid fa-leaf"></i>
+
+            </div>
+
+
+            <div class="stackly-certification-type-list">
+
+
+                <div class="stackly-certification-type">
+
+                    <div class="stackly-certification-type-icon">
+                        <i class="fa-solid fa-leaf"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Organic Farming
+                        </strong>
+
+                        <span>
+                            12 active farms
+                        </span>
+
+                    </div>
+
+                    <b>
+                        Active
+                    </b>
+
+                </div>
+
+
+                <div class="stackly-certification-type">
+
+                    <div class="stackly-certification-type-icon">
+                        <i class="fa-solid fa-seedling"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Sustainable Agriculture
+                        </strong>
+
+                        <span>
+                            09 certified farms
+                        </span>
+
+                    </div>
+
+                    <b>
+                        Active
+                    </b>
+
+                </div>
+
+
+                <div class="stackly-certification-type">
+
+                    <div class="stackly-certification-type-icon">
+                        <i class="fa-solid fa-recycle"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Eco Production
+                        </strong>
+
+                        <span>
+                            07 certified farms
+                        </span>
+
+                    </div>
+
+                    <b>
+                        Active
+                    </b>
+
+                </div>
+
+
+                <div class="stackly-certification-type">
+
+                    <div class="stackly-certification-type-icon">
+                        <i class="fa-solid fa-droplet"></i>
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Water Conservation
+                        </strong>
+
+                        <span>
+                            06 certified farms
+                        </span>
+
+                    </div>
+
+                    <b>
+                        Active
+                    </b>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+    </section>
+
+
+
+    <!-- =====================================================
+         UPCOMING INSPECTIONS
+    ====================================================== -->
+
+    <section class="stackly-certification-inspection">
+
+
+        <div class="stackly-certification-section-heading">
+
+            <div>
+
+                <span>
+                    COMPLIANCE CALENDAR
+                </span>
+
+                <h3>
+                    Upcoming Farm Inspections
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Calendar
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-inspection-grid">
+
+
+            <article class="stackly-inspection-card">
+
+                <div class="stackly-inspection-date">
+
+                    <span>
+                        SEP
+                    </span>
+
+                    <strong>
+                        10
+                    </strong>
+
+                </div>
+
+                <div class="stackly-inspection-content">
+
+                    <span>
+                        ORGANIC AUDIT
+                    </span>
+
+                    <h4>
+                        Green Valley <br>Farm
+                    </h4>
+
+                    <p>
+                        Complete organic production inspection
+                    </p>
+
+                    <small>
+                        <i class="fa-solid fa-location-dot"></i>
+                        North Field Zone
+                    </small>
+
+                </div>
+
+                <span class="inspection-scheduled">
+                    Scheduled
+                </span>
+
+            </article>
+
+
+
+            <article class="stackly-inspection-card">
+
+                <div class="stackly-inspection-date">
+
+                    <span>
+                        SEP
+                    </span>
+
+                    <strong>
+                        14
+                    </strong>
+
+                </div>
+
+                <div class="stackly-inspection-content">
+
+                    <span>
+                        SOIL AUDIT
+                    </span>
+
+                    <h4>
+                        Sunrise Organic Farm
+                    </h4>
+
+                    <p>
+                        Soil health and farm verification
+                    </p>
+
+                    <small>
+                        <i class="fa-solid fa-location-dot"></i>
+                        East Farm Zone
+                    </small>
+
+                </div>
+
+                <span class="inspection-pending">
+                    Pending
+                </span>
+
+            </article>
+
+
+
+            <article class="stackly-inspection-card">
+
+                <div class="stackly-inspection-date">
+
+                    <span>
+                        SEP
+                    </span>
+
+                    <strong>
+                        21
+                    </strong>
+
+                </div>
+
+                <div class="stackly-inspection-content">
+
+                    <span>
+                        TRACEABILITY
+                    </span>
+
+                    <h4>
+                        Harvest Fresh <br>Estate
+                    </h4>
+
+                    <p>
+                        Product tracking and harvest verification
+                    </p>
+
+                    <small>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Central Farm Zone
+                    </small>
+
+                </div>
+
+                <span class="inspection-scheduled">
+                    Scheduled
+                </span>
+
+            </article>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATE RECORDS
+    ====================================================== -->
+
+    <section class="stackly-certificate-records">
+
+
+        <div class="stackly-certification-section-heading">
+
+            <div>
+
+                <span>
+                    DOCUMENT MANAGEMENT
+                </span>
+
+                <h3>
+                    Certificate Records
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                View All Certificates
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-certificate-table-wrapper">
+
+            <table class="stackly-certificate-table">
+
+                <thead>
+
+                    <tr>
+
+                        <th>
+                            Certificate
+                        </th>
+
+                        <th>
+                            Farm
+                        </th>
+
+                        <th>
+                            Issued Date
+                        </th>
+
+                        <th>
+                            Expiry Date
+                        </th>
+
+                        <th>
+                            Standard
+                        </th>
+
+                        <th>
+                            Status
+                        </th>
+
+                    </tr>
+
+                </thead>
+
+
+                <tbody>
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-certificate-name">
+
+                                <span>
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Organic Production
+                                    </strong>
+
+                                    <small>
+                                        CERT-2026-1048
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Green Valley Farm
+                        </td>
+
+                        <td>
+                            12 Jan 2026
+                        </td>
+
+                        <td>
+                            12 Jan 2027
+                        </td>
+
+                        <td>
+                            Organic Standard
+                        </td>
+
+                        <td>
+
+                            <span class="stackly-certificate-status active">
+                                Active
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-certificate-name">
+
+                                <span>
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Sustainable Farm
+                                    </strong>
+
+                                    <small>
+                                        CERT-2026-2074
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Sunrise Organic Farm
+                        </td>
+
+                        <td>
+                            04 Feb 2026
+                        </td>
+
+                        <td>
+                            04 Feb 2027
+                        </td>
+
+                        <td>
+                            Eco Agriculture
+                        </td>
+
+                        <td>
+
+                            <span class="stackly-certificate-status active">
+                                Active
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-certificate-name">
+
+                                <span>
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Water Conservation
+                                    </strong>
+
+                                    <small>
+                                        CERT-2026-3016
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Harvest Fresh Estate
+                        </td>
+
+                        <td>
+                            18 Mar 2026
+                        </td>
+
+                        <td>
+                            18 Sep 2026
+                        </td>
+
+                        <td>
+                            Water Care Standard
+                        </td>
+
+                        <td>
+
+                            <span class="stackly-certificate-status expiring">
+                                Expiring
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+
+                    <tr>
+
+                        <td>
+
+                            <div class="stackly-certificate-name">
+
+                                <span>
+                                    <i class="fa-solid fa-file-circle-check"></i>
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Eco Production
+                                    </strong>
+
+                                    <small>
+                                        CERT-2026-4022
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+                        </td>
+
+                        <td>
+                            Pure Earth Farm
+                        </td>
+
+                        <td>
+                            22 Apr 2026
+                        </td>
+
+                        <td>
+                            22 Apr 2027
+                        </td>
+
+                        <td>
+                            Eco Production
+                        </td>
+
+                        <td>
+
+                            <span class="stackly-certificate-status active">
+                                Active
+                            </span>
+
+                        </td>
+
+                    </tr>
+
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATION STANDARDS
+    ====================================================== -->
+
+    <section class="stackly-certification-standards">
+
+
+        <div class="stackly-certification-section-heading">
+
+            <div>
+
+                <span>
+                    QUALITY FRAMEWORK
+                </span>
+
+                <h3>
+                    Certification Standards
+                </h3>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-standard-grid">
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-standard-card"
+            >
+
+                <div class="stackly-standard-icon">
+                    <i class="fa-solid fa-leaf"></i>
+                </div>
+
+                <h4>
+                    Organic <br>Standard
+                </h4>
+
+                <p>
+                    Chemical-free farming and certified organic
+                    production practices.
+                </p>
+
+                <strong>
+                    12 Farms
+                    <i class="fa-solid fa-arrow-right"></i>
+                </strong>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-standard-card"
+            >
+
+                <div class="stackly-standard-icon">
+                    <i class="fa-solid fa-seedling"></i>
+                </div>
+
+                <h4>
+                    Sustainable Agriculture
+                </h4>
+
+                <p>
+                    Responsible soil, crop and resource management practices.
+                </p>
+
+                <strong>
+                    09 Farms
+                    <i class="fa-solid fa-arrow-right"></i>
+                </strong>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-standard-card"
+            >
+
+                <div class="stackly-standard-icon">
+                    <i class="fa-solid fa-recycle"></i>
+                </div>
+
+                <h4>
+                    Certified Eco Production
+                </h4>
+
+                <p>
+                    Environment-friendly farming and sustainable
+                    production practices.
+                </p>
+
+                <strong>
+                    07 Farms
+                    <i class="fa-solid fa-arrow-right"></i>
+                </strong>
+
+            </a>
+
+
+
+            <a
+                href="404-admin.html"
+                class="stackly-standard-card"
+            >
+
+                <div class="stackly-standard-icon">
+                    <i class="fa-solid fa-droplet"></i>
+                </div>
+
+                <h4>
+                    Sustainable Water Care
+                </h4>
+
+                <p>
+                    Efficient irrigation, water conservation and responsible farm usage.
+                </p>
+
+                <strong>
+                    06 Farms
+                    <i class="fa-solid fa-arrow-right"></i>
+                </strong>
+
+            </a>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         CERTIFICATION ACTIVITY
+    ====================================================== -->
+
+    <section class="stackly-certification-activity">
+
+
+        <div class="stackly-certification-section-heading">
+
+            <div>
+
+                <span>
+                    RECENT ACTIVITY
+                </span>
+
+                <h3>
+                    Certification Updates
+                </h3>
+
+            </div>
+
+            <a href="404-admin.html">
+                Full Activity
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-certification-timeline">
+
+
+            <div class="stackly-certification-timeline-item">
+
+                <div class="stackly-timeline-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Certificate Approved
+                    </strong>
+
+                    <p>
+                        Green Valley Farm organic certificate
+                        was successfully approved.
+                    </p>
+
+                    <small>
+                        2 hours ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-certification-timeline-item">
+
+                <div class="stackly-timeline-icon">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Inspection Scheduled
+                    </strong>
+
+                    <p>
+                        Sunrise Organic Farm inspection scheduled
+                        for September 14.
+                    </p>
+
+                    <small>
+                        Yesterday
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-certification-timeline-item">
+
+                <div class="stackly-timeline-icon">
+                    <i class="fa-solid fa-file-arrow-up"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Documents Uploaded
+                    </strong>
+
+                    <p>
+                        New soil testing documents were added
+                        to Harvest Fresh Estate.
+                    </p>
+
+                    <small>
+                        2 days ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-certification-timeline-item">
+
+                <div class="stackly-timeline-icon">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+
+                <div>
+
+                    <strong>
+                        Compliance Review Completed
+                    </strong>
+
+                    <p>
+                        Monthly compliance review completed
+                        with a 96% overall score.
+                    </p>
+
+                    <small>
+                        4 days ago
+                    </small>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- =====================================================
+         EXPIRING CERTIFICATION ALERT
+    ====================================================== -->
+
+    <section class="stackly-certification-alert">
+
+        <div class="stackly-certification-alert-icon">
+
+            <i class="fa-solid fa-triangle-exclamation"></i>
+
+        </div>
+
+
+        <div class="stackly-certification-alert-content">
+
+            <span>
+                CERTIFICATION ALERT
+            </span>
+
+            <h3>
+                4 certificates require renewal soon.
+            </h3>
+
+            <p>
+                Review expiring certificates and submit renewal
+                documents before the validity period ends.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-certification-alert-progress">
+
+            <div>
+
+                <span>
+                    Renewal Progress
+                </span>
+
+                <strong>
+                    68%
+                </strong>
+
+            </div>
+
+            <div class="stackly-certification-progress-bar">
+
+                <span style="width:68%;"></span>
+
+            </div>
+
+        </div>
+
+
+        <a
+            href="404-admin.html"
+            class="stackly-certification-alert-btn"
+        >
+            Renew Certificates
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </section>
+
+
+</section>
+
+</main>
+
+</div>
+
+
+<!-- =========================================================
+     DASHBOARD JAVASCRIPT
+========================================================= -->
+
+
+<script src="admin.js"></script>
+
+</body>
+
+</html>
